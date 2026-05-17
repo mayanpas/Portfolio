@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayan Patrick</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <link
+      rel="shortcut icon"
+      href="img/Phoenix Framework.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script>
+      new Lenis({
+        autoRaf: true,
+        autoToggle: true,
+        anchors: true,
+        allowNestedScroll: true,
+        naiveDimensions: true,
+        stopInertiaOnNavigate: true,
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <a href="#cardSobreMim">Sobre mim</a>
+      <a href="#cardHabilidades">Habilidades</a>
+      <a href="#cardProjetos">Projetos</a>
+      <a href="#cardContato">Contato</a>
+    </header>
+
+    <main id="main">
+      <div id="mainCard" class="hidden">
+        <div id="titleContainer">
+          <h1>Mayan <br /><span id="patrick">Patrick</span></h1>
+          <p id="my-info">Técnico de informática e Engenheiro de Software</p>
+        </div>
+        <div id="fcButtons">
+          <a href="#cardProjetos">Veja os meus projetos</a>
+          <a href="#cardContato">Me chame</a>
+        </div>
+      </div>
+
+      <div class="card hidden" id="cardSobreMim">
+        <h2 class="cardTitle">Sobre mim</h2>
+        <div id="sobreContent">
+          <div id="sobreMim">
+            <div id="profilePhoto"></div>
+            <p id="txtSobreMim">
+              Natural de Ipatinga/MG e atualmente com 21 anos, desde criança sou
+              apaixonado por tecnologia.
+              <br /><br />
+              Almejo seguir carreira como desenvolvedor. Sou proativo e gosto de
+              aprender.
+              <br /><br />
+              Tenho experiência prática com manutenção e montagem de
+              computadores, suporte técnico presencial e remoto e venda de
+              equipamentos de informática. Cursando Engenharia de Software (3º
+              Período) na UNILESTE. Experiência em Java, MySQL, SQL. Tenho 21
+              anos e desde criança sou apaixonado por tecnologia. Almejo seguir
+              carreira como desenvolvedor. Sou proativo e gosto de aprender.
+            </p>
+          </div>
+        </div>
+
+        <div id="experiencia">
+          <div class="expCard">
+            <img src="img/Vector.svg" alt="ícone de código" />
+            <h3>2+ Anos de experiência</h3>
+            <p>Como profissional de T.I</p>
+          </div>
+          <div class="expCard">
+            <img src="img/Vector.svg" alt="ícone de código" />
+            <h3>2+ Anos de experiência</h3>
+            <p>Como profissional de T.I</p>
+          </div>
+          <div class="expCard">
+            <img src="img/Vector.svg" alt="ícone de código" />
+            <h3>2+ Anos de experiência</h3>
+            <p>Como profissional de T.I</p>
+          </div>
+          <div class="expCard">
+            <img src="img/Vector.svg" alt="ícone de código" />
+            <h3>2+ Anos de experiência</h3>
+            <p>Como profissional de T.I</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hidden" id="cardHabilidades">
+        <h2 class="cardTitle">Habilidades</h2>
+        <p class="info">
+          Um conjunto de ferramentas completo para criar aplicações modernas e escaláveis.
+        </p>
+        <div class="habMicroCards">
+          <div class="habMicroCard">
+            <h3>Frontend</h3>
+            <div class="habButtons">
+              <a href="#">HTML</a>
+              <a href="#">CSS</a>
+              <a href="#">JavaScript</a>
+            </div>
+          </div>
+          <div class="habMicroCard">
+            <h3>Backend</h3>
+            <div class="habButtons">
+              <a href="#">Java</a>
+              <a href="#">SQL</a>
+              <a href="#">MySQL</a>
+            </div>
+          </div>
+          <div class="habMicroCard">
+            <h3>Ferramentas & Outros</h3>
+            <div class="habButtons">
+              <a href="#">Git</a>
+              <a href="#">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="card hidden" id="cardProjetos">
+        <h2 class="cardTitle">Projetos</h2>
+      </div>
+
+      <div class="card hidden" id="cardContato">
+        <h2 class="cardTitle">Contato</h2>
+      </div> -->
+
+    </main>
+  </body>
+</html>

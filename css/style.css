@@ -1,0 +1,284 @@
+/* Ggeral */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url(../img/pexels-danny-meneses-340146-943096.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 2rem;
+}
+
+/* Geral - cores padronizadas */
+:root {
+  /* CORES */
+  /* Cor do texto */
+  --textColor: #fff;
+  --textColorDark: #454545;
+  /* Cor das sombras */
+  --shadowColorDark: #45454571;
+  --shadowColorLight: #afafaf36;
+  /* Cor das bordas */
+  --borderColor: #69696971;
+  /* Cor de fundo do header */
+  --headerColor: #00000071;
+  /* Cor de fundo dos botões */
+  --buttonColor: #2222221f;
+  --buttonColorHover: #7a7a7a17;
+  /* Cor de fundo dos cards */
+  --cardColor: #22222200;
+  /* Cor de fundo dos microCards */
+  --microCardColor: #45454567;
+
+  /* ANIMAÇÕES */
+  /* Animações de hover */
+  --beforeHover: transform 0.2s ease;
+  --afterHover: scale(1.1);
+}
+
+/* Geral - animação de desvandecer dos cards */
+/* Estado inicial (escondido) */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(30px);
+  transition: all 0.8s ease-out; /* Velocidade da animação */
+}
+
+/* Estado final (visível) */
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Centralização de rolagem dos cards ao usar o menu do header */
+#cardSobreMim, #cardHabilidades, #cardProjetos, #cardContato {
+    scroll-margin-top: 20vh; /* Empurra o card para baixo ao rolar */
+}
+
+/* Header */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--headerColor);
+  backdrop-filter: blur(50px);
+  border-bottom: 1px solid var(--borderColor);
+}
+/* Header - menus */
+#header a {
+  font-size: clamp(0.1rem, 4vw, 1rem);
+  text-decoration: none;
+  color: var(--textColor);
+  transition: var(--beforeHover);
+}
+#header a:hover {
+  transform: var(--afterHover);
+  text-decoration: underline;
+}
+
+/* Main */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* main - mainCard */
+#mainCard {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: center;
+  padding: 5rem;
+  padding-bottom: none;
+  min-height: 100vh;
+}
+/* titulo - Mayan Patrick e subtitulo*/
+#titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/* titulo - Mayan */
+#titleContainer h1 {
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1;
+  color: var(--textColor);
+  font-weight: lighter;
+}
+/* titulo - PATRICK */
+#patrick {
+  text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: bold;
+}
+/* Subtitulo */
+#titleContainer p {
+  color: var(--textColor);
+}
+/* mainCard - botoes */
+#fcButtons {
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
+}
+#fcButtons a {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  text-decoration: none;
+  background-color: var(--buttonColor);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--borderColor);
+  color: var(--textColor);
+  border-radius: 5rem;
+  padding: 0.7rem;
+  box-shadow: 0 10px 50px var(--shadowColorDark);
+  transition: transform 0.2s ease;
+}
+#fcButtons a:hover {
+  background-color: var(--buttonColorHover);
+  transform: scale(1.1);
+  box-shadow: 0 10px 50px var(--shadowColorLight);
+}
+
+/* main - Cards */
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--cardColor);
+  backdrop-filter: blur(50px);
+  border: 1px solid var(--borderColor);
+  color: white;
+  padding: 2rem;
+  margin: 0 1rem;
+  border-radius: 3rem;
+  box-shadow: 0 10px 50px var(--shadowColorDark);
+}
+/* titulo do card */
+.cardTitle {
+  font-size: clamp(1rem, 10vw, 3rem);
+  flex-basis: 100%;
+  padding-bottom: 1rem;
+}
+
+/* card - sobre mim */
+#cardSobreMim {
+  gap: 1rem;
+}
+#sobreContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+/* Foto de perfil */
+#profilePhoto {
+  width: clamp(100px, 15vw, 200px);
+  height: clamp(100px, 15vw, 200px);
+  background-image: url(../img/perfil.jpeg);
+  background-size: cover;
+  border-radius: clamp(1.5rem, 5vw, 2rem);
+  object-fit: cover;
+  float: inline-start;
+  /* isso coloca o texto ao redor da imagem */
+  margin-right: clamp(0.5rem, 10vw, 1rem);
+  margin-bottom: clamp(0.3rem, 2vw, 1rem);
+}
+
+/* card - experiencia */
+#experiencia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+.expCard {
+  background-color: var(--microCardColor);
+  backdrop-filter: blur(50px);
+  border: 1px solid var(--borderColor);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  transition: var(--beforeHover);
+}
+.expCard img {
+  max-width: clamp(1rem, 10vw, 2rem);
+}
+.expCard:hover {
+  transform: scale(1.01);
+  background-color: var(--shadowColorLight);
+}
+
+/* card - Habilidades */
+#cardHabilidades {
+  gap: 1rem;
+}
+
+.habMicroCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+.habMicroCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #45454567;
+  backdrop-filter: blur(50px);
+  border: solid #69696971 1px;
+  color: white;
+  padding: 25px;
+  border-radius: 2rem;
+}
+.habMicroCard h3{
+    flex-basis: 100%;
+}
+.habMicroCard a {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  text-decoration: none;
+  background-color: var(--buttonColor);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--borderColor);
+  color: var(--textColor);
+  border-radius: 1rem;
+  padding: 0.7rem;
+  box-shadow: 0 10px 50px var(--shadowColorDark);
+  transition: transform 0.2s ease;
+}
+.habMicroCard a:hover {
+  background-color: var(--buttonColorHover);
+  transform: scale(1.1);
+  box-shadow: 0 10px 50px var(--shadowColorLight);
+}
+
+/* Responsividade */
+/* Ajustes para telas menores (Celulares) */
+@media (max-width: 480px) {
+  #mainCard {
+    padding: 2rem;
+  }
+  .card {
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  .cardTitle{
+    padding-bottom: 0;
+  }
+  #experiencia {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .habMicroCards{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
