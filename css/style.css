@@ -274,11 +274,8 @@ main {
 /* Responsividade */
 /* Ajustes para telas menores (Celulares) */
 @media (max-width: 480px) {
-  body {
-    /* Se o zoom ainda estiver alto, use % para o tamanho: */
-    /* background-size: 150% auto; */ /* Aumenta a largura para 150% e ajusta altura */
-    /* Ou, se preferir ver a nave centralizada na tela vertical: */
-    background-position: 50% bottom; /* Move o foco um pouco para a esquerda, mantendo na nave */
+  html {
+    background-image: url(../img/celularbakground.jpg);
   }
   #mainCard {
     padding: 2rem;
