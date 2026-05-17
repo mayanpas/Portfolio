@@ -6,13 +6,16 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+html {
   background-image: url(../img/pexels-danny-meneses-340146-943096.jpg);
   background-size: cover;
   background-attachment: fixed;
   padding-bottom: 2rem;
   /* Impede o efeito de "puxar" a página (bounce) */
   overscroll-behavior-y: none;
+}
+
+body {
 }
 
 /* Geral - cores padronizadas */
