@@ -11,7 +11,7 @@ const observer = new IntersectionObserver((entries) => {
 }, {
     // Ajuste o threshold para 0.2 para a animação começar 
     // apenas quando 20% do card estiver visível
-    threshold: 0.1 
+    // threshold: 0.1 
 });
 
 const hiddenElements = document.querySelectorAll('.hidden');

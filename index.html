@@ -32,7 +32,7 @@
       <a href="#cardSobreMim">Sobre mim</a>
       <a href="#cardHabilidades">Habilidades</a>
       <a href="#cardProjetos">Projetos</a>
-      <a href="#cardContato">Contato</a>
+      <a href="#cardContato">Fale Comigo</a>
     </header>
 
     <main id="main">
@@ -42,8 +42,25 @@
           <p id="my-info">Técnico de informática e Engenheiro de Software</p>
         </div>
         <div id="fcButtons">
-          <a href="#cardProjetos">Veja os meus projetos</a>
-          <a href="#cardContato">Me chame</a>
+          <div class="fcButtonDiv">
+            <a href="https://github.com/mayanpas" target="_blank" rel="noopener noreferrer"
+              ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
+              GitHub</a
+            >
+          </div>
+          <div class="fcButtonDiv">
+            <a
+              href="https://www.linkedin.com/in/mayanpatrick/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src="img/linkedin.svg"
+                alt="linkedinIcon"
+                id="linkedinIcon"
+              />
+              LinkedIn</a
+            >
+          </div>
         </div>
       </div>
 
@@ -70,22 +87,22 @@
         </div>
 
         <div id="experiencia">
-          <div class="expCard">
+          <div class="microCard" id="expMicroCard">
             <img src="img/DesktopTower.svg" alt="ícone de código" />
             <h3>2+ Anos de experiência</h3>
             <p>Como profissional de T.I.</p>
           </div>
-          <div class="expCard">
+          <div class="microCard" id="expMicroCard">
             <img src="img/code.svg" alt="ícone de código" />
             <h3>1 ano de experiência</h3>
             <p>Em desenvolvimeto.</p>
           </div>
-          <div class="expCard">
+          <div class="microCard" id="expMicroCard">
             <img src="img/uiDesign.svg" alt="ícone de código" />
             <h3>2+ Anos de experiência</h3>
             <p>Em design de UI.</p>
           </div>
-          <div class="expCard">
+          <div class="microCard" id="expMicroCard">
             <img src="img/Book.svg" alt="ícone de código" />
             <h3>Formação superior</h3>
             <p>4º período em Engenharia de Software na UNILESTE.</p>
@@ -100,7 +117,7 @@
           escaláveis.
         </p>
         <div class="habMicroCards">
-          <div class="habMicroCard">
+          <div class="microCard" id="habMicroCard">
             <h3>Frontend</h3>
             <div class="habButtons">
               <div>HTML</div>
@@ -108,7 +125,7 @@
               <div>JavaScript</div>
             </div>
           </div>
-          <div class="habMicroCard">
+          <div class="microCard" id="habMicroCard">
             <h3>Backend</h3>
             <div class="habButtons">
               <div>Java</div>
@@ -116,7 +133,7 @@
               <div>MySQL</div>
             </div>
           </div>
-          <div class="habMicroCard">
+          <div class="microCard" id="habMicroCard">
             <h3>Ferramentas & Outros</h3>
             <div class="habButtons">
               <div>Git</div>
@@ -134,7 +151,7 @@
           tecnologias e abordagens para a resolução de problemas.
         </p>
         <div id="prjMicrocards">
-          <div class="prjMicrocard">
+          <div class="microCard" id="prjMicrocard">
             <img
               src="img/Cadastro de pacientes 1.jpg"
               alt="Tela de cadastro de pacientes"
@@ -157,7 +174,7 @@
             </div>
 
             <div class="prjButtons">
-              <a href="https://github.com/EmanuelScapim/S.A.C.O-" id="github">
+              <a href="https://github.com/EmanuelScapim/S.A.C.O-" id="github" target="_blank" rel="noopener noreferrer">
                 <img src="img/github.svg" alt="" />
                 GitHub
               </a>
@@ -167,7 +184,71 @@
       </div>
 
       <div class="card hidden" id="cardContato">
-        <h2 class="cardTitle">Contato</h2>
+        <h2 class="cardTitle">Fale comigo</h2>
+        <div id="firstContactContent">
+          <p>
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you!
+          </p>
+          <h2>Contatos</h2>
+          <div id="contactMicroCards">
+            <div class="microCard" id="contactMicroCard">
+              <img src="img/Email.svg" alt="" />
+
+              <div class="contactMicroCardText">
+                <h5 class="contactMicroCardTitle">Email</h5>
+                <p>mayanpas0710@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="microCard" id="contactMicroCard">
+              <img src="img/Phone.svg" alt="" />
+
+              <div class="contactMicroCardText">
+                <h5 class="contactMicroCardTitle">Telefone</h5>
+                <p>(31) 9 1234-5678</p>
+              </div>
+            </div>
+
+            <div class="microCard" id="contactMicroCard">
+              <img src="img/Location.svg" alt="" />
+
+              <div class="contactMicroCardText">
+                <h5 class="contactMicroCardTitle">Localização</h5>
+                <p>Ipatinga - MG</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="secondContactContent">
+          <form action="#" class="microCard" id="formMicroCard">
+            <label for="nome" class="label">Nome: </label>
+            <input
+              type="text"
+              name="nome"
+              id=""
+              placeholder="Insira o seu nome"
+            />
+
+            <label for="email" class="label">Nome: </label>
+            <input type="text" name="email" placeholder="Insira o seu email" />
+
+            <label for="mensagem" class="label">Nome: </label>
+            <textarea
+              name="mensagem"
+              id=""
+              placeholder="Escreva sua mensagem"
+            ></textarea>
+
+            <input
+              type="submit"
+              name=""
+              id="formSubmit"
+              value="Enviar Mensagem"
+            />
+          </form>
+        </div>
       </div>
     </main>
   </body>
