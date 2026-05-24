@@ -7,6 +7,20 @@
 }
 
 html {
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("your-image.jpg") center center no-repeat;
+  background-size: cover;
+  z-index: -1; /* Keeps it behind your site content */
+  will-change: transform; /* Helps with scrolling performance */
+}
+body {
   background-image: url(../img/backgroundV2.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -68,7 +82,7 @@ a {
 #cardHabilidades,
 #cardProjetos,
 #cardContato {
-  scroll-margin-top: 18vh; /* Empurra o card para baixo ao rolar */
+  scroll-margin-top: 13vh; /* Empurra o card para baixo ao rolar */
 }
 
 /* Header */
@@ -216,7 +230,6 @@ main {
   background-image: url(../img/perfil.jpeg);
   background-size: cover;
   border-radius: clamp(1.5rem, 5vw, 2rem);
-  object-fit: cover;
   float: inline-start;
   /* isso coloca o texto ao redor da imagem */
   margin-right: clamp(0.5rem, 10vw, 1rem);
@@ -248,9 +261,13 @@ main {
 }
 .habButtons {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
-.habButtons div {
+.habButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: clamp(0.8rem, 1vw, 1rem);
   text-decoration: none;
   background-color: var(--buttonColor);
@@ -262,7 +279,10 @@ main {
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-.habButtons div:hover {
+.habButton img {
+  max-width: 1rem;
+}
+.habButton:hover {
   background-color: var(--buttonColorHover);
   transform: scale(1.1);
   box-shadow: 0 10px 50px var(--shadowColorLight);
@@ -274,6 +294,9 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-self: end;
+}
+#prjMicrocard {
+  gap: 1rem;
 }
 #prjMicrocard:hover {
   transform: var(--afterHoverLight);
@@ -333,7 +356,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   max-width: 100%;
 }
 #contactMicroCards {
@@ -341,14 +364,24 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
+.contactMicroCardTitle {
+  font-weight: normal;
+  color: #b3b3b3;
+}
+.contactMicroCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
 #contactMicroCard {
   flex-direction: row;
+  gap: 0.7rem;
   padding: 1rem;
   max-width: 100%;
   border-radius: 1.5rem;
 }
 #contactMicroCard img {
-  width: clamp(1rem, 10vw, 2rem);
+  width: clamp(1rem, 10vw, 1.7rem);
 }
 #contactMicroCard:hover {
   transform: var(--afterHoverLight);
@@ -393,8 +426,8 @@ main {
 /* Responsividade */
 /* Ajustes para telas menores (Celulares) */
 @media (max-width: 480px) {
-  #header a{
-    font-size: .7rem;
+  #header a {
+    font-size: 0.7rem;
   }
   #mainCard {
     padding: 2rem;
@@ -416,3 +449,11 @@ main {
     padding: 1rem;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+    background-size: auto 100vh; /* Adjusts height to the viewport */
+  }
+}
+
