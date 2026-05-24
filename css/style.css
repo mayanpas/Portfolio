@@ -19,11 +19,43 @@
   background-repeat: no-repeat;
 } */
 #content {
+  background-image: url(../img/backgroundV2.jpg);
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+/* #content::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(99, 102, 241, 0.3);
+  filter: blur(100px);
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+}
+#content{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  
+
+  background: linear-gradient(125deg, #0f172a, #1e293b, #312e81, #0f172a);
+  background-size: 300% 300%;
+  
+
+  animation: movimento-fundo 15s ease infinite;
+}
+
+@keyframes movimento-fundo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+
+} */
 html {
   /* background-image: url(../img/backgroundV2.jpg);
   background-size: cover;
@@ -67,7 +99,6 @@ a {
   --blur: blur(20px);
 }
 
-
 /* Geral - animação de desvandecer dos cards */
 /* Estado inicial (escondido) */
 .hidden {
@@ -107,9 +138,9 @@ a {
   backdrop-filter: var(--blur);
   border-bottom: 1px solid var(--borderColor);
 }
-#headerLogo{
+#headerLogo {
   width: clamp(1.5rem, 4vw, 2rem);
-  a{
+  a {
     padding-bottom: 0;
     margin: 0;
   }
