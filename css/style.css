@@ -7,7 +7,6 @@
 }
 
 html {
-
 }
 body::before {
   content: "";
@@ -16,19 +15,19 @@ body::before {
   left: 0;
   width: 100%;
   height: 100dvh;
-  z-index: -1; /* Coloca a imagem atrás de todo o conteúdo */
-  
+  z-index: -1;
+
   background-image: url(../img/backgroundV2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-bottom: env(safe-area-inset-bottom);
 }
 body {
   background-image: url(../img/backgroundV2.jpg);
   background-size: cover;
   background-attachment: fixed;
-  padding-bottom: 2rem env(safe-area-inset-bottom);
+  /* iOS 11.3+ */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 a {
@@ -463,4 +462,3 @@ main {
     background-size: cover 100vh;
   }
 } */
-
