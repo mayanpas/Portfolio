@@ -26,89 +26,9 @@
 
 html {
   min-height: 100%;
-  background:
-    radial-gradient(
-      circle at 20% 15%,
-      rgba(59, 130, 246, 0.18),
-      transparent 18%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(236, 72, 153, 0.14),
-      transparent 16%
-    ),
-    radial-gradient(
-      circle at 50% 85%,
-      rgba(16, 185, 129, 0.12),
-      transparent 20%
-    ),
-    linear-gradient(135deg, #060915 0%, #121a3d 35%, #0f172a 100%);
-  background-size:
-    450% 450%,
-    450% 450%,
-    450% 450%,
-    100% 100%;
+  background: radial-gradient(125% 125% at 50% 10%, #1f1f1f 40%, #6366f1 100%);
   background-attachment: fixed;
-  color-scheme: dark;
-  overflow-x: hidden;
-  animation: backgroundShift 25s ease infinite;
 }
-
-body {
-  position: relative;
-  min-height: 100vh;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cpath d='M-100 950 C180 720 420 520 840 120' stroke='%2391d8ff' stroke-width='2.2' fill='none' opacity='0.46'/%3E%3Cpath d='M-120 870 C210 660 490 430 1010 80' stroke='%2396f0ff' stroke-width='1.6' fill='none' opacity='0.32'/%3E%3Cpath d='M-150 930 C260 690 520 470 980 170' stroke='%23d2f8ff' stroke-width='1.2' fill='none' opacity='0.22'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center bottom;
-  opacity: 0.74;
-  filter: blur(0.18px);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 120px 120px;
-  opacity: 0.22;
-}
-
-@keyframes backgroundShift {
-  0% {
-    background-position:
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 0%;
-  }
-  50% {
-    background-position:
-      10% 5%,
-      90% 15%,
-      90% 95%,
-      0% 0%;
-  }
-  100% {
-    background-position:
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 0%;
-  }
-}
-
 a {
   text-decoration: none;
   color: var(--textColor);
@@ -132,7 +52,7 @@ a {
   --buttonColor: #2222221f;
   --buttonColorHover: #7a7a7a17;
   /* Cor de fundo dos cards */
-  --cardColor: #22222200;
+  --cardColor: #2222226e;
   /* Cor de fundo dos microCards */
   --microCardColor: #45454567;
 
