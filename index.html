@@ -44,11 +44,15 @@
     </div> -->
     <div id="content">
       <header id="header">
-        <!-- <a href="#mainCard"><img src="img/mpLogo.svg" alt="" id="headerLogo"></a> -->
-        <a href="#cardSobreMim">Sobre mim</a>
-        <a href="#cardHabilidades">Habilidades</a>
-        <a href="#cardProjetos">Projetos</a>
-        <a href="#cardContato">Fale Comigo</a>
+        <a href="#mainCard"
+          ><img src="img/mpLogo.svg" alt="" id="headerLogo"
+        /></a>
+        <div id="headerLinks">
+          <a href="#cardSobreMim">Sobre mim</a>
+          <a href="#cardHabilidades">Habilidades</a>
+          <a href="#cardProjetos">Projetos</a>
+          <a href="#cardContato">Fale Comigo</a>
+        </div>
       </header>
 
       <main id="main">
@@ -241,10 +245,12 @@
                   id="github"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onclick="return false"
                 >
                   <img src="img/github.svg" alt="" />
                   GitHub
                 </a>
+                Em breve!
               </div>
             </div>
           </div>
@@ -258,23 +264,57 @@
               sobre você!
             </p>
             <div id="contactMicroCards">
-              <div class="microCard" id="contactMicroCard">
+              <a
+                href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."
+                class="microCard"
+                id="contactMicroCard"
+              >
                 <img src="img/mail.svg" alt="" />
 
-                <div class="contactMicroCardText">
+                <div class="contactMicroCardText" target="_blank">
                   <h5 class="contactMicroCardTitle">Email</h5>
                   <p>mayanpas0710@gmail.com</p>
                 </div>
-              </div>
+              </a>
 
-              <div class="microCard" id="contactMicroCard">
+              <a
+                href="https://www.instagram.com/mayanpas"
+                class="microCard"
+                id="contactMicroCard"
+                target="_blank"
+              >
                 <img src="img/instagram.svg" alt="" />
-
                 <div class="contactMicroCardText">
                   <h5 class="contactMicroCardTitle">Instagram</h5>
                   <p>@mayanpas</p>
                 </div>
-              </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/mayanpas"
+                class="microCard"
+                id="contactMicroCard"
+                target="_blank"
+              >
+                <img src="img/linkedin.svg" alt="" />
+                <div class="contactMicroCardText">
+                  <h5 class="contactMicroCardTitle">Linkedin</h5>
+                  <p>Mayan Patrick</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/mayanpas"
+                class="microCard"
+                id="contactMicroCard"
+                target="_blank"
+              >
+                <img src="img/github.svg" alt="" />
+                <div class="contactMicroCardText">
+                  <h5 class="contactMicroCardTitle">GitHub</h5>
+                  <p>mayanpas</p>
+                </div>
+              </a>
 
               <div class="microCard" id="contactMicroCard">
                 <img src="img/localization.svg" alt="" />
@@ -287,7 +327,7 @@
             </div>
           </div>
 
-          <div id="secondContactContent">
+          <!-- <div id="secondContactContent">
             <form action="#" class="microCard" id="formMicroCard">
               <label for="nome" class="label">Nome: </label>
               <input
@@ -318,7 +358,7 @@
                 value="Enviar Mensagem"
               />
             </form>
-          </div>
+          </div> -->
         </div>
       </main>
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>

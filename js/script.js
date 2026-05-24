@@ -22,4 +22,9 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 // teste backgrounnd
 
+  document.getElementById("github").addEventListener("click", function(event) {
+    event.preventDefault(); // Impede a navegação
+    alert("Este link está desativado!");
+  });
+
 
