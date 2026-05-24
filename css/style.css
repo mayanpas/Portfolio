@@ -11,7 +11,7 @@ html::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100dvw;
   height: 100dvh;
   z-index: -1;
   background: radial-gradient(125% 125% at 50% 10%, #1f1f1f 40%, #2f5cd8 100%);
@@ -26,7 +26,7 @@ html::before {
 }
 
 html {
-  background-color: #2f5cd8;
+  background-color: #29448E;
 }
 a {
   text-decoration: none;
