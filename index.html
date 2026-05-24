@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
 
     <title>Mayan Patrick</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
     <link
       rel="shortcut icon"
-      href="img/Phoenix Framework.svg"
+      href="img/mpLogo.svg"
       type="image/x-icon"
     />
     <link
@@ -28,271 +31,303 @@
       });
     </script>
   </head>
-  <body>
-    <header id="header">
-      <a href="#cardSobreMim">Sobre mim</a>
-      <a href="#cardHabilidades">Habilidades</a>
-      <a href="#cardProjetos">Projetos</a>
-      <a href="#cardContato">Fale Comigo</a>
-    </header>
+  <body id="body">
+    <div id="content">
+      <header id="header">
+        <!-- <a href="#mainCard"><img src="img/mpLogo.svg" alt="" id="headerLogo"></a> -->
+        <a href="#cardSobreMim">Sobre mim</a>
+        <a href="#cardHabilidades">Habilidades</a>
+        <a href="#cardProjetos">Projetos</a>
+        <a href="#cardContato">Fale Comigo</a>
+      </header>
 
-    <main id="main">
-      <div id="mainCard" class="hidden">
-        <div id="titleContainer">
-          <h1>Mayan <br /><span id="patrick">Patrick</span></h1>
-          <p id="my-info">Técnico de informática e Engenheiro de Software</p>
-        </div>
-        <div id="fcButtons">
-          <div class="fcButtonDiv">
-            <a
-              href="https://github.com/mayanpas"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
-              GitHub</a
-            >
+      <main id="main">
+        <div id="mainCard" class="teste">
+          <div id="titleContainer">
+            <h1>Mayan <br /><span id="patrick">Patrick</span></h1>
+            <p id="my-info">Técnico de informática e Engenheiro de Software</p>
           </div>
-          <div class="fcButtonDiv">
-            <a
-              href="https://www.linkedin.com/in/mayanpatrick/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><img
-                src="img/linkedin.svg"
-                alt="linkedinIcon"
-                id="linkedinIcon"
-              />
-              LinkedIn</a
-            >
-          </div>
-        </div>
-      </div>
 
-      <div class="card hidden" id="cardSobreMim">
-        <h2 class="cardTitle">Sobre mim</h2>
-        <div id="sobreContent">
-          <div id="sobreMim">
-            <div id="profilePhoto"></div>
-            <p id="txtSobreMim">
-              Natural de Ipatinga/MG e atualmente com 21 anos, desde criança sou
-              apaixonado por tecnologia.
-              <br /><br />
-              Almejo seguir carreira como desenvolvedor. Sou proativo e gosto de
-              aprender.
-              <br /><br />
-              Tenho experiência prática com manutenção e montagem de
-              computadores, suporte técnico presencial e remoto e venda de
-              equipamentos de informática. Cursando Engenharia de Software (3º
-              Período) na UNILESTE. Experiência em Java, MySQL, SQL. Tenho 21
-              anos e desde criança sou apaixonado por tecnologia. Almejo seguir
-              carreira como desenvolvedor. Sou proativo e gosto de aprender.
-            </p>
-          </div>
-        </div>
-
-        <div id="experiencia">
-          <div class="microCard" id="expMicroCard">
-            <img src="img/DesktopTower.svg" alt="ícone de código" />
-            <h3>2+ Anos de experiência</h3>
-            <p>Como profissional de T.I.</p>
-          </div>
-          <div class="microCard" id="expMicroCard">
-            <img src="img/code.svg" alt="ícone de código" />
-            <h3>1 ano de experiência</h3>
-            <p>Em desenvolvimeto.</p>
-          </div>
-          <div class="microCard" id="expMicroCard">
-            <img src="img/uiDesign.svg" alt="ícone de código" />
-            <h3>2+ Anos de experiência</h3>
-            <p>Em design de UI.</p>
-          </div>
-          <div class="microCard" id="expMicroCard">
-            <img src="img/Book.svg" alt="ícone de código" />
-            <h3>Formação superior</h3>
-            <p>4º período em Engenharia de Software na UNILESTE.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card hidden" id="cardHabilidades">
-        <h2 class="cardTitle">Habilidades</h2>
-        <p class="info">
-          Um conjunto de ferramentas completo para criar aplicações modernas e
-          escaláveis.
-        </p>
-        <div class="habMicroCards">
-          <div class="microCard" id="habMicroCard">
-            <h3>Frontend</h3>
-            <div class="habButtons">
-              <div class="habButton">
-                <img src="img/html5.svg" alt="" /> HTML
-              </div>
-              <div class="habButton"><img src="img/css3.svg" alt="" /> CSS</div>
-              <div class="habButton">
-                <img src="img/javaScript.svg" alt="" /> JavaScript
-              </div>
-              <div class="habButton">
-                <img src="img/nodeJs.svg" alt="" /> NodeJS
-              </div>
-              <div class="habButton">
-                <img src="img/reactJs.svg" alt="" /> React
-              </div>
-            </div>
-          </div>
-          <div class="microCard" id="habMicroCard">
-            <h3>Backend</h3>
-            <div class="habButtons">
-              <div class="habButton">
-                <img src="img/java.svg" alt="" /> Java
-              </div>
-              <div class="habButton">
-                <img src="img/mySqlBlue.svg" alt="" /> MySQL
-              </div>
-            </div>
-          </div>
-          <div class="microCard" id="habMicroCard">
-            <h3>Ferramentas & Outros</h3>
-            <div class="habButtons">
-              <div class="habButton"><img src="img/git.svg" alt="" /> Git</div>
-              <div class="habButton">
-                <img src="img/github.svg" alt="" /> GitHub
-              </div>
-            </div>
-          </div>
-          <div class="microCard" id="habMicroCard">
-            <h3>Design</h3>
-            <div class="habButtons">
-              <div class="habButton">
-                <img src="img/figma.svg" alt="" />Figma
-              </div>
-              <div class="habButton">
-                <img src="img/adobeIllustrator.svg" alt="" />Adobe Illustrator
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card hidden" id="cardProjetos">
-        <h2 class="cardTitle">Projetos</h2>
-
-        <p>
-          Uma seleção dos meus trabalhos recentes, que demonstram diversas
-          tecnologias e abordagens para a resolução de problemas.
-        </p>
-        <div id="prjMicrocards">
-          <div class="microCard" id="prjMicrocard">
-            <img
-              src="img/Cadastro de pacientes 1.jpg"
-              alt="Tela de cadastro de pacientes"
-              class="prjImage"
-            />
-            <h2>Sistema Administrativo Clínico Odontológico</h2>
-            <p>
-              Sistema completo, otimizando as operações de uma clínica
-              ondontológica, oferecendo um atendimento mais ágil e eficiente aos
-              pacientes e uma gestão mais organizada de suas atividades.
-            </p>
-            <div class="prjTools">
-              <div class="habButton">
-                <img src="img/html5.svg" alt="" /> HTML
-              </div>
-              <div class="habButton"><img src="img/css3.svg" alt="" /> CSS</div>
-              <div class="habButton">
-                <img src="img/javaScript.svg" alt="" /> JavaScript
-              </div>
-              <div class="habButton">
-                <img src="img/nodeJs.svg" alt="" /> NodeJS
-              </div>
-              <div class="habButton">
-                <img src="img/reactJs.svg" alt="" /> React
-              </div>
-            </div>
-            <div class="divSeparator">
-              <hr class="separator" />
-            </div>
-
-            <div class="prjButtons">
+          <div id="fcButtons">
+            <div class="fcButtonDiv">
               <a
-                href="https://github.com/EmanuelScapim/S.A.C.O-"
-                id="github"
+                href="https://github.com/mayanpas"
                 target="_blank"
                 rel="noopener noreferrer"
+                ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
+                GitHub</a
               >
-                <img src="img/github.svg" alt="" />
-                GitHub
-              </a>
+            </div>
+            <div class="fcButtonDiv">
+              <a
+                href="https://www.linkedin.com/in/mayanpatrick/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="img/linkedin.svg"
+                  alt="linkedinIcon"
+                  id="linkedinIcon"
+                />
+                LinkedIn</a
+              >
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="card hidden" id="cardContato">
-        <h2 class="cardTitle">Fale comigo</h2>
-        <div id="firstContactContent">
-          <p>
-            Tem algum projeto em mente ou quer colaborar? Adoraria saber mais
-            sobre você!
+        <div class="card hidden" id="cardSobreMim">
+          <h2 class="cardTitle">Sobre mim</h2>
+          <div id="sobreContent">
+            <div id="sobreMim">
+              <div id="profilePhoto"></div>
+              <p id="txtSobreMim">
+                Natural de Ipatinga/MG e atualmente com 21 anos, desde criança
+                sou apaixonado por tecnologia.
+                <br /><br />
+                Almejo seguir carreira como desenvolvedor. Sou proativo e gosto
+                de aprender.
+                <br /><br />
+                Tenho experiência prática com manutenção e montagem de
+                computadores, suporte técnico presencial e remoto e venda de
+                equipamentos de informática. Cursando Engenharia de Software (3º
+                Período) na UNILESTE. Experiência em Java, MySQL, SQL. Tenho 21
+                anos e desde criança sou apaixonado por tecnologia. Almejo
+                seguir carreira como desenvolvedor. Sou proativo e gosto de
+                aprender.
+              </p>
+            </div>
+          </div>
+
+          <div id="experiencia">
+            <div class="microCard" id="expMicroCard">
+              <img src="img/DesktopTower.svg" alt="ícone de código" />
+              <h3>2+ Anos de experiência</h3>
+              <p>Como profissional de T.I.</p>
+            </div>
+            <div class="microCard" id="expMicroCard">
+              <img src="img/code.svg" alt="ícone de código" />
+              <h3>1 ano de experiência</h3>
+              <p>Em desenvolvimeto.</p>
+            </div>
+            <div class="microCard" id="expMicroCard">
+              <img src="img/uiDesign.svg" alt="ícone de código" />
+              <h3>2+ Anos de experiência</h3>
+              <p>Em design de UI.</p>
+            </div>
+            <div class="microCard" id="expMicroCard">
+              <img src="img/Book.svg" alt="ícone de código" />
+              <h3>Formação superior</h3>
+              <p>4º período em Engenharia de Software na UNILESTE.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hidden" id="cardHabilidades">
+          <h2 class="cardTitle">Habilidades</h2>
+          <p class="info">
+            Um conjunto de ferramentas completo para criar aplicações modernas e
+            escaláveis.
           </p>
-          <div id="contactMicroCards">
-            <div class="microCard" id="contactMicroCard">
-              <img src="img/mail.svg" alt="" />
-
-              <div class="contactMicroCardText">
-                <h5 class="contactMicroCardTitle">Email</h5>
-                <p>mayanpas0710@gmail.com</p>
+          <div class="habMicroCards">
+            <div class="microCard" id="habMicroCard">
+              <h3>Frontend</h3>
+              <div class="habButtons">
+                <div class="habButton">
+                  <img src="img/html5.svg" alt="" /> HTML
+                </div>
+                <div class="habButton">
+                  <img src="img/css3.svg" alt="" /> CSS
+                </div>
+                <div class="habButton">
+                  <img src="img/javaScript.svg" alt="" /> JavaScript
+                </div>
+                <div class="habButton">
+                  <img src="img/nodeJs.svg" alt="" /> NodeJS
+                </div>
+                <div class="habButton">
+                  <img src="img/reactJs.svg" alt="" /> React
+                </div>
               </div>
             </div>
-
-            <div class="microCard" id="contactMicroCard">
-              <img src="img/instagram.svg" alt="" />
-
-              <div class="contactMicroCardText">
-                <h5 class="contactMicroCardTitle">Instagram</h5>
-                <p>@mayanpas</p>
+            <div class="microCard" id="habMicroCard">
+              <h3>Backend</h3>
+              <div class="habButtons">
+                <div class="habButton">
+                  <img src="img/java.svg" alt="" /> Java
+                </div>
+                <div class="habButton">
+                  <img src="img/mySqlBlue.svg" alt="" /> MySQL
+                </div>
               </div>
             </div>
-
-            <div class="microCard" id="contactMicroCard">
-              <img src="img/localization.svg" alt="" />
-
-              <div class="contactMicroCardText">
-                <h5 class="contactMicroCardTitle">Localização</h5>
-                <p>Ipatinga - MG</p>
+            <div class="microCard" id="habMicroCard">
+              <h3>Ferramentas & Outros</h3>
+              <div class="habButtons">
+                <div class="habButton">
+                  <img src="img/git.svg" alt="" /> Git
+                </div>
+                <div class="habButton">
+                  <img src="img/github.svg" alt="" /> GitHub
+                </div>
+              </div>
+            </div>
+            <div class="microCard" id="habMicroCard">
+              <h3>Design</h3>
+              <div class="habButtons">
+                <div class="habButton">
+                  <img src="img/figma.svg" alt="" />Figma
+                </div>
+                <div class="habButton">
+                  <img src="img/adobeIllustrator.svg" alt="" />Adobe Illustrator
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="secondContactContent">
-          <form action="#" class="microCard" id="formMicroCard">
-            <label for="nome" class="label">Nome: </label>
-            <input
-              type="text"
-              name="nome"
-              id=""
-              placeholder="Insira o seu nome"
-            />
+        <div class="card hidden" id="cardProjetos">
+          <h2 class="cardTitle">Projetos</h2>
 
-            <label for="email" class="label">E-mail: </label>
-            <input type="text" name="email" placeholder="Insira o seu email" />
+          <p>
+            Uma seleção dos meus trabalhos recentes, que demonstram diversas
+            tecnologias e abordagens para a resolução de problemas.
+          </p>
+          <div id="prjMicrocards">
+            <div class="microCard" id="prjMicrocard">
+              <img
+                src="img/Cadastro de pacientes 1.jpg"
+                alt="Tela de cadastro de pacientes"
+                class="prjImage"
+              />
+              <h2>Sistema Administrativo Clínico Odontológico</h2>
+              <p>
+                Sistema completo, otimizando as operações de uma clínica
+                ondontológica, oferecendo um atendimento mais ágil e eficiente
+                aos pacientes e uma gestão mais organizada de suas atividades.
+              </p>
+              <div class="prjTools">
+                <div class="habButton">
+                  <img src="img/html5.svg" alt="" /> HTML
+                </div>
+                <div class="habButton">
+                  <img src="img/css3.svg" alt="" /> CSS
+                </div>
+                <div class="habButton">
+                  <img src="img/javaScript.svg" alt="" /> JavaScript
+                </div>
+                <div class="habButton">
+                  <img src="img/nodeJs.svg" alt="" /> NodeJS
+                </div>
+                <div class="habButton">
+                  <img src="img/reactJs.svg" alt="" /> React
+                </div>
+              </div>
+              <div class="divSeparator">
+                <hr class="separator" />
+              </div>
 
-            <label for="mensagem" class="label">Mensagem: </label>
-            <textarea
-              name="mensagem"
-              id=""
-              placeholder="Escreva sua mensagem"
-            ></textarea>
-
-            <input
-              type="submit"
-              name=""
-              id="formSubmit"
-              value="Enviar Mensagem"
-            />
-          </form>
+              <div class="prjButtons">
+                <a
+                  href="https://github.com/EmanuelScapim/S.A.C.O-"
+                  id="github"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="img/github.svg" alt="" />
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+
+        <div class="card hidden" id="cardContato">
+          <h2 class="cardTitle">Fale comigo</h2>
+          <div id="firstContactContent">
+            <p>
+              Tem algum projeto em mente ou quer colaborar? Adoraria saber mais
+              sobre você!
+            </p>
+            <div id="contactMicroCards">
+              <div class="microCard" id="contactMicroCard">
+                <img src="img/mail.svg" alt="" />
+
+                <div class="contactMicroCardText">
+                  <h5 class="contactMicroCardTitle">Email</h5>
+                  <p>mayanpas0710@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="microCard" id="contactMicroCard">
+                <img src="img/instagram.svg" alt="" />
+
+                <div class="contactMicroCardText">
+                  <h5 class="contactMicroCardTitle">Instagram</h5>
+                  <p>@mayanpas</p>
+                </div>
+              </div>
+
+              <div class="microCard" id="contactMicroCard">
+                <img src="img/localization.svg" alt="" />
+
+                <div class="contactMicroCardText">
+                  <h5 class="contactMicroCardTitle">Localização</h5>
+                  <p>Ipatinga - MG</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="secondContactContent">
+            <form action="#" class="microCard" id="formMicroCard">
+              <label for="nome" class="label">Nome: </label>
+              <input
+                type="text"
+                name="nome"
+                id=""
+                placeholder="Insira o seu nome"
+              />
+
+              <label for="email" class="label">E-mail: </label>
+              <input
+                type="text"
+                name="email"
+                placeholder="Insira o seu email"
+              />
+
+              <label for="mensagem" class="label">Mensagem: </label>
+              <textarea
+                name="mensagem"
+                id=""
+                placeholder="Escreva sua mensagem"
+              ></textarea>
+
+              <input
+                type="submit"
+                name=""
+                id="formSubmit"
+                value="Enviar Mensagem"
+              />
+            </form>
+          </div>
+        </div>
+      </main>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+      <script>
+        VANTA.NET({
+          el: "#content",
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x3fffdd,
+          backgroundColor: 0x15193c,
+          points: 20.0,
+        });
+      </script>
+    </div>
   </body>
 </html>
