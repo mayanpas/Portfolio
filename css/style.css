@@ -454,7 +454,8 @@ main {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: fixed;
-    background-size: auto 100vh; /* Adjusts height to the viewport */
+    /*background-size: auto 100vh; /* Adjusts height to the viewport */
+    background-size: cover 100vh;
   }
 }
 
