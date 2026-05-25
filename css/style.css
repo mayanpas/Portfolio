@@ -18,7 +18,10 @@
 html::before {
   content: "";
   position: fixed;
-  inset: 0;
+  margin: 0;
+  padding: 0;
+  width: 100dvw;
+  min-height: 100dvh;
   z-index: -1;
   background: radial-gradient(125% 125% at 50% 10%, #1f1f1f 40%, #2f5cd8 100%)
     center/cover no-repeat fixed;
