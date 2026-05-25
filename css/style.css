@@ -30,7 +30,6 @@ html::before {
 }
 #content {
   padding-bottom: 2rem;
-  height: 100dvh;
 }
 
 html {
@@ -43,21 +42,7 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
-html,
-body {
-  /* Impede o efeito elástico */
-  overscroll-behavior: none;
 
-  /* Garante que o scroll aconteça apenas dentro do container, sem propagar para o navegador */
-  height: 100%;
-  overflow: hidden;
-}
-
-#content {
-  /* Permite o scroll apenas dentro do conteúdo principal */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
 a {
   text-decoration: none;
   color: var(--textColor);
@@ -104,11 +89,8 @@ a {
 
 /* Header */
 #header {
-  position: sticky;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+  position: fixed;
+  width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
   top: 0;
   z-index: 100;
   display: flex;
@@ -162,6 +144,7 @@ main {
   font-size: clamp(3rem, 10vw, 4rem);
   line-height: 1;
   color: var(--textColor);
+  text-shadow: 2px 2px 4px var(--shadowColorDark);
   font-weight: lighter;
 }
 /* titulo - PATRICK */
@@ -173,6 +156,7 @@ main {
 /* Subtitulo */
 #titleContainer p {
   color: var(--textColor);
+  text-shadow: 2px 2px 4px var(--shadowColorDark);
 }
 /* mainCard - botoes */
 #fcButtons {
