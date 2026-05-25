@@ -270,6 +270,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  max-width: 100%;
 }
 .habButton,
 .prjToolButton {
@@ -284,6 +285,7 @@ main {
   border-radius: 1rem;
   padding: 0.7rem;
   cursor: pointer;
+  max-width: 100%;
 }
 .habButton img,
 .prjToolButton img {
@@ -396,6 +398,15 @@ main {
   border: 1px solid var(--borderColor);
   border-radius: 1rem;
   transition: var(--beforeHover);
+}
+
+/* footer */
+#footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  color: var(--textColor);
 }
 
 /* Responsividade */
