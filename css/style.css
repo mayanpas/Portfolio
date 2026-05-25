@@ -481,7 +481,7 @@ main {
 }
 
 /* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
-@media (hover: none) {
+@media (pointer: coarse) {
   #header a:active {
     transform: var(--afterHover);
     box-shadow: 0 10px 20px var(--shadowColorLight);
