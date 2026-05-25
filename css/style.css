@@ -30,6 +30,7 @@ html::before {
 }
 #content {
   padding-bottom: 2rem;
+  height: 100dvh;
 }
 
 html {
@@ -41,6 +42,21 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+}
+html,
+body {
+  /* Impede o efeito elástico */
+  overscroll-behavior: none;
+
+  /* Garante que o scroll aconteça apenas dentro do container, sem propagar para o navegador */
+  height: 100%;
+  overflow: hidden;
+}
+
+#content {
+  /* Permite o scroll apenas dentro do conteúdo principal */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 a {
   text-decoration: none;
@@ -55,6 +71,7 @@ a {
   --borderColor: #69696971;
   --headerColor: #0000003b;
   --buttonColor: #2222221f;
+  --fcButtonColor: #222222c0;
   --buttonColorHover: #7a7a7a17;
   --cardColor: #2222226e;
   --microCardColor: #45454567;
@@ -87,8 +104,7 @@ a {
 
 /* Header */
 #header {
-  position: fixed;
-  width: 100%;
+  position: sticky;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
@@ -114,10 +130,6 @@ a {
 }
 #header a {
   font-size: clamp(0.001rem, 4vw, 1rem);
-}
-#header a:hover {
-  transform: var(--afterHover);
-  box-shadow: 0 10px 20px var(--shadowColorLight);
 }
 
 /* Main */
@@ -168,16 +180,12 @@ main {
   gap: clamp(0.5rem, 1vw, 1rem);
 }
 .fcButtonDiv {
-  background-color: var(--buttonColor);
+  background-color: var(--fcButtonColor);
   backdrop-filter: blur(50px);
   box-shadow: 0 10px 50px var(--shadowColorDark);
   border-radius: 5rem;
 }
-.fcButtonDiv:hover {
-  transform: var(--afterHoverLight);
-  background-color: var(--shadowColorLight);
-  box-shadow: 0 10px 50px var(--shadowColorLight);
-}
+
 #githubIcon,
 #linkedinIcon {
   max-width: 1rem;
@@ -267,11 +275,6 @@ main {
 #expMicroCard img {
   width: clamp(0.5rem, 10vw, 2rem);
 }
-#expMicroCard:hover {
-  transform: scale(1.01);
-  background-color: var(--shadowColorLight);
-  box-shadow: 0 10px 50px var(--shadowColorLight);
-}
 
 /* card - Habilidades */
 .habMicroCards {
@@ -302,12 +305,6 @@ main {
 .prjToolButton img {
   max-width: 1rem;
 }
-.habButton:hover,
-.prjToolButton:hover {
-  background-color: var(--buttonColorHover);
-  transform: scale(1.1);
-  box-shadow: 0 10px 50px var(--shadowColorLight);
-}
 
 /* card - Projetos */
 #prjMicrocards {
@@ -318,13 +315,7 @@ main {
 #prjMicrocard {
   gap: 1rem;
 }
-#prjMicrocard:hover,
-#contactMicroCard:hover,
-#formSubmit:hover {
-  transform: var(--afterHoverLight);
-  background-color: var(--shadowColorLight);
-  box-shadow: 0 10px 50px var(--shadowColorLight);
-}
+
 .prjImage {
   max-width: clamp(200px, 50vw, 500px);
   border-radius: 1rem;
@@ -460,5 +451,67 @@ main {
   }
   #contactMicroCards {
     flex-wrap: wrap;
+  }
+}
+
+/* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
+@media (hover: hover) {
+  #header a:hover {
+    transform: var(--afterHover);
+    box-shadow: 0 10px 20px var(--shadowColorLight);
+  }
+  .fcButtonDiv:hover {
+    transform: var(--afterHoverLight);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  #expMicroCard:hover {
+    transform: scale(1.01);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  .habButton:hover,
+  .prjToolButton:hover {
+    background-color: var(--buttonColorHover);
+    transform: scale(1.1);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  #prjMicrocard:hover,
+  #contactMicroCard:hover,
+  #formSubmit:hover {
+    transform: var(--afterHoverLight);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+}
+
+/* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
+@media (hover: none) {
+  #header a:active {
+    transform: var(--afterHover);
+    box-shadow: 0 10px 20px var(--shadowColorLight);
+  }
+  .fcButtonDiv:active {
+    transform: var(--afterHoverLight);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  #expMicroCard:active {
+    transform: scale(1.01);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  .habButton:active,
+  .prjToolButton:active {
+    background-color: var(--buttonColorHover);
+    transform: scale(1.1);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
+  }
+  #prjMicrocard:active,
+  #contactMicroCard:active,
+  #formSubmit:active {
+    transform: var(--afterHoverLight);
+    background-color: var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight);
   }
 }
