@@ -18,17 +18,15 @@
 html::before {
   content: "";
   position: fixed;
-  margin: 0;
-  padding: 0;
-  width: 100dvw;
-  min-height: 100dvh;
+  top: 0;
+  left: 0;
+  width: 100dvw; 
+  height: 100dvh;
   z-index: -1;
-  background: radial-gradient(125% 125% at 50% 10%, #1f1f1f 40%, #2f5cd8 100%)
-    center/cover no-repeat fixed;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+  background: radial-gradient(125% 125% at 50% 10%, #1f1f1f 40%, #2f5cd8 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #content {
   padding-bottom: 2rem;
@@ -36,10 +34,6 @@ html::before {
 
 html {
   background-color: #29448e;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 }
 /* Exemplo para garantir margem no topo e no fundo */
 /* body {
@@ -93,7 +87,8 @@ a {
 
 /* Header */
 #header {
-  position: sticky;
+  position: fixed;
+  width: 100dvw;
   top: 0;
   z-index: 100;
   display: flex;
