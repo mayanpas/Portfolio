@@ -496,11 +496,12 @@ main {
     background-color: var(--shadowColorLight);
     box-shadow: 0 10px 50px var(--shadowColorLight);
   }
-  .habButton:active,
-  .prjToolButton:active {
-    background-color: var(--buttonColorHover);
+  .habButton,
+  .prjToolButton {
+    /* background-color: var(--buttonColorHover);
     transform: scale(1.1);
-    box-shadow: 0 10px 50px var(--shadowColorLight);
+    box-shadow: 0 10px 50px var(--shadowColorLight); */
+    pointer-events: none;
   }
   #prjMicrocard:active,
   #contactMicroCard:active,
