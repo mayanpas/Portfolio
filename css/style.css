@@ -417,14 +417,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 6.5rem;
+  margin-top: 2rem;
+  margin-bottom: 4.5rem;
+  /* padding-bottom: 6.5rem; */
   color: var(--textColor);
 }
 
 #bottomShadow {
   position: fixed;
   justify-self: center;
-  width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
+  width: 100%;
   height: 10%;
   background: linear-gradient(#00193000, #001930);
   bottom: 0;
