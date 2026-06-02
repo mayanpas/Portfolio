@@ -1,3 +1,12 @@
+// Efeito de blur no background ao rolar
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  // Calcula o blur em pixels (0px até 20px)
+  // A cada 100px de scroll, aumenta 1px de blur
+  const blurValue = Math.min(scrollY / 20, 20);
+  document.documentElement.style.setProperty("--blur-value", `${blurValue}px`);
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -22,10 +31,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 // teste backgrounnd
 
-  document.getElementById("github").addEventListener("click", function(event) {
-    event.preventDefault(); // Impede a navegação
-    alert("Este link está desativado!");
-  });
-
-
-
+document.getElementById("github").addEventListener("click", function (event) {
+  event.preventDefault(); // Impede a navegação
+  alert("Este link está desativado!");
+});
