@@ -15,10 +15,12 @@
     "Helvetica Neue",
     sans-serif; */
 
-    font-family: "Google Sans", sans-serif;
+  font-family: "Google Sans", sans-serif;
 }
 html {
   --blur-value: 0px;
+  --bg-image: url(../img/backgroundV5.jpg);
+  --bgImageBlur: url(../img/backgroundV5Blur.jpg);
 }
 
 html::before {
@@ -29,12 +31,15 @@ html::before {
   width: 100dvw;
   height: 100dvh;
   z-index: -1;
-  background-image: url(../img/backgroundV5.jpg);
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(var(--blur-value));
-  /* transition: filter 0.1s ease-out; */
+  transition:
+    background-image 0.6s ease-out,
+    opacity 0.6s ease-out;
+  opacity: 1;
 }
 #content {
   padding-bottom: 2rem;
@@ -100,14 +105,17 @@ a {
 #header {
   position: fixed;
   /* width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right)); */
+  /* width: 35%; */
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   justify-self: center;
   padding: 1.3rem 2rem;
-  margin: 1rem;
+  margin: 1rem auto;
   margin-top: 0;
   border-radius: 5rem;
   background-color: var(--headerColor);
