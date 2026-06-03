@@ -19,6 +19,7 @@
 }
 html {
   --blur-value: 0px;
+  --blur-overlay-opacity: 0;
   --bg-image: url(../img/backgroundV5.jpg);
   --bgImageBlur: url(../img/backgroundV5Blur.jpg);
 }
@@ -30,7 +31,7 @@ html::before {
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  z-index: -1;
+  z-index: -2;
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
@@ -38,8 +39,26 @@ html::before {
   filter: blur(var(--blur-value));
   transition:
     background-image 0.6s ease-out,
-    opacity 0.6s ease-out;
+    opacity 0.6s ease-out,
+    filter 0.2s ease-out;
   opacity: 1;
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: -1;
+  background-image: var(--bgImageBlur);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: var(--blur-overlay-opacity);
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
 }
 #content {
   padding-bottom: 2rem;
@@ -115,7 +134,7 @@ a {
   justify-content: center;
   justify-self: center;
   padding: 1.3rem 2rem;
-  margin: 1rem auto;
+  margin: 1rem;
   margin-top: 0;
   border-radius: 5rem;
   background-color: var(--headerColor);
@@ -444,14 +463,14 @@ main {
 /* Ajustes para telas menores (Celulares) */
 @media (max-width: 480px) {
   #header {
-    padding: 1rem 1rem;
+    padding: 1.3em 1rem;
     gap: 1rem;
   }
   #headerLinks {
     gap: 0.7rem;
   }
   #header a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   #mainCard {
     padding: 2rem;
