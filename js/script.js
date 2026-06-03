@@ -1,5 +1,5 @@
 const blurConfig = {
-  maxScroll: 1200,
+  maxScroll: 500,
   stepPixels: 120,
 };
 
