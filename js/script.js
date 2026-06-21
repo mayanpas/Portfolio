@@ -10,7 +10,7 @@ function updateBackgroundBlur() {
 
   document.documentElement.style.setProperty(
     '--blur-overlay-opacity',
-    opacity.toFixed(3)
+    opacity.toFixed(.5)
   );
 }
 

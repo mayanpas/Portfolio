@@ -282,10 +282,17 @@ main {
   height: clamp(100px, 15vw, 200px);
   background-image: url(../img/perfil.jpeg);
   background-size: cover;
-  border-radius: clamp(1.5rem, 5vw, 2rem);
-  float: inline-start;
+  border-radius: clamp(10.5rem, 5vw, 2rem);
+  float: inline-end;
   margin-right: clamp(0.5rem, 10vw, 1rem);
   margin-bottom: clamp(0.3rem, 2vw, 1rem);
+}
+/* txt sobremim */
+#txtSobreMim2{
+  margin-bottom: 1rem;
+}
+#lista{
+  padding-left: 2rem;
 }
 
 /* card - experiencia */
