@@ -41,8 +41,33 @@ const observer = new IntersectionObserver(
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
-// bloquear botão github 
-document.getElementById("github").addEventListener("click", function (event) {
-  event.preventDefault(); // Impede a navegação
-  alert("Este link está desativado!");
-});
+const header = document.getElementById("header");
+let lastScrollTop = 0;
+
+function toggleHeaderOnScroll() {
+  if (!header) return;
+
+  const currentScrollTop = window.scrollY || window.pageYOffset;
+
+  if (currentScrollTop <= 0) {
+    header.classList.remove("header-hidden");
+  } else if (currentScrollTop > lastScrollTop) {
+    header.classList.add("header-hidden");
+  } else {
+    header.classList.remove("header-hidden");
+  }
+
+  lastScrollTop = currentScrollTop;
+}
+
+window.addEventListener("scroll", toggleHeaderOnScroll, { passive: true });
+window.addEventListener("load", toggleHeaderOnScroll);
+
+// bloquear botão github
+const githubButton = document.getElementById("github");
+if (githubButton) {
+  githubButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Impede a navegação
+    alert("Este link está desativado!");
+  });
+}
