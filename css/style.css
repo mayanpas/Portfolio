@@ -58,8 +58,8 @@ a {
 }
 a.desativado {
   pointer-events: none; /* Impede qualquer clique ou interação */
-  cursor: default;      /* Mantém o cursor do mouse normal */
-  opacity: 0.6;         /* Deixa o link levemente transparente (opcional) */
+  cursor: default; /* Mantém o cursor do mouse normal */
+  opacity: 0.6; /* Deixa o link levemente transparente (opcional) */
 }
 
 :root {
@@ -89,7 +89,6 @@ a.desativado {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.6s ease-out;
-
 }
 
 .show {
@@ -151,17 +150,6 @@ a.desativado {
   transition:
     filter 0.2s ease,
     transform 0.2s ease;
-}
-
-#header a:hover {
-  color: #3BA0FF;
-  transform: translateY(-2px);
-}
-
-#header a:hover img {
-  filter: brightness(0) saturate(100%) invert(50%) sepia(34%) saturate(1000%)
-    hue-rotate(170deg) brightness(106%) contrast(104%);
-  /* transform: scale(1.05); */
 }
 
 /* Main */
@@ -341,11 +329,11 @@ main {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: clamp(0.8rem, 1vw, .9rem);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
   text-decoration: none;
   background-color: var(--buttonColorHover);
   color: var(--textColor);
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
   max-width: 100%;
@@ -366,7 +354,7 @@ main {
   width: 100%;
   height: 12rem;
   border-radius: 1rem;
-  object-fit: cover;   /* Garante que ela preencha o espaço */
+  object-fit: cover; /* Garante que ela preencha o espaço */
   object-position: top; /* FORÇA o alinhamento pelo topo */
 }
 #prjMicrocard {
@@ -501,15 +489,16 @@ main {
 /* Ajustes para telas menores (Celulares) */
 @media (max-width: 480px) {
   #header {
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 2rem;
     gap: 1rem;
-    border-radius: 1.6rem;
+    border-radius: 1.5rem;
   }
   #headerLinks {
-    gap: 3rem;
+    gap: 2rem;
   }
   #header a {
     font-size: 0.5rem;
+    gap: 0.4rem;
     img {
       width: 2rem;
     }
@@ -551,8 +540,12 @@ main {
   #header a:hover {
     /* transform: var(--afterHover); */
     /* color: #8fa9ff; */
+    color: #3ba0ff;
+    transform: translateY(-2px);
     img:hover {
       transform: scale(1.2);
+      filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
+        saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
     }
 
     /* box-shadow: 0 10px 20px var(--shadowColorLight); */
@@ -590,10 +583,20 @@ main {
 @media (pointer: coarse) {
   #header:active {
     transform: var(--afterHover);
-    background-color: var(--shadowColorLight);
+    background-color: var(--headerColorHover);
+    border: var(--borderColorActive);
   }
   #header a:active {
-    transform: var(--afterHover);
+    /* transform: var(--afterHover); */
+    /* color: #8fa9ff; */
+    color: #3ba0ff;
+    transform: translateY(-2px);
+    img:hover {
+      transform: scale(1.2);
+      filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
+        saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
+    }
+
     /* box-shadow: 0 10px 20px var(--shadowColorLight); */
   }
   .fcButtonDiv:active {
