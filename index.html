@@ -50,15 +50,24 @@
     </div> -->
 
     <div id="content">
+      <div id="bottomShadow"></div>
       <header id="header">
         <!-- <a href="#mainCard"
           ><img src="img/mpLogo.svg" alt="" id="headerLogo"
         /></a> -->
         <div id="headerLinks">
-          <a href="#cardSobreMim">Sobre mim</a>
-          <a href="#cardHabilidades">Habilidades</a>
-          <a href="#cardProjetos">Projetos</a>
-          <a href="#cardContato">Fale Comigo</a>
+          <a href="#cardSobreMim" class="headerLink"
+            ><img src="img/Header/sobremim.svg" alt="" />Sobre mim</a
+          >
+          <a href="#cardHabilidades" class="headerLink"
+            ><img src="img/Header/habilidades.svg" alt="" />Habilidades</a
+          >
+          <a href="#cardProjetos" class="headerLink"
+            ><img src="img/Header/projetos.svg" alt="" />Projetos</a
+          >
+          <a href="#cardContato" class="headerLink"
+            ><img src="img/Header/falecomigo.svg" alt="" />Fale Comigo</a
+          >
         </div>
       </header>
       <main id="main">
@@ -76,24 +85,15 @@
           <div id="fcButtons">
             <div class="fcButtonDiv">
               <a
-                href="https://github.com/mayanpas"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
-                GitHub</a
-              >
-            </div>
-            <div class="fcButtonDiv">
-              <a
-                href="https://www.linkedin.com/in/mayanpatrick/"
+                href="files/Currículo Mayan Patrick.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 ><img
-                  src="img/linkedin.svg"
-                  alt="linkedinIcon"
-                  id="linkedinIcon"
+                  src="img/downloadFile.svg"
+                  alt="githubIcon"
+                  id="curriculoIcon"
                 />
-                LinkedIn</a
+                Currículo</a
               >
             </div>
           </div>
@@ -105,26 +105,32 @@
             <div id="sobreMim">
               <div id="profilePhoto"></div>
               <p id="txtSobreMim1">
-                Engenheiro de Software Júnior | Desenvolvedor Web Front-End <br /><br />
+                Engenheiro de Software Júnior | Analista de Suporte N1 |
+                Desenvolvedor Web Front-End
+                <br /><br />
                 Apaixonado por tecnologia e estudante de Engenharia de Software
-                (4º período - UNILESTE). Combino uma base técnica sólida
+                (5º período - UNILESTE). Combino uma base técnica sólida
                 adquirida em suporte especializado e infraestrutura com
                 habilidades avançadas em desenvolvimento de software.
                 <br /><br />
-                </p>
-                <ul id="lista">
-                  <li>Stack Técnica: Java, React.js, JavaScript, HTML5, CSS3.</li>
-                  <br><li>Dados e Versão: SQL, MySQL, Git e GitHub.</li>
-                  <br><li>  Diferencial: Experiência prática com arquitetura de sistemas,
-                suporte técnico e visão de produto, garantindo um
-                desenvolvimento mais consciente e centrado na performance.</li>
-                </ul>
-                <br>
-                <p id="txtSobreMim2">Busco oportunidades como desenvolvedor onde possa aplicar meu
+              </p>
+              <ul id="lista">
+                <li>Stack Técnica: Java, React.js, JavaScript, HTML5, CSS3.</li>
+                <br />
+                <li>Dados e Versão: SQL, MySQL, Git e GitHub.</li>
+                <br />
+                <li>
+                  Diferencial: Experiência prática com arquitetura de sistemas,
+                  suporte técnico e visão de produto, garantindo um
+                  desenvolvimento mais consciente e centrado na performance.
+                </li>
+              </ul>
+              <br />
+              <p id="txtSobreMim2">
+                Busco oportunidades como desenvolvedor onde possa aplicar meu
                 pensamento analítico de engenharia para construir aplicações
-                resilientes e impactantes.</p>
-                
-              
+                resilientes e impactantes.
+              </p>
             </div>
           </div>
 
@@ -147,7 +153,7 @@
             <div class="microCard" id="expMicroCard">
               <img src="img/Book.svg" alt="ícone de código" />
               <h3>Formação superior</h3>
-              <p>4º período em Engenharia de Software na UNILESTE.</p>
+              <p>5º período em Engenharia de Software na UNILESTE.</p>
             </div>
           </div>
         </div>
@@ -208,7 +214,7 @@
                   <img src="img/figma.svg" alt="" />Figma
                 </div>
                 <div class="habButton">
-                  <img src="img/adobeIllustrator.svg" alt="" />Adobe Illustrator
+                  <img src="img/adobeIllustrator.svg" alt="" />Illustrator
                 </div>
               </div>
             </div>
@@ -223,51 +229,152 @@
             tecnologias e abordagens para a resolução de problemas.
           </p>
           <div id="prjMicrocards">
+            <!-- PROJETO 1 -->
+
             <div class="microCard" id="prjMicrocard">
-              <img
-                src="img/Cadastro de pacientes 1.jpg"
-                alt="Tela de cadastro de pacientes"
-                class="prjImage"
-              />
-              <h2>Sistema Administrativo Clínico Odontológico</h2>
-              <p>
-                Sistema completo, otimizando as operações de uma clínica
-                ondontológica, oferecendo um atendimento mais ágil e eficiente
-                aos pacientes e uma gestão mais organizada de suas atividades.
-              </p>
-              <div class="prjTools">
-                <div class="habButton">
-                  <img src="img/html5.svg" alt="" /> HTML
+              <div class="prjContent">
+                <img
+                  src="img/Cadastro de pacientes 1.jpg"
+                  alt=""
+                  class="prjImage"
+                />
+                <div class="prjText">
+                  <h2>Sistema Administrativo Clínico Odontológico</h2>
+                  <p>
+                    Sistema completo, otimizando as operações de uma clínica
+                    ondontológica, oferecendo um atendimento mais ágil e
+                    eficiente aos pacientes e uma gestão mais organizada de suas
+                    atividades.
+                  </p>
+                  <div class="prjHabs">
+                    <div class="prjHabButton">HTML</div>
+                    <div class="prjHabButton">CSS</div>
+                    <div class="prjHabButton">JavaScript</div>
+                    <div class="prjHabButton">NodeJS</div>
+                    <div class="prjHabButton">React</div>
+                  </div>
                 </div>
-                <div class="habButton">
-                  <img src="img/css3.svg" alt="" /> CSS
-                </div>
-                <div class="habButton">
-                  <img src="img/javaScript.svg" alt="" /> JavaScript
-                </div>
-                <div class="habButton">
-                  <img src="img/nodeJs.svg" alt="" /> NodeJS
-                </div>
-                <div class="habButton">
-                  <img src="img/reactJs.svg" alt="" /> React
-                </div>
-              </div>
-              <div class="divSeparator">
-                <hr class="separator" />
               </div>
 
+              <!-- <div class="separator">
+                <hr>
+              </div> -->
               <div class="prjButtons">
                 <a
-                  href="https://github.com/EmanuelScapim/S.A.C.O-"
-                  id="github"
+                  href="https://github.com/mayanpas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onclick="return false;"
-                >
-                  <img src="img/github.svg" alt="" />
+                  class="prjButton desativado"
+                  id="github"
+                  ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
                   GitHub
                 </a>
-                Em breve!
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prjButton desativado"
+                  id="saibaMais"
+                  ><img
+                    src="img/setaDireita.svg"
+                    alt="githubIcon"
+                    id="saibaMaisIcon"
+                  />
+                  Saiba Mais
+                </a>
+              </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+
+            <div class="microCard" id="prjMicrocard">
+              <div class="prjContent">
+                <img src="img/bonbonetto.jpg" alt="" class="prjImage" />
+                <div class="prjText">
+                  <h2>Bonbonetto</h2>
+                  <p>Vitrine e cardápio virtual de uma confeitaria fictícia.</p>
+                  <div class="prjHabs">
+                    <div class="prjHabButton">HTML</div>
+                    <div class="prjHabButton">CSS</div>
+                    <div class="prjHabButton">JavaScript</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="separator">
+                <hr>
+              </div> -->
+              <div class="prjButtons">
+                <a
+                  href="https://github.com/mayanpas/bonbonetto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prjButton"
+                  id="github"
+                  ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
+                  GitHub
+                </a>
+                <a
+                  href="https://github.com/mayanpas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prjButton desativado"
+                  id="saibaMais"
+                  ><img
+                    src="img/setaDireita.svg"
+                    alt="githubIcon"
+                    id="saibaMaisIcon"
+                  />
+                  Saiba Mais
+                </a>
+              </div>
+            </div>
+
+            <!-- PROJETO 3 -->
+
+            <div class="microCard" id="prjMicrocard">
+              <div class="prjContent">
+                <img src="img/painelVendas.jpg" alt="" class="prjImage" />
+                <div class="prjText">
+                  <h2>Painel de vendas</h2>
+                  <p>
+                    Painel de vendas com dashboard de vendas mensais e
+                    atualização ao vivo de métricas.
+                  </p>
+                  <div class="prjHabs">
+                    <div class="prjHabButton">HTML</div>
+                    <div class="prjHabButton">CSS</div>
+                    <div class="prjHabButton">JavaScript</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="separator">
+                <hr>
+              </div> -->
+              <div class="prjButtons">
+                <a
+                  href="https://github.com/mayanpas/Painel-de-vendas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prjButton"
+                  id="github"
+                  ><img src="img/github.svg" alt="githubIcon" id="githubIcon" />
+                  GitHub
+                </a>
+                <a
+                  href="https://github.com/mayanpas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prjButton desativado"
+                  id="saibaMais"
+                  ><img
+                    src="img/setaDireita.svg"
+                    alt="githubIcon"
+                    id="saibaMaisIcon"
+                  />
+                  Saiba Mais
+                </a>
               </div>
             </div>
           </div>
@@ -289,8 +396,8 @@
                 <img src="img/mail.svg" alt="" />
 
                 <div class="contactMicroCardText" target="_blank">
-                  <h5 class="contactMicroCardTitle">Email</h5>
-                  <p>mayanpas0710@gmail.com</p>
+                  <h3 class="contactMicroCardTitle">mayanpas0710@gmail.com</h3>
+                  <p>E-mail</p>
                 </div>
               </a>
 
@@ -302,8 +409,8 @@
               >
                 <img src="img/instagram.svg" alt="" />
                 <div class="contactMicroCardText">
-                  <h5 class="contactMicroCardTitle">Instagram</h5>
-                  <p>@mayanpas</p>
+                  <h3 class="contactMicroCardTitle">@mayanpas</h3>
+                  <p>Instagram</p>
                 </div>
               </a>
 
@@ -315,8 +422,8 @@
               >
                 <img src="img/linkedin.svg" alt="" />
                 <div class="contactMicroCardText">
-                  <h5 class="contactMicroCardTitle">Linkedin</h5>
-                  <p>Mayan Patrick</p>
+                  <h3 class="contactMicroCardTitle">Mayan Patrick</h3>
+                  <p>Linkedin</p>
                 </div>
               </a>
 
@@ -328,77 +435,31 @@
               >
                 <img src="img/github.svg" alt="" />
                 <div class="contactMicroCardText">
-                  <h5 class="contactMicroCardTitle">GitHub</h5>
-                  <p>mayanpas</p>
+                  <h3 class="contactMicroCardTitle">mayanpas</h3>
+                  <p>GitHub</p>
                 </div>
               </a>
 
-              <div class="microCard" id="contactMicroCard">
+              <a
+                href="https://pt.wikipedia.org/wiki/Ipatinga"
+                target="_blank"
+                class="microCard"
+                id="contactMicroCard"
+              >
                 <img src="img/localization.svg" alt="" />
 
                 <div class="contactMicroCardText">
-                  <h5 class="contactMicroCardTitle">Localização</h5>
-                  <p>Ipatinga - MG</p>
+                  <h3 class="contactMicroCardTitle">Ipatinga - MG</h3>
+                  <p>Localização</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
-
-          <!-- <div id="secondContactContent">
-            <form action="#" class="microCard" id="formMicroCard">
-              <label for="nome" class="label">Nome: </label>
-              <input
-                type="text"
-                name="nome"
-                id=""
-                placeholder="Insira o seu nome"
-              />
-
-              <label for="email" class="label">E-mail: </label>
-              <input
-                type="text"
-                name="email"
-                placeholder="Insira o seu email"
-              />
-
-              <label for="mensagem" class="label">Mensagem: </label>
-              <textarea
-                name="mensagem"
-                id=""
-                placeholder="Escreva sua mensagem"
-              ></textarea>
-
-              <input
-                type="submit"
-                name=""
-                id="formSubmit"
-                value="Enviar Mensagem"
-              />
-            </form>
-          </div> -->
         </div>
       </main>
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
-      <script>
-        VANTA.NET({
-          el: "#content",
-          mouseControls: false,
-          touchControls: false,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1,
-          scaleMobile: 1,
-          color: 0x3fffdd,
-          backgroundColor: 0x15193c,
-          points: 20.0,
-        });
-      </script> -->
       <footer id="footer" class="hidden">
         <p id="copyright">&copy; 2026 Mayan Patrick</p>
       </footer>
     </div>
-    <div id="bottomShadow"></div>
   </body>
 </html>

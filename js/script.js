@@ -1,22 +1,22 @@
-const blurConfig = {
-  maxScroll: 500,
-  stepPixels: 120,
-};
+// const blurConfig = {
+//   maxScroll: 500,
+//   stepPixels: 120,
+// };
 
-function updateBackgroundBlur() {
-  const scrollY = Math.min(window.scrollY || window.pageYOffset, blurConfig.maxScroll);
-  const steps = blurConfig.maxScroll / blurConfig.stepPixels;
-  const opacity = Math.round((scrollY / blurConfig.maxScroll) * steps) / steps;
+// function updateBackgroundBlur() {
+//   const scrollY = Math.min(window.scrollY || window.pageYOffset, blurConfig.maxScroll);
+//   const steps = blurConfig.maxScroll / blurConfig.stepPixels;
+//   const opacity = Math.round((scrollY / blurConfig.maxScroll) * steps) / steps;
 
-  document.documentElement.style.setProperty(
-    '--blur-overlay-opacity',
-    opacity.toFixed(.5)
-  );
-}
+//   document.documentElement.style.setProperty(
+//     '--blur-overlay-opacity',
+//     opacity.toFixed(.5)
+//   );
+// }
 
-window.addEventListener('scroll', updateBackgroundBlur, { passive: true });
-window.addEventListener('DOMContentLoaded', updateBackgroundBlur);
-window.addEventListener('resize', updateBackgroundBlur);
+// window.addEventListener('scroll', updateBackgroundBlur, { passive: true });
+// window.addEventListener('DOMContentLoaded', updateBackgroundBlur);
+// window.addEventListener('resize', updateBackgroundBlur);
 
 // Animação de desvandecer dos cards
 const observer = new IntersectionObserver(
