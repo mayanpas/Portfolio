@@ -34,28 +34,19 @@
     />
   </head>
   <body id="body">
-    <!-- <div class="min-h-screen w-full relative">
 
-      <div
-        class="absolute inset-0 z-0"
-        style="
-          background: radial-gradient(
-            125% 125% at 50% 10%,
-            #fff 40%,
-            #6366f1 100%
-          );
-        "
-      ></div>
-
-    </div> -->
-
+    <!-- DIV QUE ENGLOBA TODO O CONTEÚDO DO BODY -->
+    
     <div id="content">
+
+      <!-- SOMBREAMENTO NA PARTE DE BAIXO -->
+
       <div id="bottomShadow"></div>
+
+      <!-- HEADER / NAVBAR -->
+
       <header id="header">
-        <!-- <a href="#mainCard"
-          ><img src="img/mpLogo.svg" alt="" id="headerLogo"
-        /></a> -->
-        <div id="headerLinks">
+        <nav id="headerLinks">
           <a href="#cardSobreMim" class="headerLink"
             ><img src="img/Header/sobremim.svg" alt="" />Sobre mim</a
           >
@@ -68,8 +59,13 @@
           <a href="#cardContato" class="headerLink"
             ><img src="img/Header/falecomigo.svg" alt="" />Fale Comigo</a
           >
-        </div>
+        </nav>
       </header>
+
+      <!-- MAIN - CONTEÚDO PRINCIPAL -->
+
+      <!-- HERO -->
+
       <main id="main">
         <div id="mainCard" class="hidden">
           <div id="titleContainer">
@@ -88,6 +84,7 @@
                 href="files/Currículo Mayan Patrick.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                id="curriculo"
                 ><img
                   src="img/downloadFile.svg"
                   alt="githubIcon"
@@ -98,6 +95,8 @@
             </div>
           </div>
         </div>
+
+        <!-- CARD SOBRE MIM -->
 
         <div class="card hidden" id="cardSobreMim">
           <h2 class="cardTitle">Sobre mim</h2>
@@ -157,6 +156,8 @@
             </div>
           </div>
         </div>
+
+        <!-- CARD HABILIDADES -->
 
         <div class="card hidden" id="cardHabilidades">
           <h2 class="cardTitle">Habilidades</h2>
@@ -221,6 +222,8 @@
           </div>
         </div>
 
+        <!-- CARD PROJETOS -->
+
         <div class="card hidden" id="cardProjetos">
           <h2 class="cardTitle">Projetos</h2>
 
@@ -229,6 +232,7 @@
             tecnologias e abordagens para a resolução de problemas.
           </p>
           <div id="prjMicrocards">
+
             <!-- PROJETO 1 -->
 
             <div class="microCard" id="prjMicrocard">
@@ -255,10 +259,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="separator">
-                <hr>
-              </div> -->
               <div class="prjButtons">
                 <a
                   href="https://github.com/mayanpas"
@@ -300,10 +300,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="separator">
-                <hr>
-              </div> -->
               <div class="prjButtons">
                 <a
                   href="https://github.com/mayanpas/bonbonetto"
@@ -348,10 +344,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="separator">
-                <hr>
-              </div> -->
               <div class="prjButtons">
                 <a
                   href="https://github.com/mayanpas/Painel-de-vendas"
@@ -379,6 +371,8 @@
             </div>
           </div>
         </div>
+
+        <!-- CARD FALE COMIGO -->
 
         <div class="card hidden" id="cardContato">
           <h2 class="cardTitle">Fale comigo</h2>
@@ -457,9 +451,14 @@
           </div>
         </div>
       </main>
+
+      <!-- FOOTER -->
+
       <footer id="footer" class="hidden">
         <p id="copyright">&copy; 2026 Mayan Patrick</p>
+        <a href="https://github.com/mayanpas/Portfolio" id="portGithub" target="_blank"><img src="img/github.svg" alt="">GitHub deste portfólio</a>
       </footer>
+
     </div>
   </body>
 </html>

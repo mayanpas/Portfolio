@@ -2,19 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif; */
-
   font-family: "Google Sans", sans-serif;
 }
 html::before {
@@ -77,7 +64,6 @@ a.desativado {
   --fcButtonColor: #222222c0;
   --buttonColorHover: #7a7a7a17;
   --cardColor: #2222226e;
-  /* --cardColor: linear-gradient(#000000, #ffffff00); */
   --microCardColor: #45454567;
   --beforeHover: transform 0.2s ease;
   --afterHover: scale(1.05);
@@ -107,8 +93,6 @@ a.desativado {
 /* Header */
 #header {
   position: fixed;
-  /* width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right)); */
-  /* width: 35%; */
   bottom: 0;
   left: 0;
   right: 0;
@@ -191,7 +175,6 @@ main {
   font-size: clamp(3rem, 10vw, 4rem);
   line-height: 1;
   color: var(--textColor);
-  /* text-shadow: 2px 2px 4px var(--shadowColorDark); */
   font-weight: lighter;
 }
 /* titulo - PATRICK */
@@ -208,7 +191,6 @@ main {
   p {
     color: var(--subTextColor);
   }
-  /* text-shadow: 2px 2px 4px var(--shadowColorDark); */
 }
 /* mainCard - botoes */
 #fcButtons {
@@ -218,8 +200,6 @@ main {
 .fcButtonDiv {
   background-color: var(--cardColor);
   display: flex;
-  /* backdrop-filter: blur(3px); */
-  /* box-shadow: 0 10px 50px var(--shadowColorDark); */
   border-radius: 1rem;
   img {
     width: 0.8rem;
@@ -264,7 +244,6 @@ main {
   padding: 2rem;
   margin: 0 1rem;
   border-radius: 3rem;
-  /* box-shadow: 0 10px 50px var(--shadowColorDark); */
 }
 .microCard {
   display: flex;
@@ -367,7 +346,6 @@ main {
   object-position: top; /* FORÇA o alinhamento pelo topo */
 }
 #prjMicrocard {
-  /* max-width: 50%; */
   flex: 1;
   justify-content: space-between;
   transition: var(--beforeHover);
@@ -398,12 +376,6 @@ main {
   }
 }
 
-/* .separator {
-  padding: 0.8rem 0;
-  hr {
-    border: 1px solid var(--borderColor);
-  }
-} */
 .prjButtons {
   display: flex;
   gap: 0.5rem;
@@ -443,10 +415,7 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
 }
-/* .contactMicroCardTitle {
-  font-weight: normal;
-  color: #b3b3b3;
-} */
+
 .contactMicroCardText {
   display: flex;
   flex-direction: column;
@@ -458,7 +427,6 @@ main {
 }
 #contactMicroCard {
   flex-grow: 1;
-  /* flex-direction: row; */
   gap: 0.7rem;
   padding: 0.9rem 1.5rem;
   border-radius: 1.5rem;
@@ -470,12 +438,23 @@ main {
 /* footer */
 #footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   margin-top: 2rem;
   margin-bottom: 5rem;
-  /* padding-bottom: 6.5rem; */
   color: var(--textColor);
+}
+#portGithub {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  img {
+    width: 0.8rem;
+  }
+  transition: 0.2s ease;
 }
 
 #bottomShadow {
@@ -497,6 +476,9 @@ main {
 }
 /* Ajustes para telas menores (Celulares) */
 @media (max-width: 480px) {
+  .fcButtonDiv{
+    border-radius: .9rem;
+  }
   #header {
     padding: 0.6rem 2rem;
     gap: 1rem;
@@ -519,6 +501,9 @@ main {
     padding: 1rem;
     border-radius: 2rem;
   }
+  .microCard{
+    border-radius: 1.3rem;
+  }
   .cardTitle {
     padding-bottom: 0;
   }
@@ -528,11 +513,11 @@ main {
   .habMicroCards {
     grid-template-columns: repeat(1, 1fr);
   }
-  #prjMicrocards {
-    /* flex-wrap: wrap; */
-  }
-  .prjMicrocard {
+  #prjMicrocard {
     padding: 1rem;
+  }
+  .prjImage{
+    border-radius: .6rem;
   }
   #contactMicroCards {
     flex-wrap: wrap;
@@ -546,37 +531,32 @@ main {
     background-color: var(--headerColorHover);
     border: var(--borderColorActive);
   }
-  #header a:hover {
-    /* transform: var(--afterHover); */
-    /* color: #8fa9ff; */
-    color: #3ba0ff;
-    transform: translateY(-2px);
-    img:hover {
+  .headerLink:hover {
+    img {
       transform: scale(1.2);
       filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
         saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
     }
-
-    /* box-shadow: 0 10px 20px var(--shadowColorLight); */
+  }
+  #header a:hover {
+    color: #3ba0ff;
+    transform: translateY(-2px);
   }
   .fcButtonDiv:hover {
     transform: var(--afterHoverLight);
     background-color: var(--buttonColorHover);
     border: var(--borderColorActive);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
   }
   #expMicroCard:hover {
     transform: scale(1.01);
     background-color: var(--shadowColorLight);
     border: var(--borderColorActive);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
   }
   .habButton:hover,
   .prjButton:hover {
     background-color: var(--shadowColorLight);
     transform: var(--afterHover);
     border: var(--borderColorActive);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
   }
   #prjMicrocard:hover,
   #contactMicroCard:hover,
@@ -584,7 +564,9 @@ main {
     transform: var(--afterHoverLight);
     background-color: var(--shadowColorLight);
     border: var(--borderColorActive);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
+  }
+  #portGithub:hover {
+    opacity: 1;
   }
 }
 
@@ -595,34 +577,27 @@ main {
     background-color: var(--headerColorHover);
     border: var(--borderColorActive);
   }
-  #header a:active {
-    /* transform: var(--afterHover); */
-    /* color: #8fa9ff; */
-    color: #3ba0ff;
-    transform: translateY(-2px);
-    img:hover {
+  .headerLink:active {
+    img {
       transform: scale(1.2);
       filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
         saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
     }
-
-    /* box-shadow: 0 10px 20px var(--shadowColorLight); */
+  }
+  #header a:active {
+    color: #3ba0ff;
+    transform: translateY(-2px);
   }
   .fcButtonDiv:active {
     transform: var(--afterHoverLight);
     background-color: var(--shadowColorLight);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
   }
   #expMicroCard:active {
     transform: scale(1.01);
     background-color: var(--shadowColorLight);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
   }
   .habButton,
   .prjToolButton {
-    /* background-color: var(--buttonColorHover);
-    transform: scale(1.1);
-    box-shadow: 0 10px 50px var(--shadowColorLight); */
     pointer-events: none;
   }
   #prjMicrocard:active,
@@ -630,6 +605,8 @@ main {
   #formSubmit:active {
     transform: var(--afterHoverLight);
     background-color: var(--shadowColorLight);
-    /* box-shadow: 0 10px 50px var(--shadowColorLight); */
+  }
+  #portGithub:active {
+    opacity: 1;
   }
 }

@@ -1,23 +1,3 @@
-// const blurConfig = {
-//   maxScroll: 500,
-//   stepPixels: 120,
-// };
-
-// function updateBackgroundBlur() {
-//   const scrollY = Math.min(window.scrollY || window.pageYOffset, blurConfig.maxScroll);
-//   const steps = blurConfig.maxScroll / blurConfig.stepPixels;
-//   const opacity = Math.round((scrollY / blurConfig.maxScroll) * steps) / steps;
-
-//   document.documentElement.style.setProperty(
-//     '--blur-overlay-opacity',
-//     opacity.toFixed(.5)
-//   );
-// }
-
-// window.addEventListener('scroll', updateBackgroundBlur, { passive: true });
-// window.addEventListener('DOMContentLoaded', updateBackgroundBlur);
-// window.addEventListener('resize', updateBackgroundBlur);
-
 // Animação de desvandecer dos cards
 const observer = new IntersectionObserver(
   (entries) => {
@@ -42,32 +22,56 @@ const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
 const header = document.getElementById("header");
-let lastScrollTop = 0;
+let lastScrollTop = window.scrollY || window.pageYOffset;
+let manualScrollTriggered = false;
+
+function showHeader() {
+  header?.classList.remove("header-hidden");
+}
+
+function hideHeader() {
+  header?.classList.add("header-hidden");
+}
 
 function toggleHeaderOnScroll() {
   if (!header) return;
 
   const currentScrollTop = window.scrollY || window.pageYOffset;
 
+  if (!manualScrollTriggered) {
+    lastScrollTop = currentScrollTop;
+    return;
+  }
+
   if (currentScrollTop <= 0) {
-    header.classList.remove("header-hidden");
+    showHeader();
   } else if (currentScrollTop > lastScrollTop) {
-    header.classList.add("header-hidden");
+    hideHeader();
   } else {
-    header.classList.remove("header-hidden");
+    showHeader();
   }
 
   lastScrollTop = currentScrollTop;
+  manualScrollTriggered = false;
 }
 
+function markManualScroll() {
+  manualScrollTriggered = true;
+}
+
+document.querySelectorAll(".headerLink").forEach((link) => {
+  link.addEventListener("click", showHeader);
+});
+
+window.addEventListener("wheel", markManualScroll, { passive: true });
+window.addEventListener("touchmove", markManualScroll, { passive: true });
+window.addEventListener("keydown", (event) => {
+  if (["ArrowDown", "PageDown", " ", "End"].includes(event.key)) {
+    markManualScroll();
+  }
+});
 window.addEventListener("scroll", toggleHeaderOnScroll, { passive: true });
-window.addEventListener("load", toggleHeaderOnScroll);
-
-// bloquear botão github
-const githubButton = document.getElementById("github");
-if (githubButton) {
-  githubButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Impede a navegação
-    alert("Este link está desativado!");
-  });
-}
+window.addEventListener("load", () => {
+  showHeader();
+  lastScrollTop = window.scrollY || window.pageYOffset;
+});
