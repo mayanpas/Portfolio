@@ -8,7 +8,7 @@ export default function SmoothScroll({ children }) {
       autoRaf: true,
       autoToggle: true,
       anchors: true,
-      allowNestedScroll: true,
+      allowNestedScroll: false,
       naiveDimensions: true,
       stopInertiaOnNavigate: true,
     });

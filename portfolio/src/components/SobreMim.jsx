@@ -5,7 +5,7 @@ import book from '../assets/Book.svg';
 
 function SobreMim() {
   return (
-    <div className="card" id="cardSobreMim">
+    <div className="card" id="cardSobreMim" data-aos="fade-up" data-aos-delay="10">
       <h2 className="cardTitle">Sobre mim</h2>
       <div id="sobreContent">
         <div id="sobreMim">

@@ -1,12 +1,19 @@
-import Email from '../assets/mail.svg';
-import Instagram from '../assets/instagram.svg';
-import Linkedin from '../assets/linkedin.svg';
-import GitHub from '../assets/github.svg';
-import Localizacao from '../assets/localization.svg';
+import Email from "../assets/mail.svg";
+import Instagram from "../assets/instagram.svg";
+import Linkedin from "../assets/linkedin.svg";
+import GitHub from "../assets/github.svg";
+import Localizacao from "../assets/localization.svg";
 
 function FaleComigo() {
   return (
-    <div className="card" id="cardContato">
+    // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos
+    // Você pode adicionar um delay sequencial para cada card entrar um de cada vez
+    <div
+      className="card"
+      id="cardContato"
+      data-aos="fade-up"
+      data-aos-delay="40"
+    >
       <h2 className="cardTitle">Fale comigo</h2>
       <div id="firstContactContent">
         <p>

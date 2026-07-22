@@ -7,7 +7,7 @@ import saibaMais from '../assets/setaDireita.svg';
 
 function Projetos() {
   return (
-    <div class="card" id="cardProjetos">
+    <div class="card " id="cardProjetos" data-aos="fade-up" data-aos-delay="30">
       <h2 class="cardTitle">Projetos</h2>
 
       <p>

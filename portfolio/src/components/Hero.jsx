@@ -1,8 +1,15 @@
-import downloadFile from '../assets/downloadFile.svg';
+import downloadFile from "../assets/downloadFile.svg";
 
 function Hero() {
   return (
-    <div id="mainCard" className="">
+    <div
+      id="mainCard"
+      className=""
+      // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos
+      // Você pode adicionar um delay sequencial para cada card entrar um de cada vez
+      data-aos="fade-up" // Animação de fade subindo
+      data-aos-delay="" // Atraso aumenta para cada card (0ms, 150ms, 300ms...)
+    >
       <div id="titleContainer">
         <h1>
           Mayan <br />
@@ -25,11 +32,7 @@ function Hero() {
             rel="noopener noreferrer"
             id="curriculo"
           >
-            <img
-              src={downloadFile}
-              alt="downloadIcon"
-              id="curriculoIcon"
-            />
+            <img src={downloadFile} alt="downloadIcon" id="curriculoIcon" />
             Currículo
           </a>
         </div>
