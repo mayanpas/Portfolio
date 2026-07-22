@@ -437,16 +437,14 @@ main {
 
 /* footer */
 #footer {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
-  /* margin-bottom: 5rem; */
+  margin-bottom: 5rem;
   color: var(--textColor);
-  z-index: 200;
 }
 #portGithub {
   display: flex;
