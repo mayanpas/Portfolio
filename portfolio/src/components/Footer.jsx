@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer id="footer" className="" data-aos="fade-up" data-aos-delay="50">
       <p id="copyright">&copy; 2026 Mayan Patrick</p>
-      <a
+      {/* <a
         href="https://github.com/mayanpas/Portfolio"
         id="portGithub"
         target="_blank"
@@ -13,7 +13,7 @@ function Footer() {
         <img src={GitHub} alt="gitHubIcon" />
         GitHub deste portfólio
       </a>
-      <small id='react'>Feito com React</small>
+      <small id='react'>Feito com React</small> */}
     </footer>
   );
 }
