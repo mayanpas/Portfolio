@@ -529,9 +529,9 @@ main {
   #contactMicroCards {
     flex-wrap: wrap;
   }
-  #footer{
+  /* #footer{
     padding: 2rem 0 6.5rem;
-  }
+  } */
 }
 
 /* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
