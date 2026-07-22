@@ -40,10 +40,10 @@ export default function Navbar() {
     setIsClickScrolling(true); // Trava a ocultação automática
     setShowNavbar(true); // Garante que ela fique visível
 
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // const element = document.getElementById(targetId);
+    // if (element) {
+    //   element.scrollIntoView({ behavior: "smooth" });
+    // }
 
     // Libera a ocultação por scroll manual após a animação de clique terminar
     setTimeout(() => {
