@@ -2,55 +2,67 @@ import sobreMim from "../assets/Header/sobremim.svg";
 import habilidades from "../assets/Header/habilidades.svg";
 import projetos from "../assets/Header/projetos.svg";
 import faleComigo from "../assets/Header/falecomigo.svg";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Navbar() {
 const [showNavbar, setShowNavbar] = useState(true);
+  
+  const isClickScrolling = useRef(false);
+  const targetScrollTop = useRef(0);
 
   useEffect(() => {
+    // 1. Força o navegador a ir para o topo absoluto assim que carregar/recarregar
     window.scrollTo(0, 0);
+    
     let lastScrollTop = 0;
 
     const handleScroll = () => {
       const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-      // Ignora pequenos ruídos de scroll no topo
-      if (currentScrollTop <= 50) {
-        setShowNavbar(true);
-        lastScrollTop = currentScrollTop;
-        return;
+      if (isClickScrolling.current) {
+        if (Math.abs(currentScrollTop - targetScrollTop.current) < 15 || currentScrollTop >= maxScroll - 5) {
+          isClickScrolling.current = false;
+        }
+        return; 
       }
 
-      // Se chegou no final ou entrou no efeito de bounce da borda inferior
-      if (currentScrollTop >= maxScroll - 40) {
-        setShowNavbar(false); // Mantém oculto e ignora o quique
-        lastScrollTop = currentScrollTop;
-        return;
-      }
-
-      // Comportamento normal: descendo esconde, subindo aparece
-      if (currentScrollTop > lastScrollTop) {
-        setShowNavbar(false);
+      if (currentScrollTop > lastScrollTop && currentScrollTop > 80) {
+        setShowNavbar(false); 
       } else {
-        setShowNavbar(true);
+        setShowNavbar(true);  
       }
 
       lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavLinkClick = (e, targetId) => {
     e.preventDefault();
+    
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      
+      targetScrollTop.current = Math.min(elementPosition - 80, maxScroll); 
+      isClickScrolling.current = true;
+
+      window.scrollTo({
+        top: targetScrollTop.current,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        if (targetScrollTop.current >= maxScroll - 10) {
+          setShowNavbar(false);
+        }
+      }, 1000);
     }
   };
-
   return (
     <header
       id="header"
