@@ -449,7 +449,7 @@ main {
   margin-bottom: 5rem; */
   padding: 2rem 0 2rem;
   color: var(--textColor);
-  z-index: 150;
+  z-index: 101;
 }
 #portGithub {
   display: flex;

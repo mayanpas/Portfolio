@@ -27,7 +27,21 @@ const [showNavbar, setShowNavbar] = useState(true);
         return; 
       }
 
-      if (currentScrollTop > lastScrollTop && currentScrollTop > 80) {
+      // Se chegou perto do final ou entrou no efeito de bounce da borda inferior, trava oculto
+      if (currentScrollTop >= maxScroll - 40) {
+        setShowNavbar(false);
+        lastScrollTop = currentScrollTop;
+        return;
+      }
+
+      // Ignora pequenos ruídos de scroll no topo
+      if (currentScrollTop <= 50) {
+        setShowNavbar(true);
+        lastScrollTop = currentScrollTop;
+        return;
+      }
+
+      if (currentScrollTop > lastScrollTop) {
         setShowNavbar(false); 
       } else {
         setShowNavbar(true);  
@@ -36,7 +50,7 @@ const [showNavbar, setShowNavbar] = useState(true);
       lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
