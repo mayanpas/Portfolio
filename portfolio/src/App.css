@@ -444,9 +444,9 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  /* margin-top: 2rem;
-  margin-bottom: 5rem; */
-  padding: 2rem 0 7rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  /* padding: 2rem 0 7rem; */
   color: var(--textColor);
 }
 #portGithub {
@@ -527,9 +527,9 @@ main {
   #contactMicroCards {
     flex-wrap: wrap;
   }
-  #footer{
+  /* #footer{
     padding: 2rem 0 6.5rem;
-  }
+  } */
 }
 
 /* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
