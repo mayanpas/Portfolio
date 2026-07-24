@@ -29,7 +29,7 @@ html {
   /* background-color: #1f3049; */
   color-scheme: dark;
   content: "";
-  position: fixed;
+  /* position: fixed; */
   width: 100dvw;
   height: 100dvh;
   /* background-image: url(assets/backgroundV6.svg);
