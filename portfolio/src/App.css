@@ -15,6 +15,8 @@ html::before {
   content: "";
   position: fixed;
   width: 100dvw;
+  top: 0;
+  left: 0;
   /* height: 100dvh; */
   /* height: 100dvh; */
   /* Se a barra do Safari ainda cortar embaixo, estique um pouco além usando env() */
