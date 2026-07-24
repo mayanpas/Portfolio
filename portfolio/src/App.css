@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
-*, :after, :before {
+*,
+:after,
+:before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Google Sans", sans-serif;
 }
 meta {
-    display: none;
+  display: none;
 }
 html::before {
   /* content: "";
@@ -15,15 +17,19 @@ html::before {
   width: 100dvw;
   height: 100dvh;
   z-index: -1; */
-  background-image: url(assets/backgroundV6.svg);
+  /* background-image: url(assets/backgroundV6.svg);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 html {
   /* min-height: 100%; */
   /* background-color: #1f3049;
   color-scheme: dark; */
+  background-image: url(assets/backgroundV6.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #content {
