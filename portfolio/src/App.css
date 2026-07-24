@@ -25,15 +25,9 @@ html::before {
   background-repeat: no-repeat;
 }
 html {
-  /* content: ""; */
-  position: sticky;
-  top: 0;
-  width: 100dvw;
-  min-height: 100dvh;
-  background-image: url(assets/backgroundV6-5.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100%;
+  background-color: #253858;
+  color-scheme: dark;
 }
 
 #content {
