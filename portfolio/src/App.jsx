@@ -18,7 +18,7 @@ function App() {
   return (
     <SmoothScroll>
       {/* <Background /> */}
-      <FooterShadow />
+      {/* <FooterShadow /> */}
       <Navbar />
       <main>
         <Hero />
