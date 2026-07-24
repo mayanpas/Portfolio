@@ -26,7 +26,7 @@ html::before {
 }
 html {
   min-height: 100%;
-  background-color: #1f3049;
+  /* background-color: #1f3049; */
   color-scheme: dark;
   /* background-image: url(assets/backgroundV6.svg);
   background-size: cover;
