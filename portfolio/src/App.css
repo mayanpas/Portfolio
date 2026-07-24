@@ -11,7 +11,7 @@
 meta {
   display: none;
 }
-html::before {
+/* html::before {
   content: "";
   position: fixed;
   width: 100dvw;
@@ -21,23 +21,25 @@ html::before {
   z-index: -1;
   background-image: url(assets/backgroundV8.svg);
   background-size: cover;
-  /* background-position: center; */
+  background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
-}
+} */
 html {
   min-height: 100%;
   /* background-color: #253858; */
   color-scheme: dark;
 }
-/* .background{
-  position: fixed;
-  background-color: red;
+.background{
+  background-image: url(./assets/backgroundV8.svg);
   height: 100dvh;
   width: 100dvw;
-  z-index: 0;
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
   pointer-events: none;
-} */
+  position: fixed;
+}
 
 #content {
   position: relative;
