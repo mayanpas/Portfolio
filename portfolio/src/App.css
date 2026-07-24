@@ -25,27 +25,15 @@ html::before {
   background-repeat: no-repeat;
 }
 html {
-  min-height: 100%;
-  /* background-color: #1f3049; */
-  color-scheme: dark;
-  /* content: ""; */
-  /* position: fixed; */
-  /* width: 100dvw;
-  height: 100dvh; */
-  /* background-image: url(assets/backgroundV6.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-  /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
-  background-attachment: fixed; */
-  /* background-color: #253858; */
+  content: "";
+  position: sticky;
+  top: 0;
+  width: 100dvw;
+  height: 100dvh;
   background-image: url(assets/backgroundV6-5.svg);
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
   background-size: cover;
-  background-attachment: fixed;
-
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #content {
