@@ -54,7 +54,6 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right); */
-  bottom: 0;
   background: transparent;
     /* background: linear-gradient(to bottom, #050505 46%, #253A59 100%);
     background-attachment: fixed; */
@@ -63,6 +62,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     overscroll-behavior-y: none;
+    z-index: 1;
 }
 
 a {
