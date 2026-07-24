@@ -20,8 +20,8 @@ html::before {
   background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed;
   /* background-image: url(assets/backgroundV6.svg); */
-  background-size: cover;
-  background-position: center;
+  /* background-size: cover;
+  background-position: center; */
   background-repeat: no-repeat;
 }
 html {
