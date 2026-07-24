@@ -17,12 +17,7 @@ html::before {
   width: 100dvw;
   top: 0;
   left: 0;
-  /* height: 100dvh; */
-  /* height: 100dvh; */
-  /* Se a barra do Safari ainda cortar embaixo, estique um pouco além usando env() */
-  height: calc(
-    100dvh + env(safe-area-inset-bottom) + 80px
-  ); /* Adiciona a folga exata da barra do Safari */
+  height: 100dvh;
   z-index: -1;
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
@@ -49,10 +44,10 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  padding-top: env(safe-area-inset-top);
+  /* padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+  padding-right: env(safe-area-inset-right); */
   background: transparent;
 }
 
