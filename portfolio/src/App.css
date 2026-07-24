@@ -21,7 +21,7 @@ html::before {
   z-index: -1;
   background-image: url(assets/backgroundV8.svg);
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   background-repeat: no-repeat;
   pointer-events: none;
 }
