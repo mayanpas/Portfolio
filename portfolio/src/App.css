@@ -16,7 +16,7 @@ html::before {
   position: fixed;
   width: 100dvw;
   /* height: 100dvh; */
-  height: 100%;
+  height: 150%;
   z-index: -1;
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
