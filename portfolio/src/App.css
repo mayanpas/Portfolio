@@ -34,7 +34,8 @@ html {
   background-repeat: no-repeat; */
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
-  background-color: #253858;
+  /* background-color: #253858; */
+  background-image: url(assets/backgroundV6.svg);
 }
 
 #content {
