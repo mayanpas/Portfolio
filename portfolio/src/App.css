@@ -19,7 +19,7 @@ html::before {
   left: 0;
   height: 100dvh;
   z-index: -1;
-  background-image: url(assets/backgroundV9.svg);
+  background-image: url(assets/backgroundV10.svg);
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
@@ -28,7 +28,8 @@ html::before {
 html {
   min-height: 100%;
   /* background-color: #253858; */
-  background-color: #070707;
+  /* background-color: #070707; */
+  background-color: #021B30;
   color-scheme: dark;
 }
 
