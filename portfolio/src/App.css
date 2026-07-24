@@ -22,8 +22,8 @@ html::before {
 }
 html {
   min-height: 100%;
-  background-color: #1f3049;
-  color-scheme: dark;
+  /* background-color: #1f3049;
+  color-scheme: dark; */
 }
 
 #content {
