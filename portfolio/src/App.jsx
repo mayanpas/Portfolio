@@ -16,7 +16,7 @@ function App() {
   // useScrollAnimation('.hidden');
   return (
     <SmoothScroll>
-      <FooterShadow />
+      {/* <FooterShadow /> */}
       <Navbar />
       <main>
         <Hero />
