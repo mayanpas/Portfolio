@@ -61,6 +61,7 @@ body {
     background-image: url(./assets/backgroundV6.svg);
     background-size: cover;
     background-attachment: fixed;
+    overscroll-behavior-y: none;
 }
 
 a {
