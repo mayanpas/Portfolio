@@ -12,15 +12,15 @@ meta {
   display: none;
 }
 html::before {
-  /* content: "";
-  position: fixed; */
+  content: "";
+  position: fixed;
   /* width: 100dvw;
   height: 100dvh; */
- /* Garante que o gradiente cubra toda a altura da tela */
-  /* margin: 0;
+  height: 100vh; /* Garante que o gradiente cubra toda a altura da tela */
+  margin: 0;
   z-index: -1;
   background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
-  background-attachment: fixed; */
+  background-attachment: fixed;
   /* background-image: url(assets/backgroundV6.svg);
   background-size: cover;
   background-position: center;
@@ -36,13 +36,9 @@ html {
   background-repeat: no-repeat; */
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
-  /* background-color: #1f3049; */
-}
-html, body {
-  background: linear-gradient(to bottom, #050505 46%, #253A59 100%);
-  min-height: 100dvh; /* Usa a altura dinâmica real no iOS */
-  margin: 0;
-  background-attachment: fixed; /* Garante que o gradiente fique fixo no fundo */
+  background-color: #1f3049;
+  background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
+  min-height: 100dvh;
 }
 
 #content {
