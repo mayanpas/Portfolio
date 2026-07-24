@@ -20,7 +20,9 @@ html::before {
   /* height: 100dvh; */
   /* height: 100dvh; */
   /* Se a barra do Safari ainda cortar embaixo, estique um pouco além usando env() */
-  height: 120svh;
+  height: calc(
+    100dvh + env(safe-area-inset-bottom) + 80px
+  ); /* Adiciona a folga exata da barra do Safari */
   z-index: -1;
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
