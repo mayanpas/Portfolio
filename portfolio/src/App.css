@@ -36,6 +36,9 @@ html {
   background-attachment: fixed; */
   /* background-color: #253858; */
   background-image: url(assets/backgroundV6.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #content {
