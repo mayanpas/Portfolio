@@ -25,7 +25,6 @@ html::before {
   background-repeat: no-repeat;
 }
 html {
-  display: none;
   /* min-height: 100%; */
   /* background-color: #1f3049; */
   color-scheme: dark;
@@ -40,7 +39,7 @@ html {
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
   /* background-color: #253858; */
-  background-image: url(assets/backgroundV6.svg);
+  background-image: url(assets/backgroundV6-5.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
