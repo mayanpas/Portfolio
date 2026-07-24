@@ -8,7 +8,7 @@ function FaleComigo() {
   return (
     // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos
     // Você pode adicionar um delay sequencial para cada card entrar um de cada vez
-    <div
+    <section
       className="card"
       id="cardContato"
       data-aos="fade-up"
@@ -92,7 +92,7 @@ function FaleComigo() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

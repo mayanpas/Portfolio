@@ -2,8 +2,8 @@ import downloadFile from "../assets/downloadFile.svg";
 
 function Hero() {
   return (
-    <div
-      id="mainCard"
+    <section
+      id="hero"
       className=""
       // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos
       // Você pode adicionar um delay sequencial para cada card entrar um de cada vez
@@ -37,7 +37,7 @@ function Hero() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

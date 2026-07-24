@@ -12,7 +12,7 @@ import Illustrator from '../assets/adobeIllustrator.svg';
 
 function Habilidades() {
   return (
-    <div className="card" id="cardHabilidades" data-aos="fade-up" data-aos-delay="20">
+    <section className="card" id="cardHabilidades" data-aos="fade-up" data-aos-delay="20">
       <h2 className="cardTitle">Habilidades</h2>
       <p className="info">
         Um conjunto de ferramentas completo para criar aplicações modernas e
@@ -75,7 +75,7 @@ function Habilidades() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

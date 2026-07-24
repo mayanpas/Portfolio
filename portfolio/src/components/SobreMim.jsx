@@ -5,7 +5,7 @@ import book from '../assets/Book.svg';
 
 function SobreMim() {
   return (
-    <div className="card" id="cardSobreMim" data-aos="fade-up" data-aos-delay="10">
+    <section className="card" id="cardSobreMim" data-aos="fade-up" data-aos-delay="10">
       <h2 className="cardTitle">Sobre mim</h2>
       <div id="sobreContent">
         <div id="sobreMim">
@@ -24,9 +24,7 @@ function SobreMim() {
           </p>
           <ul id="lista">
             <li>Stack Técnica: Java, React.js, JavaScript, HTML5, CSS3.</li>
-            <br />
             <li>Dados e Versão: SQL, MySQL, Git e GitHub.</li>
-            <br />
             <li>
               Diferencial: Experiência prática com arquitetura de sistemas,
               suporte técnico e visão de produto, garantindo um desenvolvimento
@@ -64,7 +62,7 @@ function SobreMim() {
           <p>5º período em Engenharia de Software na UNILESTE.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
