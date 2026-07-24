@@ -28,8 +28,8 @@ html {
   content: "";
   position: sticky;
   top: 0;
-  width: 100dvw;
-  height: 100dvh;
+  /* width: 100dvw;
+  height: 100dvh; */
   background-image: url(assets/backgroundV6-5.svg);
   background-size: cover;
   background-position: center;
