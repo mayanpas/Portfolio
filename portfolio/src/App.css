@@ -48,7 +48,8 @@ html {
 /* Exemplo para garantir margem no topo e no fundo */
 body {
   min-height: 100vh;
-  position: relative;
+  position: sticky;
+  top: 0;
   overflow-x: hidden;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
