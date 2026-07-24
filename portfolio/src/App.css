@@ -14,8 +14,8 @@ meta {
 html::before {
   content: "";
   position: fixed;
-  width: 100dvw;
-  height: 100dvh;
+  /* width: 100dvw;
+  height: 100dvh; */
   z-index: -1;
   background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed;
