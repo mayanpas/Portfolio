@@ -2,7 +2,7 @@ import GitHub from '../assets/github.svg';
 
 function Footer() {
   return (
-    <footer id="footer" className="" >
+    <footer id="footer" className="" data-aos="fade" data-aos-delay="50">
       <p id="copyright">&copy; 2026 Mayan Patrick</p>
       <a
         href="https://github.com/mayanpas/Portfolio"
