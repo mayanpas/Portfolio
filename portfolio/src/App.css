@@ -57,7 +57,10 @@ body {
   background: transparent;
     /* background: linear-gradient(to bottom, #050505 46%, #253A59 100%);
     background-attachment: fixed; */
-    background-color: red;
+    /* background-color: red; */
+    background-image: url(./assets/backgroundV6.svg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 a {
