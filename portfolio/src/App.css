@@ -18,7 +18,7 @@ html::before {
   top: 0;
   left: 0;
   height: 100dvh;
-  z-index: 0;
+  z-index: 1;
   background-image: url(assets/backgroundV6.svg);
   background-size: cover;
   background-position: center;
