@@ -15,7 +15,8 @@ html::before {
   content: "";
   position: fixed;
   width: 100dvw;
-  height: 100dvh;
+  /* height: 100dvh; */
+  height: 100%;
   z-index: -1;
   /* background: linear-gradient(to bottom, #050505 46%, #253a59 100%);
   background-attachment: fixed; */
@@ -26,7 +27,7 @@ html::before {
 }
 html {
   min-height: 100%;
-  background-color: #253858;
+  /* background-color: #253858; */
   color-scheme: dark;
 }
 
