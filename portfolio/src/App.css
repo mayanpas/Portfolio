@@ -636,7 +636,7 @@ h2{
 /* AJUSTES PARA TABLETS E CELULARES */
 @media (max-width: 768px) {
   main {
-    padding: 2rem;
+    padding: 1.5rem;
     gap: 5rem;
     overflow-x: hidden;
   }
