@@ -37,7 +37,7 @@ function Habilidades() {
       <div className="" id="cardHabilidades" data-aos={isMobile ? "fade-up" : "fade-right"}>
         <div className="habMicroCards">
           <div className="microCard" id="habMicroCard">
-            <h3>Frontend</h3>
+            <h2>Frontend</h2>
             <div className="habButtons">
               <div className="habButton">
                 <img src={HTML5} alt="html5Icon" /> HTML
@@ -57,7 +57,7 @@ function Habilidades() {
             </div>
           </div>
           <div className="microCard" id="habMicroCard">
-            <h3>Backend</h3>
+            <h2>Backend</h2>
             <div className="habButtons">
               <div className="habButton">
                 <img src={Java} alt="javaIcon" /> Java
@@ -68,7 +68,7 @@ function Habilidades() {
             </div>
           </div>
           <div className="microCard" id="habMicroCard">
-            <h3>Ferramentas & Outros</h3>
+            <h2>Ferramentas & Outros</h2>
             <div className="habButtons">
               <div className="habButton">
                 <img src={Git} alt="giticon" /> Git
@@ -79,7 +79,7 @@ function Habilidades() {
             </div>
           </div>
           <div className="microCard" id="habMicroCard">
-            <h3>Design</h3>
+            <h2>Design</h2>
             <div className="habButtons">
               <div className="habButton">
                 <img src={Figma} alt="figmaIcon" />

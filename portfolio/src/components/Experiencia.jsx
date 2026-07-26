@@ -29,22 +29,22 @@ function Experiencia() {
       <div id="experiencia" data-aos="fade-up">
         <div className="microCard" id="expMicroCard">
           <img src={desktopTower} alt="desktopIcon" />
-          <h3>2+ Anos de experiência</h3>
+          <h2>2+ Anos de experiência</h2>
           <p>Como profissional de T.I.</p>
         </div>
         <div className="microCard" id="expMicroCard">
           <img src={code} alt="codeIcon" />
-          <h3>1 ano de experiência</h3>
+          <h2>1 ano de experiência</h2>
           <p>Em desenvolvimeto.</p>
         </div>
         <div className="microCard" id="expMicroCard">
           <img src={uiDesign} alt="squaresIcon" />
-          <h3>2+ Anos de experiência</h3>
+          <h2>2+ Anos de experiência</h2>
           <p>Em design de UI.</p>
         </div>
         <div className="microCard" id="expMicroCard">
           <img src={book} alt="bookIcon" />
-          <h3>Formação superior</h3>
+          <h2>Formação superior</h2>
           <p>5º período em Engenharia de Software na UNILESTE.</p>
         </div>
       </div>
