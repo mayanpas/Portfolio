@@ -110,14 +110,16 @@ html::before {
   pointer-events: none;
   opacity: 0.5;
   animation: fadeInBg 0.8s ease forwards;
-  transition: 0.5s ease;
+  /* transition: 0.5s ease; */
+  overflow: hidden;
+  overflow-x: hidden;
 }
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  transition: 1s ease;
+  /* transition: 1s ease; */
 }
 
 @keyframes fadeInBg {
@@ -165,8 +167,8 @@ a.desativado {
   opacity: 0.6; /* Deixa o link levemente transparente (opcional) */
 }
 /* CONFIGURAÇÃO GLOBAL DE TÍTULOS H2 */
-h2{
-  font-size:large;
+h2 {
+  font-size: large;
 }
 /* CONFIGURAÇÃO GLOBAL DOS CARDS E MICROCARDS */
 .superSection {
@@ -634,7 +636,12 @@ h2{
   }
 }
 /* AJUSTES PARA TABLETS E CELULARES */
-@media (max-width: 768px) {
+@media (orientation: landscape) and (max-height: 500px){
+  #prjMicrocards{
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
   main {
     padding: 1.5rem;
     gap: 5rem;
@@ -668,6 +675,9 @@ h2{
       font-size: 0.7rem;
       max-width: 80%;
     }
+  }
+  #sectionExperiencia{
+    align-items: flex-start;
   }
   #experienciaSuperTitle,
   #experienciaTitle,
@@ -703,7 +713,11 @@ h2{
   #habSuperTitle {
     line-height: normal;
   }
- #FraseFinalSuperTitle{
+  #contactMicroCard {
+    width: auto;
+    flex: auto;
+  }
+  #FraseFinalSuperTitle {
     align-items: center;
     justify-content: center;
     text-align: center;

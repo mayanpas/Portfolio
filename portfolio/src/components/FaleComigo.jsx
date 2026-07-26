@@ -23,7 +23,7 @@ function FaleComigo() {
         <div id="contactMicroCards">
           <a
             href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."
-            className="microCard"
+            className="microCard mail"
             id="contactMicroCard"
           >
             <img src={Email} alt="mailIcon" />
