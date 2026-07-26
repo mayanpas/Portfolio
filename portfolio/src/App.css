@@ -640,6 +640,9 @@ h2 {
   #prjMicrocards{
     flex-direction: column;
   }
+  /* body{
+    padding: 3rem;
+  } */
 }
 @media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
   main {
