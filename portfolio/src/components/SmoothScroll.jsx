@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import Lenis from 'lenis';
-import 'lenis/dist/lenis.css'; // Importa o CSS padrão do Lenis
+import { useEffect } from "react";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css"; // Importa o CSS padrão do Lenis
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
@@ -12,6 +12,13 @@ export default function SmoothScroll({ children }) {
       naiveDimensions: true,
       stopInertiaOnNavigate: true,
     });
+
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      lenis.scrollTo(0, { immediate: true });
+    };
+
+    requestAnimationFrame(resetScroll);
 
     return () => {
       lenis.destroy();

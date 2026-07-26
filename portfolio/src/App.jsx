@@ -10,6 +10,8 @@ import FaleComigo from "./components/FaleComigo";
 import Footer from "./components/Footer";
 import FooterShadow from "./components/FooterShadow";
 import Background from "./components/Background";
+import Experiencia from "./components/Experiencia";
+import FraseFinal from "./components/FraseFinal";
 import "./App.css";
 
 function App() {
@@ -21,9 +23,11 @@ function App() {
       <main>
         <Hero />
         <SobreMim />
+        <Experiencia />
         <Habilidades />
         <Projetos />
         <FaleComigo />
+        <FraseFinal />
       </main>
       <Footer />
     </SmoothScroll>

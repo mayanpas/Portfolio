@@ -3,23 +3,29 @@ import Instagram from "../assets/instagram.svg";
 import Linkedin from "../assets/linkedin.svg";
 import GitHub from "../assets/github.svg";
 import Localizacao from "../assets/localization.svg";
+import React from "react";
+import { useIsMobile } from "../hooks/useIsMobile"; // 1. Importa o hook
 
 function FaleComigo() {
+    const isMobile = useIsMobile(); // 2. Executa em 1 linha!
   return (
-    // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos
-    // Você pode adicionar um delay sequencial para cada card entrar um de cada vez
-    <section
-      className="card"
-      id="cardContato"
-      data-aos="fade-up"
-      data-aos-delay="40"
-    >
-      <h2 className="cardTitle">Fale comigo</h2>
-      <div id="firstContactContent">
+    <section className="superSection" id="sectionFaleComigo">
+      <div className="superTitleContainer" id="FaleComigoSuperTitle" data-aos={isMobile ? "fade-up" : "fade"}>
+        <h1 id="FaleComigoTitle">
+          <span>fale comigo</span>
+        </h1>
         <p>
+          {/* <strong>Engenheiro de Software & Técnico em T.I.</strong>
+          <br />
+          Desenvolvendo aplicações focadas na experiência do usuário.
+          <br /> */}
           Tem algum projeto em mente ou quer colaborar? Adoraria saber mais
           sobre você!
         </p>
+      </div>
+      {/* // AQUI ESTÁ O SEGREDO: Adicione o atributo data-aos // Você pode
+      adicionar um delay sequencial para cada card entrar um de cada vez */}
+      <div className="" id="cardContato" data-aos="fade-up">
         <div id="contactMicroCards">
           <a
             href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."

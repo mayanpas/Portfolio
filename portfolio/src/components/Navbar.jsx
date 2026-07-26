@@ -1,121 +1,104 @@
+import { useEffect, useState } from "react";
 import sobreMim from "../assets/Header/sobremim.svg";
 import habilidades from "../assets/Header/habilidades.svg";
 import projetos from "../assets/Header/projetos.svg";
 import faleComigo from "../assets/Header/falecomigo.svg";
-import { useState, useEffect, useRef } from 'react';
+import experiencia from "../assets/Header/experiencia.svg";
 
-export default function Navbar() {
-const [showNavbar, setShowNavbar] = useState(true);
-  
-  const isClickScrolling = useRef(false);
-  const targetScrollTop = useRef(0);
+function Navbar() {
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    // 1. Força o navegador a ir para o topo absoluto assim que carregar/recarregar
-    window.scrollTo(0, 0);
-    
-    let lastScrollTop = 0;
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
 
-    const handleScroll = () => {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (sections.length === 0) return;
 
-      if (isClickScrolling.current) {
-        if (Math.abs(currentScrollTop - targetScrollTop.current) < 15 || currentScrollTop >= maxScroll - 5) {
-          isClickScrolling.current = false;
+    const getActiveSection = () => {
+      const line = window.innerHeight * 0.35;
+
+      const active = sections.reduce((currentActive, section) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - line);
+
+        if (!currentActive || distance < currentActive.distance) {
+          return { id: section.id, distance };
         }
-        return; 
-      }
+        return currentActive;
+      }, null);
 
-      // Se chegou perto do final ou entrou no efeito de bounce da borda inferior, trava oculto
-      if (currentScrollTop >= maxScroll - 40) {
-        setShowNavbar(false);
-        lastScrollTop = currentScrollTop;
-        return;
+      if (active && active.id !== activeSection) {
+        setActiveSection(active.id);
       }
-
-      // Ignora pequenos ruídos de scroll no topo
-      if (currentScrollTop <= 50) {
-        setShowNavbar(true);
-        lastScrollTop = currentScrollTop;
-        return;
-      }
-
-      if (currentScrollTop > lastScrollTop) {
-        setShowNavbar(false); 
-      } else {
-        setShowNavbar(true);  
-      }
-
-      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => {
+      window.requestAnimationFrame(getActiveSection);
+    };
 
-  const handleNavLinkClick = (e, targetId) => {
-    e.preventDefault();
-    
-    const element = document.getElementById(targetId);
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      
-      targetScrollTop.current = Math.min(elementPosition - 80, maxScroll); 
-      isClickScrolling.current = true;
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
 
-      window.scrollTo({
-        top: targetScrollTop.current,
-        behavior: 'smooth'
-      });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [activeSection]);
 
-      setTimeout(() => {
-        if (targetScrollTop.current >= maxScroll - 10) {
-          setShowNavbar(false);
-        }
-      }, 1000);
-    }
-  };
+  const links = [
+    {
+      id: "sectionSobreMim",
+      label: "Sobre mim",
+      icon: sobreMim,
+      alt: "iconePessoa",
+    },
+    {
+      id: "sectionExperiencia",
+      label: "Experiência",
+      icon: experiencia,
+      alt: "iconeBalao",
+    },
+    {
+      id: "sectionHabilidades",
+      label: "Habilidades",
+      icon: habilidades,
+      alt: "iconeCodigo",
+    },
+    {
+      id: "sectionProjetos",
+      label: "Projetos",
+      icon: projetos,
+      alt: "iconeArquivos",
+    },
+    {
+      id: "sectionFaleComigo",
+      label: "Fale Comigo",
+      icon: faleComigo,
+      alt: "iconeBalao",
+    },
+  ];
+
   return (
-    <header
-      id="header"
-      className={`navbar ${showNavbar ? "visible" : "hidden"}`}
-    >
+    <header id="header">
       <nav id="headerLinks">
-        <a
-          href="#cardSobreMim"
-          className="headerLink"
-          onClick={(e) => handleNavLinkClick(e, "cardSobreMim")}
-        >
-          <img src={sobreMim} alt="iconePessoa" />
-          Sobre mim
-        </a>
-        <a
-          href="#cardHabilidades"
-          className="headerLink"
-          onClick={(e) => handleNavLinkClick(e, "cardHabilidades")}
-        >
-          <img src={habilidades} alt="iconeCodigo" />
-          Habilidades
-        </a>
-        <a
-          href="#cardProjetos"
-          className="headerLink"
-          onClick={(e) => handleNavLinkClick(e, "cardProjetos")}
-        >
-          <img src={projetos} alt="iconeArquivos" />
-          Projetos
-        </a>
-        <a
-          href="#cardContato"
-          className="headerLink"
-          onClick={(e) => handleNavLinkClick(e, "cardContato")}
-        >
-          <img src={faleComigo} alt="iconeBalao" />
-          Fale Comigo
-        </a>
+        {links.map((link) => {
+          const isActive = activeSection === link.id;
+
+          return (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={`headerLink${isActive ? " active" : ""}`}
+              aria-current={isActive ? "page" : undefined}
+            >
+              <img src={link.icon} alt={link.alt} />
+              {link.label}
+            </a>
+          );
+        })}
       </nav>
     </header>
   );
 }
+
+export default Navbar;
