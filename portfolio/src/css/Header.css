@@ -24,7 +24,7 @@ header {
   width: 100%;
   padding: 1rem 2rem;
   background-color: var(--headerBackground);
-  backdrop-filter: var(--blur);
+  /* backdrop-filter: var(--blur); */
   /* display: flex;
   justify-content: space-between;
   align-items: center;
