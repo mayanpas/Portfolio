@@ -10,14 +10,14 @@ function Contato() {
   return (
     <section id="contatoSection">
       <div className="sectionContent" id="contatoContent">
-        <div className="sectionText" id="contatoText" data-aos="fade">
+        <div className="sectionText" id="contatoText">
           <h2>Contato</h2>
           <p>
             <span>Estou disponível</span> para novas oportunidades e projetos freelances.
             Envie uma mensagem pelo e-mail ou me mande um oi nas redes sociais!
           </p>
         </div>
-        <div className="contatoButtons" data-aos="fade">
+        <div className="contatoButtons">
           <a
             href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."
             className="contatoButton"

@@ -31,14 +31,14 @@ function Home() {
         }
 
         // 2. Para as outras seções (sobre, projetos, contato, etc.)
-        // const element = document.querySelector(hash);
-        // if (element) {
-        //   element.scrollIntoView();
-        // }
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView();
+        }
       });
     } else {
       // Se não tiver hash na URL, garante que abre no topo
-      // window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     }
   }, [hash]);
 
