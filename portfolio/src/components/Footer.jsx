@@ -13,7 +13,6 @@ function Footer() {
       >
        <BiLogoGithub size={20}/> GitHub deste portfólio
       </a>
-      {/* <small id='react'>Feito com React</small> */}
     </footer>
   );
 }

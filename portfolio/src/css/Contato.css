@@ -9,6 +9,7 @@
   /* min-height: 100dvh; */
   padding: 10rem 0;
   box-sizing: border-box;
+  height: 110vh;
 }
 #contatoContent {
   display: flex;

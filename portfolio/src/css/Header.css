@@ -3,44 +3,26 @@
 /* CONFIGURAÇÃO DE CORES */
 :root {
   /* --headerBackground: linear-gradient(#fff, #ffffffbd 50%); */
-  --headerBackground: #ffffffbd;
+  --headerBackground: #ffffff;
 }
 
 [data-theme="dark"] {
   /* --headerBackground: linear-gradient(#0c0c0c, #0c0c0cbd 50%); */
-  --headerBackground: #0c0c0cbd;
+  --headerBackground: #0c0c0c;
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 150;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  width: 100%;
-  padding: 1rem 2rem;
-  background-color: var(--headerBackground);
-  backdrop-filter: blur(8px);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
-  /* backdrop-filter: var(--blur); */
-  /* display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: var(--headerBackground);
-  backdrop-filter: var(--blur);
+  /* backdrop-filter: var(--blur); */
   position: fixed;
   top: 0;
   width: 100%;
   box-shadow: var(--shadow);
-  z-index: 150; */
-  /* transition: var(--transition); */
+  z-index: 150;
 }
 
 /* LOGO */
