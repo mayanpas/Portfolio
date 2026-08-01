@@ -9,7 +9,7 @@
   --textColor: #111;
   --subTextColor: #333;
   --button1IconColor: #fff;
-  /* --transition: 0.5s ease; */
+  --transition: 0.5s ease;
   --blur: blur(8px);
   --shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.08);
   --photoShadow: 0px 4px 50px 0px #3f95ffbb;
@@ -67,15 +67,11 @@ html::before {
 html {
   background-color: var(--HTMLBackgroundColor) !important;
   color-scheme: var(--HTMLColorScheme);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 main {
-  padding: 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  padding: 0 10rem;
 }
 header {
   padding: 1rem 10rem;
@@ -154,14 +150,12 @@ a {
 @media (max-width: 768px) {
   main {
     padding: 0 1.5rem;
-    padding-bottom: 6rem !important;
   }
   header {
     padding: 0.6rem 1.5rem;
   }
   footer {
     padding: 1.5rem;
-    padding-bottom: 6rem !important;
     gap: 1rem;
     a,
     p {
