@@ -2,7 +2,7 @@ import "../css/Hero.css";
 
 function Hero() {
   return (
-    <section id="heroSection" data-aos="fade-up">
+    <section id="heroSection">
       <div className="sectionContent" id="heroContent">
         <h1>
           <span id="prazer">Prazer,</span>
