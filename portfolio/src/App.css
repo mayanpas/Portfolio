@@ -34,16 +34,7 @@
 
 /* CONFIGURAÇÕES GLOBAIS */
 /* 1. Garante que o layout flex funcione de cima a baixo */
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
-  background-color: var(--HTMLBackgroundColor);
-}
-.fade-in-page{
-  background-color: var(--HTMLBackgroundColor);
-}
+
 *,
 :after,
 :before {
