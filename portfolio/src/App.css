@@ -71,8 +71,10 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 main {
-  padding: 0 10rem;
+  padding: 10rem;
+  padding-top: 0;
   flex: 1;
+  padding-bottom: 6rem !important;
 }
 header {
   padding: 1rem 10rem;
