@@ -50,10 +50,10 @@ a {
 html::before {
   content: "";
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
@@ -145,22 +145,23 @@ a {
 /* APENAS PARA CELULARES */
 @media (max-width: 480px) {
   html::before {
-  background-image: var(--HTMLBackgroundImageMobile);
-}
+    background-image: var(--HTMLBackgroundImageMobile);
+  }
 }
 @media (max-width: 768px) {
   main {
     padding: 0 1.5rem;
   }
   header {
-    padding: .6rem 1.5rem;
+    padding: 0.6rem 1.5rem;
   }
   footer {
     padding: 1.5rem;
-     gap: 1rem;
-     a,p{
+    gap: 1rem;
+    a,
+    p {
       font-size: x-small;
-     }
+    }
   }
   section {
     min-height: 100dvh;
@@ -187,25 +188,25 @@ a {
     }
   }
 }
-@media (min-width: 480px) and (max-width: 768px){
-  main{
+@media (min-width: 480px) and (max-width: 768px) {
+  main {
     padding: 0 5rem;
   }
-  header{
+  header {
     padding: 1rem 5rem;
-    nav ul{
+    nav ul {
       gap: 1rem;
     }
   }
-  .headerRightGroup{
+  .headerRightGroup {
     gap: 1rem;
   }
 }
 /* TELAS DE LAPTOPS/MONITORES PEQUENOS */
 @media (min-width: 768px) and (max-width: 1024px) {
   .prjCards {
-  grid-template-columns: repeat(1, 1fr);
-}
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 /* AJUSTES PARA TABLETS E CELULARES */
 @media (orientation: landscape) and (max-height: 500px) {
