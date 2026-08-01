@@ -7,7 +7,7 @@
 }
 /* --- TEMA ESCURO --- */
 [data-theme="dark"] {
-  --footerBackground: #111111;
+  --footerBackground: #0c0c0c;
 }
 
 footer {
