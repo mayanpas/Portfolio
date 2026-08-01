@@ -20,7 +20,7 @@ function Root() {
 
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
       offset: 0,
       disableMutationObserver: true, // Evita re-calculos pesados de DOM no iOS
       throttleDelay: 99, // Suaviza o disparo de eventos de scroll

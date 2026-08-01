@@ -47,7 +47,7 @@ function Home() {
       <Hero />
       <Sobre />
       <Habilidades />
-      {/* <Projetos /> */}
+      <Projetos />
       <Contato />
     </div>
   );
