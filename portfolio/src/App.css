@@ -64,9 +64,10 @@ html::before {
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0.6;
 }
 html {
-  background-color: var(--HTMLBackgroundColor);
+  background-color: var(--HTMLBackgroundColor) !important;
   color-scheme: var(--HTMLColorScheme);
   /* overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
