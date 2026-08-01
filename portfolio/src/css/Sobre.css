@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 120dvh;
   padding-top: 0;
 }
 #sobrePhoto {

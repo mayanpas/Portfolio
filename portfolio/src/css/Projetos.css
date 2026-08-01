@@ -1,7 +1,8 @@
 @import "../App.css";
 
 #prjSection {
-  padding-top: 5rem;
+  padding-top: 4rem;
+  width: 100%;
 }
 .prjCards {
   display: grid;

@@ -73,7 +73,6 @@ html::before {
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
-  transition: var(--transition);
 }
 html {
   background-color: var(--HTMLBackgroundColor);
@@ -168,6 +167,10 @@ a {
   }
   footer {
     padding: 1.5rem;
+     gap: 1rem;
+     a,p{
+      font-size: x-small;
+     }
   }
   section {
     min-height: 100dvh;

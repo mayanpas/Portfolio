@@ -5,8 +5,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  height: 110dvh;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .sectionContent {
   display: flex;
@@ -43,9 +44,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: clamp(10rem, 22vw, 20rem);
+  width: clamp(10rem, 22vw, 17rem);
   max-width: 100%;
-  aspect-ratio: 9/16;
+  aspect-ratio: 9/15;
   border-radius: 1.5rem;
   outline: 0.2rem dashed var(--accentColor);
   outline-offset: 3px;
