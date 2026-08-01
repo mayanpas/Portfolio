@@ -1,4 +1,5 @@
-import GitHub from '../assets/github.svg';
+import "../css/Footer.css";
+import { BiLogoGithub } from "react-icons/bi";
 
 function Footer() {
   return (
@@ -10,8 +11,7 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={GitHub} alt="gitHubIcon" />
-        GitHub deste portfólio
+       <BiLogoGithub size={20}/> GitHub deste portfólio
       </a>
       {/* <small id='react'>Feito com React</small> */}
     </footer>

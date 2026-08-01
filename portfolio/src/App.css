@@ -1,88 +1,51 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
-
 /* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
 
 :root {
-  --HTMLBackgroundColor: #162133;
-  --textColor: #fff;
-  --subTextColor: #ffffffa9;
-  --textColorDark: #454545;
-  --shadowColorDark: #45454571;
-  --shadowColorLight: #97979736;
-  --borderColor: #69696971;
-  --borderColorActive: 1px solid #ffffff46;
-  --borderColorActiveBlue: 1px solid #87edff;
-  --headerColor: #2c2c2ca8;
-  --headerColorHover: #4b4b4bc0;
-  --buttonColor: #2222221f;
-  --fcButtonColor: #222222c0;
-  --buttonColorHover: #7a7a7a17;
-  --cardColor: #2222226e;
-  --microCardColor: #45454567;
-  --beforeHover: transform 0.2s ease;
-  --afterHover: scale(1.05);
-  --afterHoverLight: scale(1.015);
-  --blur: blur(8px);
-  --backgroundImage: url(assets/backgroundV10-1.svg);
-  --HTMLColorScheme: dark;
-  --superTitleGradient: linear-gradient(#ffffff 50%, #ffffff65 100%);
-  --githubButtonTextColor: #e2e8f0;
-  --profilePhotoGlow: 0 0 100px #0e2549;
-  --footerShadow: linear-gradient(#16213300, #162133);
-  --portGithub: #adb8f8;
-}
-/* --- TEMA CLARO --- */
-[data-theme="light"] {
-  --HTMLBackgroundColor: #b2cff8;
-  --textColor: #1a1d20;
-  --subTextColor: #5c6470;
-  --textColorDark: #e2e8f0;
-  --shadowColorDark: #0000001a;
-  --shadowColorLight: #ffffff80;
-  --borderColor: #d0d7de71;
-  --borderColorActive: 1px solid #00000020;
-  --borderColorActiveBlue: 1px solid #007acc;
-  --headerColor: #ffffffc4;
-  --headerColorHover: #f0f3f6e6;
-  --buttonColor: #2222221f;
-  --fcButtonColor: #222222c0;
-  --buttonColorHover: #7a7a7a17;
-  --cardColor: #ffffffa6;
-  --microCardColor: #e8ecef80;
-  --beforeHover: transform 0.2s ease;
-  --afterHover: scale(1.05);
-  --afterHoverLight: scale(1.015);
-  --blur: blur(8px);
-  --backgroundImage: url(assets/backgroundV10-1Light.svg);
+  --accentColor: #3f96ff;
+  --HTMLBackgroundColor: #ffffff;
+  --HTMLBackgroundImage: url(assets/Backgrounds/light.jpg);
+  --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/light.jpg);
   --HTMLColorScheme: light;
-  --superTitleGradient: linear-gradient(
-    180deg,
-    #18191c 50%,
-    rgba(24, 25, 28, 0.75) 100%
-  );
-  --githubButtonTextColor: #e2e8f0;
-  --profilePhotoGlow: 0 0px 100px #95c2fd;
-  --footerShadow: linear-gradient(#b2cff800, #b2cff8);
-  --portGithub: #006eff;
+  --textColor: #111;
+  --subTextColor: #333;
+  --button1IconColor: #fff;
+  --transition: 0.5s ease;
+  --blur: blur(8px);
+  --shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --photoShadow: 0px 4px 50px 0px #3f95ffbb;
+  --borderRadius: 1rem;
+  --cardBackgroundColor: #ffffffbb;
+  --blackWhite: #000;
 }
-
-/* Ícones no modo claro */
-[data-theme="light"] #header a img,
-[data-theme="light"] .heroButtonContainer img,
-[data-theme="light"] .heroButtonContainer svg,
-[data-theme="light"] #portGithub img {
-  filter: brightness(0) saturate(100%) invert(20%) contrast(130%);
-}
-
-[data-theme="light"] #header a:hover img,
-[data-theme="light"] #header .headerLink.active img,
-[data-theme="light"] .heroButtonContainer:hover img,
-[data-theme="light"] .heroButtonContainer:hover svg {
-  filter: brightness(0) saturate(100%) invert(35%) sepia(70%) saturate(800%)
-    hue-rotate(175deg) brightness(105%) contrast(110%);
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] {
+  --accentColor: #8dc1ff;
+  --HTMLBackgroundColor: #111111;
+  --HTMLBackgroundImage: url(assets/Backgrounds/dark.jpg);
+  --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/dark.jpg);
+  --HTMLColorScheme: dark;
+  --textColor: #fff;
+  --subTextColor: #c2c2c2;
+  --button1IconColor: #111;
+  --photoShadow: 0px 4px 50px 0px #8dc0ff6b;
+  --cardBackgroundColor: #111111bb;
+  --blackWhite: #fff;
 }
 
 /* CONFIGURAÇÕES GLOBAIS */
+/* Animação de entrada suave quando a página carrega */
+.page-enter {
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--transition);
+}
+
+/* Animação de saída ao clicar em Voltar */
+.page-exit {
+  opacity: 0;
+  transform: translatex(20px);
+  transition: var(--transition);
+}
 
 *,
 :after,
@@ -90,736 +53,188 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Google Sans", sans-serif;
+  font-family: "Cal Sans", "Plus Jakarta Sans", sans-serif;
 }
 meta {
   display: none;
+}
+a {
+  transition: var(--transition);
 }
 /* CONTROLE DO BACKGROUND DO SITE */
 html::before {
   content: "";
   position: fixed;
-  width: 100dvw;
+  width: 100%;
   top: 0;
   left: 0;
   height: 100dvh;
   z-index: -1;
-  background-image: var(--backgroundImage);
+  background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
-  pointer-events: none;
-  opacity: 0.5;
-  animation: fadeInBg 0.8s ease forwards;
-  /* transition: 0.5s ease; */
-  overflow: hidden;
-  overflow-x: hidden;
+  transition: var(--transition);
 }
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
-  /* transition: 1s ease; */
 }
-
-@keyframes fadeInBg {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* Quando o AOS dispara a animação */
-[data-aos].aos-animate.bloquear-clique {
-  /* Executa uma "animação" de bloqueio do ponteiro com a mesma duração do AOS */
-  animation: travar-ponteiro 1s forwards;
-}
-
-@keyframes travar-ponteiro {
-  0% {
-    pointer-events: none; /* Desativa cliques */
-  }
-  99% {
-    pointer-events: none; /* Mantém desativado até o final */
-  }
-  100% {
-    pointer-events: auto; /* Libera o clique assim que termina */
-  }
-}
-/* CONTROLE DE LAYOUT */
 main {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 5rem;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 10rem;
 }
-/* CONFIGURAÇÃO GLOBAL DE LINKS A */
+header {
+  padding: 1rem 10rem;
+}
+footer {
+  padding: 2rem 10rem;
+}
+section {
+  min-height: 100dvh;
+  width: 100%;
+  .sectionText {
+    line-height: 3;
+    color: var(--textColor);
+    h2 {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+    p {
+      line-height: normal;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: large;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: 0;
+      span {
+        color: var(--accentColor);
+      }
+    }
+  }
+}
 a {
   text-decoration: none;
-  color: var(--textColor);
 }
-a.desativado {
-  pointer-events: none; /* Impede qualquer clique ou interação */
-  cursor: default; /* Mantém o cursor do mouse normal */
-  opacity: 0.6; /* Deixa o link levemente transparente (opcional) */
-}
-/* CONFIGURAÇÃO GLOBAL DE TÍTULOS H2 */
-h2 {
-  font-size: large;
-}
-/* CONFIGURAÇÃO GLOBAL DOS CARDS E MICROCARDS */
-.superSection {
+.button1 {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  min-height: 100dvh;
-}
-.superTitleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  h1 {
-    font-size: clamp(1.3rem, 10vw, 4rem);
-    line-height: 1;
-    color: var(--textColor);
-    font-weight: lighter;
-    background: var(--superTitleGradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  span {
-    text-transform: uppercase;
-    font-size: clamp(2.7rem, 10vw, 6rem);
-    font-weight: bold;
-    display: inline-block;
-  }
-  p {
-    color: var(--subTextColor);
-    strong {
-      color: var(--textColor);
-    }
-  }
-}
-.card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  background: var(--cardColor);
-  color: white;
-  padding: 2rem;
-  border-radius: 3rem;
-}
-.cardTitle {
-  font-size: clamp(1rem, 10vw, 3rem);
-  flex-basis: 100%;
-}
-.microCard {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  background-color: var(--microCardColor);
-  padding: 1.5rem;
-  border-radius: 2rem;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-/* CONTEÚDO DA PÁGINA (COMPONENTES) */
-
-/* NAVBAR.JSX */
-
-#header {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 150;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  padding: 1rem 2rem;
-  margin: 0.8rem;
-  margin-top: 0;
-  border-radius: 2rem;
-  background-color: var(--headerColor);
-  backdrop-filter: var(--blur);
-  border: 1px solid var(--borderColor);
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    background-color 0.2s ease;
-}
-#headerLinks {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-#header a {
-  font-size: clamp(0.001rem, 4vw, 0.7rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--textColor);
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-#header a img {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
-}
-#header .headerLink.active {
-  color: #3ba0ff;
-  transform: translateY(-2px);
-}
-#header .headerLink.active img {
-  filter: brightness(0) saturate(100%) invert(50%) sepia(34%) saturate(1000%)
-    hue-rotate(170deg) brightness(106%) contrast(104%);
-}
-
-/* HERO.JSX */
-
-#hero {
-  align-self: start;
-  display: flex;
-  align-items: center;
-  /* margin-top: 12rem; */
-  justify-content: space-between;
-  gap: 2rem;
-  min-height: 100vh;
-  width: 100%;
-}
-/* hero - botoes */
-.heroButtons {
-  display: flex;
-  gap: clamp(0.5rem, 1vw, 1rem);
-  a {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    padding: 0.6rem 1rem;
-  }
-}
-.heroButtonContainer {
-  background-color: var(--cardColor);
-  display: flex;
-  border-radius: 1rem;
-  img {
-    width: 0.8rem;
-  }
-  transition: 0.5s ease;
-}
-#theme,
-#curriculo {
-  cursor: pointer;
-}
-/* Foto de perfil */
-.profilePhoto {
-  width: clamp(9rem, 20vw, 20rem);
-  height: clamp(9rem, 20vw, 20rem);
-  background-image: url(assets/perfil.jpeg);
-  background-size: cover;
-  border-radius: clamp(10.5rem, 5vw, 2rem);
-  box-shadow: var(--profilePhotoGlow);
-  transition: 1s ease;
-  flex-shrink: 0;
-}
-
-/* main - Cards */
-.card,
-.microCard,
-.heroButtonContainer,
-.habButton,
-.prjToolButton {
-  border: 1px solid var(--borderColor);
-}
-#header a,
-.heroButtonContainer,
-.microCard,
-.habButton,
-.prjToolButton,
-.prjImage {
-  transition: var(--beforeHover);
-}
-
-/* card - sobre mim */
-#cardSobreMim {
-  gap: 1rem;
-  width: 60%;
-}
-#sobreContent {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-/* txt sobremim */
-#txtSobreMim1 {
-  strong {
-    font-size: xx-large;
-  }
-}
-#txtSobreMim2 {
-  margin-bottom: 1rem;
-}
-#lista {
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-weight: bold;
-  li {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    svg {
-      flex-shrink: 0;
-    }
-  }
-}
-
-/* card - experiencia */
-#sectionExperiencia {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#experienciaSuperTitle {
-  align-items: center;
-  line-height: 0;
-}
-#experienciaTitle {
-  text-align: center;
-  line-height: 1.1;
-}
-#experiencia {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-#expMicroCard img {
-  width: clamp(0.5rem, 10vw, 2rem);
-}
-
-/* card - Habilidades */
-#sectionHabilidades {
-  flex-direction: row-reverse;
-}
-#habSuperTitle {
-  line-height: 0.5;
-}
-#habTitle {
-  text-align: left;
-}
-.habMicroCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-}
-#habMicroCard {
-  h2 {
-    font-weight: normal;
-    font-size: medium;
-  }
-  gap: 1rem;
-}
-.habButtons {
-  display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
-  max-width: 100%;
-}
-.habButton,
-.prjToolButton {
-  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
   text-decoration: none;
-  background-color: var(--buttonColorHover);
-  color: var(--textColor);
-  border-radius: 0.7rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  max-width: 100%;
+  width: fit-content;
   border: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: medium;
+  color: var(--button1IconColor);
+  background-color: var(--accentColor);
+  cursor: pointer;
+  transition: var(--transition);
 }
-.habButton img,
-.prjToolButton img {
-  max-width: 1rem;
-}
-
-/* card - Projetos */
-#sectionProjetos {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-#prjMicrocards {
+.habButton {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.prjImage {
-  width: 100%;
-  height: 12rem;
-  border-radius: 1rem;
-  object-fit: cover; /* Garante que ela preencha o espaço */
-  object-position: top; /* FORÇA o alinhamento pelo topo */
-}
-#prjMicrocard {
-  flex: 1;
-  justify-content: space-between;
-}
-.prjContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  .prjText {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    p {
-      color: var(--textColor);
-    }
-  }
-  .prjHabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    .prjHabButton {
-      background-color: var(--borderColor);
-      border-radius: 0.3rem;
-      padding: 0.2rem 0.5rem;
-      font-size: 0.8rem;
-    }
-  }
-}
-
-.prjButtons {
-  display: flex;
-  gap: 0.5rem;
-  border-top: 1px solid var(--borderColor);
-  padding-top: 1rem;
-  .prjButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid var(--borderColor);
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.7rem;
-    font-size: 0.8rem;
-    img {
-      width: 1rem;
-    }
-    transition: var(--beforeHover);
-  }
-}
-#github {
-  background-color: #000;
-  color: var(--githubButtonTextColor);
-}
-#saibaMais {
-  background-color: var(--buttonColor);
-}
-
-/* card - contato */
-#sectionFaleComigo {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#FaleComigoSuperTitle {
-  text-align: center;
-}
-#contactMicroCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contactMicroCardText {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  p {
-    font-size: 0.8rem;
-    color: var(--textColor);
-  }
-}
-#contactMicroCard {
-  gap: 0.7rem;
-  padding: 0.9rem 1.5rem;
-  border-radius: 1.5rem;
-}
-#contactMicroCard img {
-  width: clamp(1rem, 10vw, 1.7rem);
-}
-
-/* frase final */
-#sectionFraseFinal {
-  border-bottom: 1px solid var(--borderColor);
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-#FraseFinalTitle {
+  gap: 0.3rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
   color: var(--textColor);
-  text-align: center;
-}
-
-/* footer */
-#footer {
-  position: relative;
-  /* background: var(--footerShadow); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 5rem 7rem 5rem;
-  color: var(--textColor);
-  bottom: 0;
-}
-#portGithub {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.8;
   img {
     width: 0.8rem;
   }
-  transition: 0.2s ease;
+  font-size: small;
+  transition: var(--transition);
 }
-#react {
-  opacity: 0.8;
+.habButtonsCollection {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 0;
 }
 
 /* Responsividade */
 /* APENAS PARA CELULARES */
-@media (min-width: 480px) {
-  #profilePhoto2 {
-    display: none;
+@media (max-width: 480px) {
+  html::before {
+  background-image: var(--HTMLBackgroundImageMobile);
+}
+}
+@media (max-width: 768px) {
+  main {
+    padding: 0 1.5rem;
+  }
+  header {
+    padding: .6rem 1.5rem;
+  }
+  footer {
+    padding: 1.5rem;
+  }
+  section {
+    min-height: 100dvh;
+    /* padding: 7rem; */
+    width: 100%;
+    .sectionText {
+      line-height: 2.5;
+      color: var(--textColor);
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+      p {
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: medium;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: 0;
+        span {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}
+@media (min-width: 480px) and (max-width: 768px){
+  main{
+    padding: 0 5rem;
+  }
+  header{
+    padding: 1rem 5rem;
+    nav ul{
+      gap: 1rem;
+    }
+  }
+  .headerRightGroup{
+    gap: 1rem;
   }
 }
 /* TELAS DE LAPTOPS/MONITORES PEQUENOS */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .superTitleContainer {
-    text-align: left;
-    gap: 0.5rem;
-    h1 {
-      font-size: 2rem;
-    }
-    span {
-      font-size: 4rem;
-    }
-    p {
-      font-size: 0.7rem;
-      max-width: 80%;
-    }
-  }
-  #habSuperTitle {
-    line-height: normal;
-  }
+  .prjCards {
+  grid-template-columns: repeat(1, 1fr);
+}
 }
 /* AJUSTES PARA TABLETS E CELULARES */
-@media (orientation: landscape) and (max-height: 500px){
-  #prjMicrocards{
-    flex-direction: column;
-  }
-  body{
-    padding: 3rem;
-  }
+@media (orientation: landscape) and (max-height: 500px) {
 }
 @media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
-  main {
-    padding: 1.5rem;
-    gap: 5rem;
-    overflow-x: hidden;
-  }
-  /* #hero{
-    margin-top: 18rem;
-  } */
-  .STPhoto {
-    display: flex;
-    align-items: center;
-  }
-  #header {
-    padding: 0.8rem 1.3rem;
-    border-radius: 1.8rem;
-  }
-  #headerLinks {
-    gap: 1.2rem;
-    a {
-      font-size: 0.6rem;
-      gap: 0.4rem;
-      img {
-        width: 1.5rem;
-      }
-    }
-  }
-  .superTitleContainer {
-    text-align: left;
-    gap: 0.5rem;
-    p {
-      font-size: 0.7rem;
-      max-width: 80%;
-    }
-  }
-  #sectionExperiencia{
-    align-items: flex-start;
-  }
-  #experienciaSuperTitle,
-  #experienciaTitle,
-  #FaleComigoSuperTitle {
-    text-align: left;
-    align-items: flex-start;
-  }
-  .superSection {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .microCard {
-    width: 100%;
-  }
-  #cardSobreMim {
-    width: 100%;
-    strong {
-      font-size: 1.5rem;
-    }
-    svg {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-  #experiencia {
-    flex-wrap: wrap;
-  }
-  #sectionHabilidades {
-    flex-direction: column;
-    justify-content: center;
-  }
-  #habSuperTitle {
-    line-height: normal;
-  }
-  #contactMicroCard {
-    width: auto;
-    flex: auto;
-  }
-  #FraseFinalSuperTitle {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-}
-/* AJUSTES PARA TELAS QUE NÃO FOREM CELULARES */
-@media (max-width: 480px) {
-  #profilePhoto1 {
-    display: none;
-  }
 }
 
 /* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
 @media (hover: hover) {
-  #header:hover {
-    transform: var(--afterHover);
-    background-color: var(--headerColorHover);
-    border: var(--borderColorActive);
+  .button1:hover {
+    background-color: var(--textColor);
+    color: var(--button1IconColor);
   }
-  .headerLink:hover {
-    img {
-      transform: scale(1.2);
-      filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
-        saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
-    }
-  }
-  #header a:hover {
-    color: #3ba0ff;
-    transform: translateY(-2px);
-  }
-  .heroButtonContainer:hover {
-    transform: var(--afterHoverLight);
-    background-color: var(--buttonColorHover);
-    border: var(--borderColorActive);
-  }
-  .heroButtonContainer:hover img,
-  .heroButtonContainer:hover svg {
-    filter: brightness(0) saturate(100%) invert(35%) sepia(70%) saturate(800%)
-      hue-rotate(175deg) brightness(105%) contrast(110%);
-  }
-  .profilePhoto:hover {
-    transform: var(--afterHover);
-    box-shadow: 0 0 100px #293a58;
-  }
-  #expMicroCard:hover {
-    transform: scale(1.01);
-    background-color: var(--shadowColorLight);
-    border: var(--borderColorActive);
-  }
-  .habButton:hover,
-  .prjButton:hover {
-    background-color: var(--shadowColorLight);
-    transform: var(--afterHover);
-    border: var(--borderColorActive);
-  }
-  #prjMicrocard:hover,
-  #contactMicroCard:hover {
-    transform: var(--afterHoverLight);
-    background-color: var(--shadowColorLight);
-    border: var(--borderColorActive);
-  }
-  #portGithub:hover {
-    color: var(--portGithub);
+  .button1:active {
+    transform: scale(0.98);
+    opacity: 0.8;
   }
 }
 
 /* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
 @media (pointer: coarse) {
-  #header:active {
-    transform: var(--afterHover);
-    background-color: var(--headerColorHover);
-    border: var(--borderColorActive);
-  }
-  .headerLink:active {
-    img {
-      transform: scale(1.2);
-      filter: brightness(0) saturate(100%) invert(50%) sepia(34%)
-        saturate(1000%) hue-rotate(170deg) brightness(106%) contrast(104%);
-    }
-  }
-  #header a:active {
-    color: #3ba0ff;
-    transform: translateY(-2px);
-  }
-  .heroButtonContainer:active {
-    transform: var(--afterHoverLight);
-    background-color: var(--shadowColorLight);
-  }
-  #expMicroCard:active {
-    transform: scale(1.01);
-    background-color: var(--shadowColorLight);
-  }
-  .habButton,
-  .prjToolButton {
-    pointer-events: none;
-  }
-  #prjMicrocard:active,
-  #contactMicroCard:active {
-    transform: var(--afterHoverLight);
-    background-color: var(--shadowColorLight);
+  .button1:active {
+    transform: scale(0.98);
   }
 }

@@ -1,0 +1,68 @@
+@import "../App.css";
+
+#contatoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#contatoContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100%;
+}
+#contatoText {
+  h2 {
+    line-height: 2;
+  }
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.contatoButtons {
+  display: flex;
+  gap: 1rem;
+}
+.contatoButton {
+  display: flex;
+  border: 3px solid var(--accentColor);
+  border-radius: 10rem;
+  padding: 0.5rem;
+  font-size: xx-large;
+  color: var(--accentColor);
+}
+.contatoButton:hover {
+  color: var(--textColor);
+  border-color: var(--textColor);
+}
+.contatoButton:active {
+  transform: scale(0.98);
+  opacity: 0.5;
+}
+/* RESPONSIVIDADE */
+/* APENAS PARA CELULARES */
+@media (max-width: 480px) {
+  #contatoContent {
+    gap: 0;
+  }
+  .contatoButton {
+    border: 2px solid var(--accentColor);
+    font-size: x-large;
+  }
+  #contatoText {
+    h2 {
+      line-height: 2;
+    }
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

@@ -1,0 +1,93 @@
+@import "../App.css";
+
+#heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+.sectionContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  h1 {
+    line-height: 0.95;
+    color: var(--textColor);
+    font-weight: 500;
+  }
+}
+#prazer {
+  color: var(--accentColor);
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+#mayan {
+  text-transform: uppercase;
+  font-size: 8rem;
+}
+#patrick {
+  text-transform: uppercase;
+  font-size: 7.1rem;
+}
+#subtitulo {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  opacity: 0.7;
+}
+#heroPhoto {
+  background-image: url(../assets/FotosPerfil/perfil1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: clamp(10rem, 22vw, 20rem);
+  max-width: 100%;
+  aspect-ratio: 9/16;
+  border-radius: 1.5rem;
+  outline: 0.2rem dashed var(--accentColor);
+  outline-offset: 3px;
+  box-shadow: var(--photoShadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+#heroPhoto:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+/* RESPONSIVIDADE */
+/* APENAS PARA CELULARES */
+@media (max-width: 768px) {
+  #heroSection {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #heroContent {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    h1 {
+      line-height: 0.85;
+    }
+  }
+  #prazer {
+    font-size: 2rem;
+  }
+  #mayan {
+    font-size: 5rem;
+  }
+  #patrick {
+    font-size: 4.5rem;
+  }
+  #subtitulo {
+    font-size: 1rem;
+  }
+  #heroPhoto {
+    width: 10rem;
+    border-radius: 1rem;
+  }
+}

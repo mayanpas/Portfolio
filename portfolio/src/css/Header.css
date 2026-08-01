@@ -1,0 +1,175 @@
+@import "../App.css";
+
+/* CONFIGURAÇÃO DE CORES */
+:root {
+  --headerBackground: linear-gradient(#fff, #ffffffbd 50%);
+}
+
+[data-theme="dark"] {
+  --headerBackground: linear-gradient(#111, #111111bd 50%);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--headerBackground);
+  backdrop-filter: var(--blur);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+/* LOGO */
+#headerLogo {
+  text-decoration: none;
+  color: var(--accentColor);
+  font-family: "Cal Sans", sans-serif;
+  font-size: 1.5rem;
+  z-index: 1001; /* Fica acima do menu retrátil */
+}
+
+#headerLogo:hover {
+  color: var(--textColor);
+}
+
+/* NAVEGAÇÃO DESKTOP */
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  color: var(--textColor);
+  font-size: 1rem;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Bolinha / Traço do Scrollspy (Desktop) */
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 1rem;
+  height: 0.23rem;
+  background-color: var(--accentColor);
+  border-radius: 1rem;
+  opacity: 0.3;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+header nav ul li a.active::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+header nav ul li a.active {
+  font-weight: bold;
+  color: var(--blackWhite);
+}
+
+/* AÇÕES DO HEADER (Ajusta desktop e mobile) */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1001; /* Fica acima do menu retrátil no mobile */
+}
+
+.mobileMenuToggle {
+  display: none; /* Escondido no Desktop */
+  background: transparent;
+  border: none;
+  color: var(--textColor);
+  cursor: pointer;
+  padding: 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================================================
+   📱 RESPONSIVIDADE MOBILE (Menor ou igual a 768px)
+   =================================================== */
+@media (max-width: 480px) {
+  .mobileMenuToggle {
+    display: flex; /* Exibe o botão hambúrguer no mobile */
+  }
+
+  /* Painel Overlay (Estilo Apple) */
+  #headerNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--HTMLBackgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 3rem;
+    z-index: 1000;
+
+    /* Animação de entrada / saída */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity .3s ease,
+                transform .5s ease,
+                visibility 0.3s;
+  }
+
+  /* Quando o menu está aberto */
+  #headerNav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Garante que os itens voltem a aparecer no mobile */
+  #headerNav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8rem;
+    width: 100%;
+  }
+
+  #headerNav ul li {
+    display: block; /* Garante visibilidade sobrepondo estilos antigos */
+  }
+
+  #headerNav ul li a {
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    color: var(--textColor);
+    text-decoration: none;
+  }
+
+  /* Oculta o indicador de aba ativa em telas pequenas para manter o visual limpo */
+  #headerNav ul li a::after {
+    display: none;
+  }
+}
+
+/* Agrupa nav e botões no lado direito em telas desktop */
+.headerRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}

@@ -1,0 +1,124 @@
+@import "../App.css";
+
+#prjDetailsSection {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+#prjDetailContent {
+  flex-direction: column;
+  text-align: center;
+  h2 {
+    text-transform: capitalize;
+    justify-self: center;
+    line-height: 2;
+  }
+  p {
+    width: 50%;
+    justify-self: center;
+  }
+  .backButton {
+    align-self: flex-start;
+    a {
+      background-color: transparent;
+      border: 2px solid var(--accentColor);
+      color: var(--accentColor);
+    }
+  }
+}
+.prjPhotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  .prjPhoto {
+    /* (100% / 3 colunas) menos o espaço dos gaps */
+    width: calc(33.333% - 0.4rem);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+habs {
+  display: flex;
+}
+.prjButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  a {
+    font-weight: 500;
+  }
+  #github {
+    background-color: var(--textColor);
+    border: 3px solid transparent;
+  }
+  #liveDemo {
+    background-color: transparent;
+    border: 3px solid var(--textColor);
+    color: var(--textColor);
+  }
+}
+a:hover {
+  opacity: 0.8;
+}
+@media (max-width: 480px) {
+  #prjDetailsSection {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+  #prjDetailContent {
+    p {
+      width: 100%;
+    }
+    .backButton {
+      a {
+        font-size: small;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+  .prjPhotos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    .prjPhoto {
+      /* (100% / 3 colunas) menos o espaço dos gaps */
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .habButtonsCollection {
+    flex-wrap: wrap;
+    padding: 0 0 0 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  #prjDetailsSection {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+  .prjPhotos {
+    .prjPhoto {
+      /* (100% / 3 colunas) menos o espaço dos gaps */
+      width: calc(50% - 0.4rem);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

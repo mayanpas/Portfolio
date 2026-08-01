@@ -1,0 +1,130 @@
+@import "../App.css";
+/* TEMA CLARO */
+:root {
+  --backgroundColor: #ffffffbb;
+  --habCardIconBackground: #dbecff;
+}
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] {
+  --backgroundColor: #111111bb;
+  --habCardIconBackground: #002a5d;
+}
+#habSection {
+  display: flex;
+  height: 110dvh;
+  align-items: center;
+  justify-content: center;
+}
+#habContent {
+  gap: 20%;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+#habText{
+  flex: 1;
+  max-width: 80%;
+}
+.habCardIcon {
+  background-color: var(--habCardIconBackground);
+  width: fit-content;
+  padding: 1rem;
+  display: flex;
+  color: var(--accentColor);
+  font-size: x-large;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+}
+.habCards {
+  text-align: start;
+  display: flex;
+  gap: 1rem;
+  width: auto;
+  .part2 {
+    padding-top: 1rem;
+  }
+  .habCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--backgroundColor);
+    padding: clamp(1rem, 2rem, 2rem);
+    border-radius: var(--borderRadius);
+    width: 15rem;
+    aspect-ratio: 1/1;
+    transition: var(--transition);
+    h3 {
+      font-weight: 500;
+      font-family: "Cal Sans", sans-serif;
+      color: var(--textColor);
+      text-transform: capitalize;
+    }
+  }
+  .habButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    .habButtonsCollection {
+      padding: 0;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.4rem;
+      .habButton {
+        line-height: 1.7;
+        color: var(--subTextColor);
+      }
+    }
+  }
+}
+#HB2,
+#HB4 {
+  margin-top: 1rem;
+}
+.part2 {
+  margin-top: 1rem;
+}
+.habCard:hover {
+  box-shadow: var(--shadow);
+  transform: scale(1.03);
+}
+/* RESPONSIVIDADE */
+/* APENAS PARA CELULARES */
+@media (max-width: 480px) {
+  #habSection {
+    text-align: center;
+  }
+  #habContent {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .habCardIcon {
+    padding: 0.5rem;
+    font-size: medium;
+  }
+  .habCards {
+    .habCard {
+      justify-content: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      width: 11rem;
+      aspect-ratio: 1/1;
+      h3 {
+        font-size: medium;
+        text-align: start;
+      }
+    }
+    .habButtons {
+      .habButtonsCollection {
+        .habButton {
+          line-height: 1.3;
+          font-size: 0.6rem;
+          img {
+            width: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}

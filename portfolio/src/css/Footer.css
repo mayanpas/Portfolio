@@ -1,0 +1,46 @@
+@import "../App.css";
+
+/* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
+/* TEMA ESCURO */
+:root {
+  --footerBackground: #ffffff;
+}
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] {
+  --footerBackground: #111111;
+}
+
+footer {
+  background-color: var(--footerBackground);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  transition: var(--transition);
+  p {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--textColor);
+  }
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    gap: 0.3rem;
+    color: var(--textColor);
+    font-size: 0.81rem;
+    img {
+      width: 1rem;
+    }
+  }
+}
+/* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
+@media (hover: hover) {
+  a:hover {
+    color: var(--accentColor);
+  }
+}
