@@ -2,11 +2,13 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  --headerBackground: linear-gradient(#fff, #ffffffbd 50%);
+  /* --headerBackground: linear-gradient(#fff, #ffffffbd 50%); */
+  --headerBackground: #ffffffbd;
 }
 
 [data-theme="dark"] {
-  --headerBackground: linear-gradient(#0c0c0c, #0c0c0cbd 50%);
+  /* --headerBackground: linear-gradient(#0c0c0c, #0c0c0cbd 50%); */
+  --headerBackground: #0c0c0cbd;
 }
 
 header {
@@ -21,7 +23,7 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 1000;
-  transition: var(--transition);
+  /* transition: var(--transition); */
 }
 
 /* LOGO */

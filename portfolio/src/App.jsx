@@ -79,6 +79,7 @@ function App() {
             <Route path="/projeto/:id" element={<DetalhesProjeto />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </SmoothScroll>
   );
