@@ -6,7 +6,7 @@
 }
 
 [data-theme="dark"] {
-  --headerBackground: linear-gradient(#111, #111111bd 50%);
+  --headerBackground: linear-gradient(#0c0c0c, #0c0c0cbd 50%);
 }
 
 header {

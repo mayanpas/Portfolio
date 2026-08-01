@@ -20,7 +20,7 @@
 /* --- TEMA ESCURO --- */
 [data-theme="dark"] {
   --accentColor: #8dc1ff;
-  --HTMLBackgroundColor: #111111;
+  --HTMLBackgroundColor: #0c0c0c;
   --HTMLBackgroundImage: url(assets/Backgrounds/dark.jpg);
   --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/dark.jpg);
   --HTMLColorScheme: dark;
@@ -33,17 +33,6 @@
 }
 
 /* CONFIGURAÇÕES GLOBAIS */
-
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Usa a altura total da tela */
-  min-height: 100dvh; /* Garante precisão em navegadores mobile (Safari/Chrome) */
-}
-
-main {
-  flex: 1; /* Empurra o footer para o final sempre que o conteúdo for menor que a tela */
-}
 
 *,
 :after,

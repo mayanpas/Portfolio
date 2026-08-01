@@ -49,6 +49,7 @@ function Home() {
       <Habilidades />
       <Projetos />
       <Contato />
+      <Footer />
     </div>
   );
 }
@@ -79,7 +80,6 @@ function App() {
             <Route path="/projeto/:id" element={<DetalhesProjeto />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </SmoothScroll>
   );
