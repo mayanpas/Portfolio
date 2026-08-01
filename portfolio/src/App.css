@@ -153,6 +153,7 @@ a {
 @media (max-width: 768px) {
   main {
     padding: 0 1.5rem;
+    padding-bottom: 6rem !important;
   }
   header {
     padding: 0.6rem 1.5rem;
