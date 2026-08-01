@@ -33,18 +33,16 @@
 }
 
 /* CONFIGURAÇÕES GLOBAIS */
-/* Animação de entrada suave quando a página carrega */
-.page-enter {
-  opacity: 1;
-  transform: translateY(0);
-  transition: var(--transition);
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Usa a altura total da tela */
+  min-height: 100dvh; /* Garante precisão em navegadores mobile (Safari/Chrome) */
 }
 
-/* Animação de saída ao clicar em Voltar */
-.page-exit {
-  opacity: 0;
-  transform: translatex(20px);
-  transition: var(--transition);
+main {
+  flex: 1; /* Empurra o footer para o final sempre que o conteúdo for menor que a tela */
 }
 
 *,
@@ -54,9 +52,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Cal Sans", "Plus Jakarta Sans", sans-serif;
-}
-meta {
-  display: none;
 }
 a {
   transition: var(--transition);

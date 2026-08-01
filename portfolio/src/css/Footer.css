@@ -11,8 +11,6 @@
 }
 
 footer {
-  position: relative;
-  bottom: 0;
   background-color: var(--footerBackground);
   width: 100%;
   display: flex;
