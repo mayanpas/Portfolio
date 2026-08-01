@@ -65,6 +65,10 @@ html::before {
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.6;
+  pointer-events: none;
+  animation: fadeInBg 0.8s ease forwards;
+  overflow: hidden;
+  overflow-x: hidden;
 }
 html {
   background-color: var(--HTMLBackgroundColor) !important;
