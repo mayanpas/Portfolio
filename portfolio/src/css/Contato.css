@@ -8,8 +8,7 @@
   width: 100%;
   /* min-height: 100dvh; */
   padding: 10rem 0;
-  box-sizing: border-box;
-  height: 110svh;
+  /* height: 110svh; */
 }
 #contatoContent {
   display: flex;
