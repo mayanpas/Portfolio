@@ -25,10 +25,9 @@ header {
   padding: 1rem 2rem;
   background-color: var(--headerBackground);
   backdrop-filter: blur(8px);
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    background-color 0.2s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
   /* backdrop-filter: var(--blur); */
   /* display: flex;
   justify-content: space-between;
