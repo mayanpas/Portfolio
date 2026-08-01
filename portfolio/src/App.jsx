@@ -69,7 +69,7 @@ function App() {
     <SmoothScroll>
       <LoadingScreen isLoading={isLoading} />
       <div className="App">
-        <Header />
+        
         <main>
           <Routes>
             {/* Rota principal (página única) */}
@@ -79,7 +79,7 @@ function App() {
             <Route path="/projeto/:id" element={<DetalhesProjeto />} />
           </Routes>
         </main>
-        <Footer />
+        
       </div>
     </SmoothScroll>
   );
