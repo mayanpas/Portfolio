@@ -12,7 +12,20 @@
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--headerBackground);
+  backdrop-filter: var(--blur);
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -22,7 +35,7 @@ header {
   top: 0;
   width: 100%;
   box-shadow: var(--shadow);
-  z-index: 1000;
+  z-index: 150; */
   /* transition: var(--transition); */
 }
 
@@ -67,7 +80,9 @@ header nav ul li a::after {
   border-radius: 1rem;
   opacity: 0.3;
   transform: scale(0);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s ease;
 }
 
 header nav ul li a.active::after {
@@ -122,13 +137,13 @@ header nav ul li a.active {
     padding: 0 3rem;
     z-index: 1000;
 
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(-50px);
-    transition: opacity .3s ease,
-                transform .5s ease,
-                visibility .5s;
+    transition:
+      opacity 0.3s ease,
+      transform 0.5s ease,
+      visibility 0.5s;
   }
 
   /* Quando o menu está aberto */
@@ -175,13 +190,13 @@ header nav ul li a.active {
 /* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
 @media (hover: hover) {
   #headerLogo:hover {
-  color: var(--textColor);
-}
+    color: var(--textColor);
+  }
 }
 
 /* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
 @media (pointer: coarse) {
   #headerLogo:active {
-  color: var(--textColor);
-}
+    color: var(--textColor);
+  }
 }
