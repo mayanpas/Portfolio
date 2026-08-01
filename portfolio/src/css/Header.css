@@ -108,7 +108,7 @@ header nav ul li a.active {
   }
 
   /* Painel Overlay (Estilo Apple) */
-  #headerNav {
+  /* #headerNav {
     position: fixed;
     top: 0;
     left: 0;
@@ -122,14 +122,14 @@ header nav ul li a.active {
     padding: 0 3rem;
     z-index: 1000;
 
-    /* Animação de entrada / saída */
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(-50px);
     transition: opacity .3s ease,
                 transform .5s ease,
                 visibility .5s;
-  }
+  } */
 
   /* Quando o menu está aberto */
   #headerNav.open {
