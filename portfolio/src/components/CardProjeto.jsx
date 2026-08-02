@@ -1,36 +1,44 @@
 import "../css/Projetos.css";
 import { Link } from "react-router-dom";
 
-import Button from "../components/Buttons/Button1";
-
 export default function CardProjeto({
   id,
   image,
   type,
   title,
   description,
-  delay,
+  delay = 0, // Valor default para evitar 'undefined' no AOS
 }) {
+  const handleScrollToTop = () => {
+    // Tratamento seguro para a instância do Lenis
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
-    <div className="cardProjeto" data-aos="fade-up" data-aos-delay={delay}>
+    <article className="cardProjeto" data-aos="fade-up" data-aos-delay={delay}>
       <div
         className="prjImage"
         style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <p className="type">{type}</p>
-      <h3>{title}</h3>
-      <p className="description">{description}</p>
-      {/* Redireciona para a nova rota dinamicamente */}
+        role="img"
+        aria-label={`Capa do projeto ${title}`}
+      />
+
+      <div className="cardProjetoContent">
+        <span className="type">{type}</span>
+        <h3>{title}</h3>
+        <p className="description">{description}</p>
+      </div>
       <Link
         to={`/projeto/${id}`}
         className="button1"
-        onClick={() => {
-          if (window.lenis) window.lenis.scrollTo(0, { immediate: true });
-          window.scrollTo(0, 0);
-        }}
+        onClick={handleScrollToTop}
       >
         Saiba Mais
       </Link>
-    </div>
+    </article>
   );
 }

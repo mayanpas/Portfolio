@@ -3,7 +3,7 @@ import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/700.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import SmoothScroll from "./components/SmoothScroll";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -13,7 +13,6 @@ import Projetos from "./components/Projetos";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 import DetalhesProjeto from "./components/DetalhesProjetos";
-import LoadingScreen from "./components/LoadingScreen";
 import "./App.css";
 
 function Home() {
@@ -42,19 +41,8 @@ function Home() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 250);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <SmoothScroll>
-      <LoadingScreen isLoading={isLoading} />
       <div className="App">
         <Header />
         <main>

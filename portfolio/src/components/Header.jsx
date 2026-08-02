@@ -2,7 +2,7 @@ import "../css/Header.css";
 import { useTheme } from "../hooks/useTheme";
 import { BiMoon, BiSun, BiMenu, BiX } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
-import Button from "../components/Buttons/Button2";
+import Button from "../components/Buttons/Button1";
 import { useState, useEffect } from "react";
 
 function Header() {
@@ -28,6 +28,7 @@ function Header() {
 
   // Observer do Scrollspy
   useEffect(() => {
+    // Se não estiver na Home, limpa a seção ativa
     if (location.pathname !== "/") {
       setActiveSection("");
       return;
@@ -53,7 +54,8 @@ function Header() {
 
     const handleScroll = () => {
       const isBottom =
-        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 50;
       if (isBottom) {
         setActiveSection("contatoSection");
       }
@@ -69,12 +71,12 @@ function Header() {
 
   return (
     <header className={menuOpen ? "menu-active" : ""}>
-      {/* 1. LOGO (Esquerda) */}
+      {/* 1. LOGO */}
       <Link to="/#heroSection" id="headerLogo" onClick={handleLinkClick}>
         mayanpas
       </Link>
 
-      {/* 2. CONJUNTO DE NAVEGAÇÃO E AÇÕES (Alinhados à Direita no Desktop) */}
+      {/* 2. NAVEGAÇÃO E AÇÕES DA DIREITA */}
       <div className="headerRightGroup">
         <nav id="headerNav" className={menuOpen ? "open" : ""}>
           <ul>
@@ -118,13 +120,15 @@ function Header() {
         </nav>
 
         <div className="headerActions">
-          {/* 💡 ÍCONE CORRIGIDO: Modo escuro mostra o Sol, Modo claro mostra a Lua */}
+          {/* Alternador de Tema */}
           <Button
             acao={toggleTheme}
             icon={theme === "dark" ? <BiSun size={20} /> : <BiMoon size={20} />}
             id="headerButton"
+            aria-label="Alternar tema"
           />
 
+          {/* Botão Hambúrguer Mobile */}
           <button
             className="mobileMenuToggle"
             onClick={() => setMenuOpen(!menuOpen)}

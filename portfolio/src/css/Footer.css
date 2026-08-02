@@ -1,51 +1,70 @@
 @import "../App.css";
 
-/* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
-/* TEMA ESCURO */
+/* CONFIGURAÇÃO DE CORES P/ TEMA CLARO E ESCURO */
 :root {
   --footerBackground: #ffffff;
- 
-    --footerBorder: #0c0c0c21;
+  --footerBorder: #0c0c0c21;
 }
+
 /* --- TEMA ESCURO --- */
 [data-theme="dark"] {
   --footerBackground: #0c0c0c;
- --footerBorder: #ffffff21;
+  --footerBorder: #ffffff21;
 }
 
 footer {
+  /* O background-color agora está ativo para cobrir elementos caso haja sobreposição */
   /* background-color: var(--footerBackground); */
   border-top: 1px solid var(--footerBorder);
   width: 100%;
+  padding: 1.5rem 2rem; /* Adicionado padding para respiro visual */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3rem;
+}
 
-  p {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-    color: var(--textColor);
-    transition: var(--transition);
-  }
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-    gap: 0.3rem;
-    color: var(--textColor);
-    font-size: 0.81rem;
-    img {
-      width: 1rem;
-    }
+footer p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--textColor);
+  transition: var(--transition);
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  color: var(--textColor);
+  font-size: 0.81rem;
+  transition: var(--transition);
+}
+
+/* Ajuste direto para o SVG do React Icons (removida a tag img) */
+footer a .footerIcon,
+footer a svg {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* O hover escopado APENAS para o footer, evitando quebrar links globais */
+@media (hover: hover) {
+  footer a:hover {
+    color: var(--accentColor);
   }
 }
-/* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
-@media (hover: hover) {
-  a:hover {
-    color: var(--accentColor);
+
+/* ===================================================
+   📱 RESPONSIVIDADE MOBILE (Menor ou igual a 480px)
+   =================================================== */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column; /* Empilha os itens no mobile */
+    gap: 0.8rem; /* Reduz o espaço entre eles */
+    padding: 1.5rem 1rem;
   }
 }

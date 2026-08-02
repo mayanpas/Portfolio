@@ -15,13 +15,14 @@ function Habilidades() {
             modernas e alta performance em todas as camadas do sistema.
           </p>
         </div>
+
         <div className="habCards" data-aos="fade-up">
           <div className="part1">
             <div className="habCard" id="HB1">
               <div className="habCardIcon">
                 <BiCodeBlock />
               </div>
-              <h3> 1. lingaugens</h3>
+              <h3>1. Linguagens</h3>
               <div className="habButtons">
                 <HabButtons
                   habs={["html5", "css3", "java", "javaScript", "sql"]}
@@ -33,18 +34,19 @@ function Habilidades() {
               <div className="habCardIcon">
                 <BiCoinStack />
               </div>
-              <h3>2. frameworks</h3>
+              <h3>2. Frameworks</h3>
               <div className="habButtons">
                 <HabButtons habs={["node", "react"]} />
               </div>
             </div>
           </div>
+
           <div className="part2">
             <div className="habCard" id="HB3">
               <div className="habCardIcon">
                 <BiHive />
               </div>
-              <h3>3. tecnologias</h3>
+              <h3>3. Tecnologias</h3>
               <div className="habButtons">
                 <HabButtons habs={["gitHub", "mySql"]} />
               </div>
@@ -54,7 +56,7 @@ function Habilidades() {
               <div className="habCardIcon">
                 <BiStar />
               </div>
-              <h3>4. outros</h3>
+              <h3>4. Outros</h3>
               <div className="habButtons">
                 <HabButtons habs={["figma"]} />
               </div>

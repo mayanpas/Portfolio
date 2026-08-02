@@ -1,9 +1,11 @@
 @import "../App.css";
+
 /* TEMA CLARO */
 :root {
   --backgroundColor: #ffffffbb;
 }
-/* --- TEMA ESCURO --- */
+
+/* TEMA ESCURO */
 [data-theme="dark"] {
   --backgroundColor: #111111bb;
 }
@@ -12,89 +14,99 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120dvh;
-  padding-top: 0;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 4rem 0;
 }
+
+#sobreContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 5rem);
+  background-color: var(--backgroundColor);
+  padding: clamp(2rem, 6vw, 6rem);
+  border-radius: var(--borderRadius);
+  transition: var(--transition);
+  width: 100%;
+}
+
 #sobrePhoto {
   background-image: url(../assets/FotosPerfil/perfil2.jpg);
   background-size: cover;
   background-position: top;
   border-radius: var(--borderRadius);
   box-shadow: var(--photoShadow);
-  width: clamp(10rem, 25%, 20rem);
-  aspect-ratio: 9/16;
-  /* flex-shrink: 0; */
+  width: clamp(12rem, 25%, 20rem);
+  aspect-ratio: 9 / 16;
   outline: 0.3rem dashed var(--accentColor);
   outline-offset: 3px;
   cursor: pointer;
   transition: var(--transition);
-  /* flex: 1; */
+  flex-shrink: 0; /* Impede a imagem de ser esmagada caso o texto cresça */
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 }
-#sobrePhoto:active {
-  transform: scale(0.98);
-  opacity: 0.9;
-}
-#sobreContent {
-  display: flex;
-  justify-content: space-between;
-  gap: 10%;
-  /* gap: 10rem; */
-  background-color: var(--backgroundColor);
-  /* padding: 8rem 10rem; */
-  padding: clamp(2rem, 10%, 10rem);
-  border-radius: var(--borderRadius);
-  transition: var(--transition);
-}
+
 #sobreText {
-  /* width: clamp(100%, 10vw, 50%); */
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
 #sobreButton {
-  padding: 0 2rem;
+  align-self: flex-start; /* Evita que o botão estique na largura do container */
+  padding: 0.4rem 1.5rem;
 }
+
 /* RESPONSIVIDADE */
-/* APENAS PARA CELULARES */
+
+/* Tablets e Celulares (Modo Retrato) */
 @media (max-width: 480px) {
-  #sobreSection {
-    text-align: center;
-  }
   #sobreContent {
     flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    padding-top: 3.5rem;
+    text-align: center;
     align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
   }
+
   #sobrePhoto {
-    width: 10rem;
-    height: 15rem;
+    width: clamp(10rem, 40vw, 14rem);
   }
-  .sectionText {
-    display: flex;
-    flex-direction: column;
+
+  #sobreText {
     align-items: center;
-    justify-content: center;
+  }
+
+  #sobreButton {
+    align-self: center;
   }
 }
-@media (max-height: 480px) {
+
+/* Dispositivos no Modo Landscape (Horizontal Curta) */
+@media (max-height: 480px) and (orientation: landscape) {
   #sobreSection {
-    /* text-align: center; */
+    min-height: auto;
   }
+
   #sobreContent {
-    /* flex-direction: column; */
-    /* gap: 1rem; */
-    padding: 2rem;
-    padding-top: 3.5rem;
-    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    /* padding: 1.5rem; */
   }
+  #sobreButton {
+    padding: 0.1rem 1.5rem;
+  }
+
   #sobrePhoto {
-    width: 10rem;
-    height: 15rem;
-  }
-  .sectionText {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
+    width: 8rem;
   }
 }

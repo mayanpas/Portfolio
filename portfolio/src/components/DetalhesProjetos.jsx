@@ -1,58 +1,55 @@
-import React from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { projetosData } from "../hooks/projetosData";
 import "../css/DetalhesProjetos.css";
 import HabButtons from "../components/HabButtons";
 import Button from "../components/Buttons/Button1";
 import { BiArrowBack, BiLogoGithub, BiExit } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 export default function DetalhesProjeto() {
-  const { id } = useParams(); // Pega o id/slug vindo da URL
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [isExiting, setIsExiting] = useState(false);
 
-  // 3. Encontra o objeto do projeto correspondente
   const projeto = projetosData.find((item) => item.id === id);
 
-  // Tratamento caso o id da URL não exista no array
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
         <h2>Projeto não encontrado</h2>
-        <Link to="/">
+        <Link to="/#prjSection">
           <Button icon={<BiArrowBack />} label="Voltar" />
         </Link>
       </section>
     );
   }
 
-  // Dentro do seu componente DetalhesProjetos:
-  const navigate = useNavigate();
-  const [isExiting, setIsExiting] = useState(false);
-
+  // Redireciona diretamente para a seção de projetos na Home (#prjSection)
   const handleGoBack = () => {
-    // 1. Ativa a classe de animação de saída
     setIsExiting(true);
-
-    // 2. Aguarda o tempo da animação (ex: 300ms) antes de mudar de rota
     setTimeout(() => {
-      navigate(-1);
+      navigate("/#prjSection");
     }, 300);
   };
 
   return (
     <section
       id="prjDetailsSection"
-      className={`project-detail-container ${isExiting ? "page-exit" : "page-enter"}`}
+      className={`project-detail-container ${
+        isExiting ? "page-exit" : "page-enter"
+      }`}
     >
       <div
         className="sectionContent"
         id="prjDetailContent"
         data-aos="fade-right"
       >
-        <Link to="/#prjSection" className="backButton">
-          <Button icon={<BiArrowBack />} label="Voltar" />
-        </Link>
+        <div className="backButton">
+          <Link to="/#prjSection" onClick={handleGoBack}>
+            <Button icon={<BiArrowBack />} label="Voltar" id="backButton"/>
+          </Link>
+        </div>
+
         <div className="sectionText" id="prjDetailText">
           <h2>{projeto.title}</h2>
           <p>{projeto.description}</p>
@@ -60,30 +57,39 @@ export default function DetalhesProjeto() {
             <HabButtons habs={projeto.habilities} />
           </div>
         </div>
-        <div className="prjHabs"></div>
-        <div className="prjPhotos">
-          {projeto.photos?.map((photo, index) => (
-            <div key={index} className="prjPhoto">
-              <img
-                src={photo}
-                alt={`Foto ${index + 1} do projeto ${projeto.title}`}
-              />
-            </div>
-          ))}
-        </div>
+
+        {projeto.photos && projeto.photos.length > 0 && (
+          <div className="prjPhotos">
+            {projeto.photos.map((photo, index) => (
+              <div key={index} className="prjPhoto">
+                <img
+                  src={photo}
+                  alt={`Foto ${index + 1} do projeto ${projeto.title}`}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="prjButtons" data-aos="fade">
-          <Button
-            acao={projeto.github}
-            icon={<BiLogoGithub size={20} />}
-            label="GitHub"
-            id="github"
-          />
-          <Button
-            acao={projeto.liveDemo}
-            icon={<BiExit size={20} />}
-            label="Live demo"
-            id="liveDemo"
-          />
+          {projeto.github && (
+            <a href={projeto.github} target="_blank" rel="noopener noreferrer">
+              <Button
+                icon={<BiLogoGithub size={20} />}
+                label="GitHub"
+                id="github"
+              />
+            </a>
+          )}
+          {projeto.liveDemo && (
+            <a href={projeto.liveDemo} target="_blank" rel="noopener noreferrer">
+              <Button
+                icon={<BiExit size={20} />}
+                label="Live Demo ->"
+                id="liveDemo"
+              />
+            </a>
+          )}
         </div>
       </div>
     </section>

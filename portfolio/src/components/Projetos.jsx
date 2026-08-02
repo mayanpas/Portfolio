@@ -1,6 +1,6 @@
 import "../css/Projetos.css";
 import PrjCard from "../components/CardProjeto";
-import { projetosData } from "../hooks/projetosData"; // Importa os dados aqui
+import { projetosData } from "../hooks/projetosData";
 
 function Projetos() {
   return (
@@ -13,20 +13,13 @@ function Projetos() {
             tecnologias e abordagens para a resolução de problemas.
           </p>
         </div>
+        
         <div className="prjCards">
           {projetosData.map((projeto, index) => (
             <PrjCard
-              key={index}
-              id={projeto.id}
-              image={projeto.image}
-              type={projeto.type}
-              title={projeto.title}
-              description={projeto.description}
-              habilities={projeto.habilities}
-              photos={projeto.photos}
-              github={projeto.github}
-              liveDemo={projeto.liveDemo}
-              delay={index * 100} // Card 0 = 0ms | Card 1 = 200ms | Card 2 = 400ms...
+              key={projeto.id || index} // Chave única e estável
+              {...projeto}              // Passa todas as propriedades limpamente
+              delay={index * 100}       // Incremental: 0ms, 100ms, 200ms...
             />
           ))}
         </div>

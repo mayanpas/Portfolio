@@ -4,16 +4,20 @@ function Hero() {
   return (
     <section id="heroSection">
       <div className="sectionContent" id="heroContent" data-aos="fade-up">
-        <h1>
-          <span id="prazer">Prazer,</span>
-          <br />
-          <span id="mayan">mayan</span>
-          <br />
-          <span id="patrick">patrick</span>
-          <br />
-          <span id="subtitulo">engenheiro de software</span>
-        </h1>
-        <div id="heroPhoto"></div>
+        <div className="heroText">
+          <span className="greeting">Prazer,</span>
+          <h1>
+            Mayan <br />
+            Patrick
+          </h1>
+          <p className="subtitle">Engenheiro de Software</p>
+        </div>
+
+        <div
+          id="heroPhoto"
+          role="img"
+          aria-label="Foto de Mayan Patrick"
+        />
       </div>
     </section>
   );

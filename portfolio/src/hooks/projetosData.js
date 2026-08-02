@@ -2,7 +2,6 @@
 import clinigest from "../assets/Projetos/clinigest.jpg";
 import bonbonetto from "../assets/Projetos/bonbonetto.jpg";
 import painelVendas from "../assets/Projetos/painelVendas.jpg";
-import HabButtons from "../components/HabButtons";
 
 // Carrega automaticamente todas as fotos da pasta Clinigest
 const clinigestPhotosObj = import.meta.glob("../assets/Projetos/Clinigest/*.{jpeg,jpg,png,svg}", {
@@ -15,16 +14,16 @@ const clinigestPhotos = Object.values(clinigestPhotosObj);
 
 export const projetosData = [
   {
-    id: "clinegest",
+    id: "clinigest", // Corrigido de "clinegest" para "clinigest"
     image: clinigest,
     type: "front-end / back-end",
-    title: "clinigest",
+    title: "Clinigest",
     description:
       "Sistema completo de uma clínica odontológica, promovendo uma gestão mais organizada de suas atividades.",
     habilities: ["html5", "css3", "javaScript", "react", "gitHub"],
-    photos: clinigestPhotos, // <--- Passa o Array de fotos aqui!
+    photos: clinigestPhotos,
     github: "https://github.com/mayanpas",
-    liveDemo: "",
+    liveDemo: "", // Cole aqui o link (ex: "https://clinigest.vercel.app") para o botão aparecer!
   },
   {
     id: "bonbonetto",
@@ -33,7 +32,7 @@ export const projetosData = [
     title: "Bonbonetto",
     description: "Vitrine e cardápio virtual de uma confeitaria fictícia.",
     habilities: ["html5", "css3", "javaScript", "gitHub"],
-    photos: null, // <--- Passa o Array de fotos aqui!
+    photos: null,
     github: "https://github.com/mayanpas",
     liveDemo: "",
   },
@@ -45,7 +44,7 @@ export const projetosData = [
     description:
       "Painel de vendas com dashboard de vendas mensais e atualização ao vivo de métricas.",
     habilities: ["html5", "css3", "javaScript", "gitHub"],
-    photos: null, // <--- Passa o Array de fotos aqui!
+    photos: null,
     github: "https://github.com/mayanpas",
     liveDemo: "",
   },

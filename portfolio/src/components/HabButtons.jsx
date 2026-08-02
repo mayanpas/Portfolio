@@ -1,35 +1,35 @@
-import HTML5 from "../assets/Habilidades/html5.svg";
-import CSS3 from "../assets/Habilidades/css3.svg";
-import JavaScript from "../assets/Habilidades/javaScript.svg";
-import NodeJS from "../assets/Habilidades/nodeJs.svg";
-import ReactJS from "../assets/Habilidades/react.svg";
-import Java from "../assets/Habilidades/java.svg";
-import MySQL from "../assets/Habilidades/mySqlBlue.svg";
-import Git from "../assets/Habilidades/git.svg";
-import GitHub from "../assets/Habilidades/github.svg";
-import Figma from "../assets/Habilidades/figma.svg";
-import Vite from "../assets/Habilidades/vite.svg";
+import React from "react";
 import "../css/Habilidades.css";
 
-// Dicionário com os dados associados a cada ID
+import {
+  BiLogoHtml5,
+  BiLogoCss3,
+  BiLogoJavascript,
+  BiLogoNodejs,
+  BiLogoReact,
+  BiLogoJava,
+  BiLogoGit,
+  BiLogoGithub,
+  BiLogoFigma,
+} from "react-icons/bi";
+import { SiMysql, SiVite } from "react-icons/si";
+
 const habilidadesData = {
-  html5: { label: "HTML 5", icon: HTML5 },
-  css3: { label: "CSS 3", icon: CSS3 },
-  javaScript: { label: "JavaScript", icon: JavaScript },
-  sql: { label: "SQL", icon: MySQL },
-  node: { label: "Node", icon: NodeJS },
-  react: { label: "React", icon: ReactJS },
-  java: { label: "Java", icon: Java },
-  mySql: { label: "MySQL", icon: MySQL },
-  git: { label: "Git", icon: Git },
-  gitHub: { label: "GitHub", icon: GitHub },
-  vite: { label: "Vite", icon: Vite },
-  figma: { label: "Figma", icon: Figma },
+  html5: { label: "HTML 5", Icon: BiLogoHtml5, color: "#E34F26" },
+  css3: { label: "CSS 3", Icon: BiLogoCss3, color: "#1572B6" },
+  javaScript: { label: "JavaScript", Icon: BiLogoJavascript, color: "#F7DF1E" },
+  sql: { label: "SQL", Icon: SiMysql, color: "#4479A1" },
+  node: { label: "Node", Icon: BiLogoNodejs, color: "#339933" },
+  react: { label: "React", Icon: BiLogoReact, color: "#61DAFB" },
+  java: { label: "Java", Icon: BiLogoJava, color: "#007396" },
+  mySql: { label: "MySQL", Icon: SiMysql, color: "#4479A1" },
+  git: { label: "Git", Icon: BiLogoGit, color: "#F05032" },
+  gitHub: { label: "GitHub", Icon: BiLogoGithub, color: "#181717" },
+  vite: { label: "Vite", Icon: SiVite, color: "#646CFF" },
+  figma: { label: "Figma", Icon: BiLogoFigma, color: "#F24E1E" },
 };
 
 export default function HabButtons({ habs = [] }) {
-  // Se passar um array de IDs (ex: ['html5', 'css3']), renderiza só eles.
-  // Se não passar nada, renderiza todos os cadastrados.
   const listaParaExibir = habs.length > 0 ? habs : Object.keys(habilidadesData);
 
   return (
@@ -37,12 +37,13 @@ export default function HabButtons({ habs = [] }) {
       {listaParaExibir.map((id) => {
         const item = habilidadesData[id];
 
-        // Se o id não existir no dicionário, ignora
         if (!item) return null;
+
+        const IconComponent = item.Icon;
 
         return (
           <div key={id} className="habButton" id={id}>
-            <img src={item.icon} alt={item.label} />
+            <IconComponent className="habIcon" style={{ color: item.color }} />
             {item.label}
           </div>
         );

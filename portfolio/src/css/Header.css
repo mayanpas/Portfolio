@@ -2,13 +2,11 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  /* --headerBackground: linear-gradient(#fff, #ffffffbd 50%); */
-  --headerBackground: #ffffff;
+  --headerBackground: #ffffffbd;
 }
 
 [data-theme="dark"] {
-  /* --headerBackground: linear-gradient(#0c0c0c, #0c0c0cbd 50%); */
-  --headerBackground: #0c0c0c;
+  --headerBackground: #0c0c0cbd;
 }
 
 header {
@@ -17,12 +15,12 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background: var(--headerBackground);
-  /* backdrop-filter: var(--blur); */
   position: fixed;
   top: 0;
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
+  backdrop-filter: blur(8px);
 }
 
 /* LOGO */
@@ -31,7 +29,15 @@ header {
   color: var(--accentColor);
   font-family: "Cal Sans", sans-serif;
   font-size: 1.5rem;
-  z-index: 1001; /* Fica acima do menu retrátil */
+  z-index: 1001; /* Fica acima do overlay mobile */
+  transition: var(--transition);
+}
+
+/* AGRUPAMENTO DA DIREITA */
+.headerRightGroup {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
 
 /* NAVEGAÇÃO DESKTOP */
@@ -55,7 +61,7 @@ header nav ul li a {
   transition: var(--transition);
 }
 
-/* Bolinha / Traço do Scrollspy (Desktop) */
+/* Traço do Scrollspy (Desktop) */
 header nav ul li a::after {
   content: "";
   position: absolute;
@@ -67,8 +73,8 @@ header nav ul li a::after {
   opacity: 0.3;
   transform: scale(0);
   transition:
-    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    opacity 0.3s ease;
+    transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 1s ease;
 }
 
 header nav ul li a.active::after {
@@ -81,16 +87,16 @@ header nav ul li a.active {
   color: var(--blackWhite);
 }
 
-/* AÇÕES DO HEADER (Ajusta desktop e mobile) */
+/* AÇÕES DO HEADER */
 .headerActions {
   display: flex;
   align-items: center;
   gap: 1rem;
-  z-index: 1001; /* Fica acima do menu retrátil no mobile */
+  z-index: 1001; /* Fica acima do overlay mobile */
 }
 
 .mobileMenuToggle {
-  display: none; /* Escondido no Desktop */
+  display: none; /* Oculto em Telas Grandes */
   background: transparent;
   border: none;
   color: var(--textColor);
@@ -100,15 +106,38 @@ header nav ul li a.active {
   justify-content: center;
 }
 
+/* HOVER / TOUCH FEEDBACK */
+@media (hover: hover) {
+  #headerLogo:hover {
+    color: var(--textColor);
+  }
+  a:hover {
+    color: var(--accentColor);
+  }
+}
+
+@media (pointer: coarse) {
+  #headerLogo:active {
+    color: var(--textColor);
+  }
+  #headerNav ul li a:active {
+    color: var(--accentColor);
+  }
+}
+
 /* ===================================================
-   📱 RESPONSIVIDADE MOBILE (Menor ou igual a 768px)
+   📱 RESPONSIVIDADE MOBILE / TABLET (<= 768px)
    =================================================== */
-@media (max-width: 480px) {
-  .mobileMenuToggle {
-    display: flex; /* Exibe o botão hambúrguer no mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
   }
 
-  /* Painel Overlay (Estilo Apple) */
+  .mobileMenuToggle {
+    display: flex;
+  }
+
+  /* Overlay do Menu Mobile */
   #headerNav {
     position: fixed;
     top: 0;
@@ -132,24 +161,22 @@ header nav ul li a.active {
       visibility 0.5s;
   }
 
-  /* Quando o menu está aberto */
+  /* Estado Aberto */
   #headerNav.open {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  /* Garante que os itens voltem a aparecer no mobile */
   #headerNav ul {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
     gap: 1.8rem;
     width: 100%;
   }
 
   #headerNav ul li {
-    display: block; /* Garante visibilidade sobrepondo estilos antigos */
+    display: block;
   }
 
   #headerNav ul li a {
@@ -160,29 +187,8 @@ header nav ul li a.active {
     text-decoration: none;
   }
 
-  /* Oculta o indicador de aba ativa em telas pequenas para manter o visual limpo */
+  /* Oculta o indicador de aba ativa em telas menores */
   #headerNav ul li a::after {
     display: none;
-  }
-}
-
-/* Agrupa nav e botões no lado direito em telas desktop */
-.headerRightGroup {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-/* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
-@media (hover: hover) {
-  #headerLogo:hover {
-    color: var(--textColor);
-  }
-}
-
-/* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
-@media (pointer: coarse) {
-  #headerLogo:active {
-    color: var(--textColor);
   }
 }
