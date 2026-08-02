@@ -3,7 +3,7 @@ import "../css/Hero.css";
 function Hero() {
   return (
     <section id="heroSection">
-      <div className="sectionContent" id="heroContent">
+      <div className="sectionContent" id="heroContent" data-aos="fade-up">
         <h1>
           <span id="prazer">Prazer,</span>
           <br />
