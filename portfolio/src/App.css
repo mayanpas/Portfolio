@@ -191,10 +191,10 @@ a {
 }
 @media (max-height: 480px) {
   main {
-    padding: 0 2.5rem;
+    padding: 0 4rem;
   }
   header {
-    padding: 0.6rem 2.5rem;
+    padding: 0.6rem 4rem;
   }
   section {
     min-height: 100dvh;

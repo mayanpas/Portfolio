@@ -145,7 +145,9 @@
     font-size: 1rem;
   }
   #heroPhoto {
-    width: 10rem;
-    border-radius: 1rem;
+    /* width: 10rem;
+    border-radius: 1rem; */
+    aspect-ratio: 9 /12;
+    background-position: top;
   }
 }
