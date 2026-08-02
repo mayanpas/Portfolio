@@ -70,6 +70,7 @@ html {
   color-scheme: var(--HTMLColorScheme);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: var(--transition);
 }
 main {
   padding: 0 10rem;

@@ -147,7 +147,8 @@
   #heroPhoto {
     /* width: 10rem;
     border-radius: 1rem; */
-    aspect-ratio: 9 /12;
+    width: 20%;
+    aspect-ratio: 1 / 1.2;
     background-position: top;
   }
 }
