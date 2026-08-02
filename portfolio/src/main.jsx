@@ -5,19 +5,23 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App from "./App.jsx";
 
-// Evita que o navegador tente restaurar a posição do scroll ao recarregar a página
+// Evita a restauração automática do scroll pelo navegador ao dar F5
 if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
 
 function Root() {
   useEffect(() => {
-    window.scrollTo(0, 0);
-
+    // Inicializa o AOS
     AOS.init({
-      duration: 1000,
-      once: false,
-      offset: 0,
+      duration: 800, // 1000ms pode parecer um pouco lento com Smooth Scroll; 800ms costuma ser o ponto ideal
+      once: false,   // Garante que a animação aconteça apenas uma vez e não quebre durante a rolagem
+      offset: 50,   // Um offset menor (50px em vez de 0/100) garante que o elemento já comece a animar assim que entra na viewport
+    });
+
+    // Força o AOS a recalcular as posições dos elementos após a renderização inicial do React
+    requestAnimationFrame(() => {
+      AOS.refresh();
     });
   }, []);
 
