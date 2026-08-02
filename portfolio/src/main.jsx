@@ -5,23 +5,19 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App from "./App.jsx";
 
-function resetScrollPosition() {
-  if (typeof window === "undefined") return;
-
+// Evita que o navegador tente restaurar a posição do scroll ao recarregar a página
+if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
 }
 
 function Root() {
   useEffect(() => {
-    resetScrollPosition();
+    window.scrollTo(0, 0);
 
     AOS.init({
       duration: 1000,
-      once: true,
-      offset: 100,
+      once: false,
+      offset: 0,
     });
   }, []);
 
@@ -35,5 +31,5 @@ function Root() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Root />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
