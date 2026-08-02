@@ -47,7 +47,7 @@ a,p,h1,h2,h3,span{
   transition: var(--transition);
 }
 /* CONTROLE DO BACKGROUND DO SITE */
-main::before {
+html::before {
   content: "";
   position: fixed;
   top: 0;
@@ -140,11 +140,11 @@ a {
 /* Responsividade */
 /* APENAS PARA CELULARES */
 @media (max-width: 480px) {
-  main::before {
+  html::before {
     background-image: var(--HTMLBackgroundImageMobile);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   main {
     padding: 0 1.5rem;
   }
