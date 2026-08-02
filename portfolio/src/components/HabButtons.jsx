@@ -43,7 +43,7 @@ export default function HabButtons({ habs = [] }) {
 
         return (
           <div key={id} className="habButton" id={id}>
-            <IconComponent className="habIcon" style={{ color: item.color }} />
+            <IconComponent className="habIcon" style={{ color: item.color }} aria-hidden="true"/>
             {item.label}
           </div>
         );
