@@ -196,6 +196,12 @@ a {
   }
   header {
     padding: 0.6rem 4rem;
+    #headerLogo{
+      font-size: medium;
+    }
+    nav ul li a{
+      font-size: small;
+    }
   }
   section {
     min-height: 100dvh;
@@ -205,13 +211,13 @@ a {
       line-height: 2.5;
       color: var(--textColor);
       h2 {
-        font-size: 2.5rem;
+        font-size: xx-large;
         font-weight: 500;
       }
       p {
         line-height: normal;
         font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: medium;
+        font-size: small;
         font-weight: 500;
         margin-bottom: 1.5rem;
         transition: 0;
@@ -238,8 +244,41 @@ a {
 }
 /* TELAS DE LAPTOPS/MONITORES PEQUENOS */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .prjCards {
+  /* .prjCards {
     grid-template-columns: repeat(1, 1fr);
+  } */
+   #prjSection{
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+   }
+  .prjCards {
+    display: flex;
+    gap: .5rem;
+  }
+  .cardProjeto {
+    flex: 1;
+    padding: 1rem;
+    gap: .6rem;
+    border-radius: .5rem;
+    .type {
+      font-size: x-small;
+    }
+    h3{
+      font-size: medium;
+    }
+    .description {
+      font-size: x-small;
+    }
+    a {
+      padding: 0.4rem 0.8rem;
+      border: 2px solid var(--accentColor);
+      font-size: small;
+    }
+    a:hover {
+      background-color: var(--accentColor);
+      color: var(--button1IconColor);
+    }
   }
 }
 /* AJUSTES PARA TABLETS E CELULARES */
