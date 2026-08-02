@@ -18,14 +18,20 @@
   justify-content: center;
 }
 #habContent {
+  display: flex;
   gap: 20%;
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
 }
-#habText{
+#habText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex: 1;
   max-width: 80%;
+  margin-bottom: 2rem;
 }
 .habCardIcon {
   background-color: var(--habCardIconBackground);
@@ -100,9 +106,46 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    p{
+    p {
       display: none;
     }
+  }
+  .habCardIcon {
+    padding: 0.5rem;
+    font-size: medium;
+  }
+  .habCards {
+    .habCard {
+      justify-content: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      width: 10rem;
+      aspect-ratio: 1/1;
+      h3 {
+        font-size: medium;
+        text-align: start;
+      }
+    }
+    .habButtons {
+      .habButtonsCollection {
+        .habButton {
+          line-height: 1.3;
+          font-size: 0.6rem;
+          img {
+            width: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-height: 480px) {
+  #habSection {
+    /* text-align: center; */
+  }
+  #habContent {
+    display: flex;
+    flex-wrap: nowrap;
   }
   .habCardIcon {
     padding: 0.5rem;

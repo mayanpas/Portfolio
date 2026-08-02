@@ -42,9 +42,6 @@
     height: 100%;
   }
 }
-habs {
-  display: flex;
-}
 .prjButtons {
   display: flex;
   align-items: center;

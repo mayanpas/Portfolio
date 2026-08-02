@@ -43,7 +43,12 @@
   box-sizing: border-box;
   font-family: "Cal Sans", "Plus Jakarta Sans", sans-serif;
 }
-a,p,h1,h2,h3,span{
+a,
+p,
+h1,
+h2,
+h3,
+span {
   transition: var(--transition);
 }
 /* CONTROLE DO BACKGROUND DO SITE */
@@ -144,7 +149,7 @@ a {
     background-image: var(--HTMLBackgroundImageMobile);
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   main {
     padding: 0 1.5rem;
   }
@@ -158,6 +163,38 @@ a {
     p {
       font-size: x-small;
     }
+  }
+  section {
+    min-height: 100dvh;
+    /* padding: 7rem; */
+    width: 100%;
+    .sectionText {
+      line-height: 2.5;
+      color: var(--textColor);
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+      p {
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: medium;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: 0;
+        span {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}
+@media (max-height: 480px) {
+  main {
+    padding: 0 2.5rem;
+  }
+  header {
+    padding: 0.6rem 2.5rem;
   }
   section {
     min-height: 100dvh;

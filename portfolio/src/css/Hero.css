@@ -9,7 +9,7 @@
   padding-top: 0;
   padding-bottom: 0;
 }
-.sectionContent {
+#heroContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@
 }
 /* RESPONSIVIDADE */
 /* APENAS PARA CELULARES */
-@media (max-width: 768px), (orientation: landscape) and (orientation: portrait) {
+@media (max-width: 480px) {
   #heroSection {
     flex-direction: column;
     justify-content: center;
@@ -70,6 +70,63 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    gap: 3rem;
+    h1 {
+      line-height: 0.85;
+    }
+  }
+  #prazer {
+    font-size: 2rem;
+  }
+  #mayan {
+    font-size: 5rem;
+  }
+  #patrick {
+    font-size: 4.5rem;
+  }
+  #subtitulo {
+    font-size: 1rem;
+  }
+  #heroPhoto {
+    width: 10rem;
+    border-radius: 1rem;
+  }
+}
+/* TABLETS */
+@media (max-width: 768px){
+    #heroSection {
+    height: 100dvh;
+  }
+  #heroContent {
+    /* flex-direction: column-reverse; */
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    h1 {
+      line-height: 0.85;
+    }
+  }
+  #prazer {
+    font-size: 2rem;
+  }
+  #mayan {
+    font-size: 5rem;
+  }
+  #patrick {
+    font-size: 4.5rem;
+  }
+  #subtitulo {
+    font-size: 1rem;
+  }
+  #heroPhoto {
+    width: 10rem;
+    border-radius: 1rem;
+  }
+}
+@media (max-height: 480px) {
+  #heroContent {
+    align-items: center;
+    justify-content: space-around;
     gap: 3rem;
     h1 {
       line-height: 0.85;
