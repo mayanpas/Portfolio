@@ -43,7 +43,7 @@
   box-sizing: border-box;
   font-family: "Cal Sans", "Plus Jakarta Sans", sans-serif;
 }
-a {
+a,p,h1,h2,h3,span{
   transition: var(--transition);
 }
 /* CONTROLE DO BACKGROUND DO SITE */
@@ -58,11 +58,7 @@ main::before {
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.6;
-  pointer-events: none;
-  animation: fadeInBg 0.8s ease forwards;
-  overflow: hidden;
-  overflow-x: hidden;
+  transition: var(--transition);
 }
 html {
   background-color: var(--HTMLBackgroundColor) !important;
@@ -75,6 +71,7 @@ main {
 }
 header {
   padding: 1rem 10rem;
+  transition: var(--transition);
 }
 footer {
   padding: 2rem 10rem;

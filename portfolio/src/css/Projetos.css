@@ -66,6 +66,7 @@
 }
 .cardProjeto:hover {
   box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 /* RESPONSIVIDADE */
 /* APENAS PARA CELULARES */
