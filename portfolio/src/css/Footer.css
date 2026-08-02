@@ -17,6 +17,8 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   transition: var(--transition);
   p {
     font-family: "Plus Jakarta Sans", sans-serif;
