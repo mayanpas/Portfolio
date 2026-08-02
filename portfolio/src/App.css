@@ -47,7 +47,7 @@ a {
   transition: var(--transition);
 }
 /* CONTROLE DO BACKGROUND DO SITE */
-html::before {
+main::before {
   content: "";
   position: fixed;
   top: 0;
