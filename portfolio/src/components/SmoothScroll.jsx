@@ -20,7 +20,7 @@ export default function SmoothScroll({ children }) {
     });
 
     // 2. Reseta o scroll para o topo de forma limpa na montagem
-    lenis.scrollTo(0, { immediate: true });
+    // lenis.scrollTo(0, { immediate: true });
 
     // 3. Cleanup garantido
     return () => {

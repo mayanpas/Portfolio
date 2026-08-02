@@ -8,9 +8,9 @@ import {
 
 function Contato() {
   return (
-    <section id="contatoSection">
-      <div className="sectionContent" id="contatoContent">
-        <div className="sectionText" id="contatoText" data-aos="fade-up">
+    <section id="contatoSection" >
+      <div className="sectionContent" id="contatoContent" data-aos="fade-up">
+        <div className="sectionText" id="contatoText" >
           <h2>Contato</h2>
           <p>
             <span className="textHighlight">Estou disponível</span> para novas oportunidades e projetos freelances.
@@ -18,7 +18,7 @@ function Contato() {
           </p>
         </div>
         
-        <div className="contatoButtons" data-aos="fade-up">
+        <div className="contatoButtons">
           <a
             href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."
             className="contatoButton"

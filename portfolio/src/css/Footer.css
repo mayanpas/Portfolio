@@ -63,8 +63,7 @@ footer a svg {
    =================================================== */
 @media (max-width: 480px) {
   footer {
-    flex-direction: column; /* Empilha os itens no mobile */
-    gap: 0.8rem; /* Reduz o espaço entre eles */
+    gap: 1rem; /* Reduz o espaço entre eles */
     padding: 1.5rem 1rem;
   }
 }
