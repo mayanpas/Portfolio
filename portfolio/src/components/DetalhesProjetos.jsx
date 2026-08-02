@@ -85,7 +85,7 @@ export default function DetalhesProjeto() {
             <a href={projeto.liveDemo} target="_blank" rel="noopener noreferrer">
               <Button
                 icon={<BiExit size={20} />}
-                label="Live Demo ->"
+                label="Live Demo"
                 id="liveDemo"
               />
             </a>

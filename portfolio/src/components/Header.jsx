@@ -125,8 +125,9 @@ function Header() {
             acao={toggleTheme}
             icon={theme === "dark" ? <BiSun size={20} /> : <BiMoon size={20} />}
             id="headerButton"
-            aria-label="Alternar tema"
+            ariaLabel="Alternar tema"
           />
+          
 
           {/* Botão Hambúrguer Mobile */}
           <button

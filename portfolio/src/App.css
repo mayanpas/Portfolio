@@ -1,7 +1,7 @@
 /* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
 
 :root {
-  --accentColor: #3f96ff;
+  --accentColor: #0073ff;
   --HTMLBackgroundColor: #ffffff;
   --HTMLBackgroundImage: url(assets/Backgrounds/light.jpg);
   --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/light.jpg);
