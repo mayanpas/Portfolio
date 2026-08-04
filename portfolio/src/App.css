@@ -11,7 +11,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   z-index: -2; /* Fica no fundo de tudo */
   background-color: var(--HTMLBackgroundColor);
   transition: background-color 0.5s ease; /* Aqui a transição funciona! */
