@@ -131,64 +131,81 @@ header nav ul li a.active {
 @media (max-width: 768px) {
   header {
     padding: 1rem 1.5rem;
+    position: fixed;
   }
 
   .mobileMenuToggle {
     display: flex;
   }
 
-  /* Overlay do Menu Mobile */
+  /* Menu Flutuante Mobile (Substitui o overlay) */
   #headerNav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--HTMLBackgroundColor);
+    position: absolute;
+    top: 4.5rem; /* Posicionado logo abaixo do header */
+    right: 1.5rem;
+    width: 200px;
+    height: auto;
+    background-color: var(--cardBackgroundColor);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 3rem;
     z-index: 1000;
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-50px);
+    transform: translateY(-15px) scale(0.95);
+    transform-origin: top right;
     transition:
       opacity 0.3s ease,
-      transform 0.5s ease,
-      visibility 0.5s;
+      transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      visibility 0.3s;
   }
 
-  /* Estado Aberto */
+  /* Estado Aberto com animação suave */
   #headerNav.open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 
   #headerNav ul {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.2rem;
     width: 100%;
+    align-items: flex-start;
   }
 
   #headerNav ul li {
     display: block;
+    width: 100%;
   }
 
+  /* Fontes ajustadas para um menu menor */
   #headerNav ul li a {
-    font-size: 1.8rem;
-    font-weight: 500;
-    font-family: "Cal Sans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Plus Jakarta Sans", sans-serif;
     color: var(--textColor);
     text-decoration: none;
+    width: 100%;
+    display: block;
+    text-align: left;
   }
 
-  /* Oculta o indicador de aba ativa em telas menores */
+  /* Oculta o sublinhado em telas menores */
   #headerNav ul li a::after {
     display: none;
+  }
+  
+  /* Destaca a seção ativa mudando a cor do texto no mobile */
+  #headerNav ul li a.active {
+    color: var(--accentColor);
   }
 }

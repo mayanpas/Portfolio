@@ -13,47 +13,8 @@ function Header() {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  // Controle total do Menu Aberto (Scroll, Meta Tag e Fix do Safari)
-  useEffect(() => {
-    let themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-    if (menuOpen) {
-      // 1. Cria a meta tag dinamicamente se não existir
-      if (!themeColorMeta) {
-        themeColorMeta = document.createElement("meta");
-        themeColorMeta.name = "theme-color";
-        document.head.appendChild(themeColorMeta);
-      }
-      
-      // 2. Trava o scroll
-      document.body.style.overflow = "hidden";
-      
-      // 3. Adiciona a classe que esconde a imagem de fundo no CSS
-      document.documentElement.classList.add("menu-open-safari-fix");
-      
-      // 4. Força a cor na meta tag
-      themeColorMeta.setAttribute("content", theme === "dark" ? "#0c0c0c" : "#ffffff");
-      
-    } else {
-      // Reverte tudo quando o menu fecha
-      document.body.style.overflow = "unset";
-      document.documentElement.classList.remove("menu-open-safari-fix");
-      
-      if (themeColorMeta) {
-        themeColorMeta.remove();
-      }
-    }
-
-    // Cleanup de segurança caso o componente seja desmontado
-    return () => {
-      document.body.style.overflow = "unset";
-      document.documentElement.classList.remove("menu-open-safari-fix");
-    };
-  }, [menuOpen, theme]);
-
   // Observer do Scrollspy
   useEffect(() => {
-    // Se não estiver na Home, limpa a seção ativa
     if (location.pathname !== "/") {
       setActiveSection("");
       return;

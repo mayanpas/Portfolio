@@ -1,15 +1,3 @@
-/* Adicione no final do seu arquivo de estilos globais */
-html.menu-open-safari-fix::before {
-  opacity: 0;
-  visibility: hidden;
-}
-
-html.menu-open-safari-fix, 
-html.menu-open-safari-fix body {
-  background-color: var(--HTMLBackgroundColor) !important;
-}
-
-
 /* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
 
 :root {
