@@ -94,12 +94,12 @@ html::before {
   transition: var(--transition);
 }
 html {
-  background-color: var(--HTMLBackgroundColor) !important;
+  background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  overflow-x: hidden;
+  /* overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: var(--transition);
-  scroll-behavior:smooth;
+  scroll-behavior:smooth; */
 }
 main {
   padding: 0 10rem;
