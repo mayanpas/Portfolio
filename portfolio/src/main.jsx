@@ -21,9 +21,9 @@ function Root() {
     });
 
     // Força o AOS a recalcular as posições dos elementos após a renderização inicial do React
-    // requestAnimationFrame(() => {
-    //   AOS.refresh();
-    // });
+    requestAnimationFrame(() => {
+      AOS.refresh();
+    });
   }, []);
 
   return (

@@ -70,7 +70,14 @@ function Header() {
               <Link
                 to="/#sobreSection"
                 className={activeSection === "sobreSection" ? "active" : ""}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  document
+                    .getElementById("sobreSection")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, null, "#sobreSection");
+                }}
               >
                 Sobre
               </Link>
@@ -79,7 +86,14 @@ function Header() {
               <Link
                 to="/#habSection"
                 className={activeSection === "habSection" ? "active" : ""}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  document
+                    .getElementById("habSection")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, null, "#habSection");
+                }}
               >
                 Habilidades
               </Link>
@@ -88,7 +102,14 @@ function Header() {
               <Link
                 to="/#prjSection"
                 className={activeSection === "prjSection" ? "active" : ""}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  document
+                    .getElementById("prjSection")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, null, "#prjSection");
+                }}
               >
                 Projetos
               </Link>
@@ -97,7 +118,14 @@ function Header() {
               <Link
                 to="/#contatoSection"
                 className={activeSection === "contatoSection" ? "active" : ""}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  document
+                    .getElementById("contatoSection")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, null, "#contatoSection");
+                }}
               >
                 Contato
               </Link>
