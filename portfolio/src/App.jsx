@@ -42,7 +42,7 @@ function Home() {
 
 function App() {
   return (
-    <SmoothScroll>
+    <>
       <div className="App">
         <Header />
         <main>
@@ -53,7 +53,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </SmoothScroll>
+    </>
   );
 }
 
