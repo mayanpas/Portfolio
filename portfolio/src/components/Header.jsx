@@ -26,6 +26,28 @@ function Header() {
     };
   }, [menuOpen]);
 
+  // NOVO: Sincroniza a cor da barra do Safari (iOS) quando o menu abre
+  useEffect(() => {
+    let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+    if (menuOpen) {
+      // Se não existir, cria a meta tag dinamicamente
+      if (!themeColorMeta) {
+        themeColorMeta = document.createElement("meta");
+        themeColorMeta.name = "theme-color";
+        document.head.appendChild(themeColorMeta);
+      }
+      // Define a cor sólida baseada no tema (as mesmas cores do seu --HTMLBackgroundColor no App.css)
+      themeColorMeta.setAttribute("content", theme === "dark" ? "#0c0c0c" : "#ffffff");
+    } else {
+      // Quando o menu fecha, removemos a meta tag para o Safari 
+      // voltar a mesclar a cor com a sua imagem de fundo (light.jpg / dark.jpg)
+      if (themeColorMeta) {
+        themeColorMeta.remove();
+      }
+    }
+  }, [menuOpen, theme]);
+
   // Observer do Scrollspy
   useEffect(() => {
     // Se não estiver na Home, limpa a seção ativa
@@ -128,7 +150,6 @@ function Header() {
             ariaLabel="Alternar tema"
           />
           
-
           {/* Botão Hambúrguer Mobile */}
           <button
             className="mobileMenuToggle"
