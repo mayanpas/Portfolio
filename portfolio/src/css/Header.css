@@ -2,11 +2,11 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  --headerBackground: #ffffff;
+  --headerBackground: #ffffffbd;
 }
 
 [data-theme="dark"] {
-  --headerBackground: #0c0c0c;
+  --headerBackground: #0c0c0cbd;
 }
 
 header {
@@ -20,6 +20,7 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
+  backdrop-filter: var(--blur);
 }
 
 /* LOGO */
@@ -148,7 +149,6 @@ header nav ul li a.active {
     background-color: var(--cardBackgroundColor);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
-    border: 1px solid rgba(128, 128, 128, 0.1);
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
@@ -162,9 +162,9 @@ header nav ul li a.active {
     transform: translateY(-15px) scale(0.95);
     transform-origin: top right;
     transition:
-      opacity 0.3s ease,
-      transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-      visibility 0.3s;
+      opacity 0.5s ease,
+      transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      visibility 0.5s;
   }
 
   /* Estado Aberto com animação suave */
