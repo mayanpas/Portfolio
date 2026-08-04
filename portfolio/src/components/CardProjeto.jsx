@@ -14,7 +14,8 @@ export default function CardProjeto({
     if (window.lenis) {
       window.lenis.scrollTo(0, { immediate: true });
     } else {
-      window.scrollTo(0, 0);
+      // Força a rolagem suave para o topo caso o Lenis não esteja ativado
+      indow.scrollTo(0, 0);
     }
   };
 
