@@ -2,11 +2,11 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  --headerBackground: #ffffff;
+  --headerBackground: #ffffffbd;
 }
 
 [data-theme="dark"] {
-  --headerBackground: #0c0c0c;
+  --headerBackground: #0c0c0cbd;
 }
 
 header {
@@ -20,6 +20,7 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
+  backdrop-filter: var(--blur);
 }
 
 /* LOGO */
