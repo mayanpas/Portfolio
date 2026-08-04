@@ -13,39 +13,42 @@ function Header() {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  // Trava o scroll do body quando o menu retrátil estiver aberto no mobile
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [menuOpen]);
-
-  // NOVO: Sincroniza a cor da barra do Safari (iOS) quando o menu abre
+  // Controle total do Menu Aberto (Scroll, Meta Tag e Fix do Safari)
   useEffect(() => {
     let themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
     if (menuOpen) {
-      // Se não existir, cria a meta tag dinamicamente
+      // 1. Cria a meta tag dinamicamente se não existir
       if (!themeColorMeta) {
         themeColorMeta = document.createElement("meta");
         themeColorMeta.name = "theme-color";
         document.head.appendChild(themeColorMeta);
       }
-      // Define a cor sólida baseada no tema (as mesmas cores do seu --HTMLBackgroundColor no App.css)
+      
+      // 2. Trava o scroll
+      document.body.style.overflow = "hidden";
+      
+      // 3. Adiciona a classe que esconde a imagem de fundo no CSS
+      document.documentElement.classList.add("menu-open-safari-fix");
+      
+      // 4. Força a cor na meta tag
       themeColorMeta.setAttribute("content", theme === "dark" ? "#0c0c0c" : "#ffffff");
+      
     } else {
-      // Quando o menu fecha, removemos a meta tag para o Safari 
-      // voltar a mesclar a cor com a sua imagem de fundo (light.jpg / dark.jpg)
+      // Reverte tudo quando o menu fecha
+      document.body.style.overflow = "unset";
+      document.documentElement.classList.remove("menu-open-safari-fix");
+      
       if (themeColorMeta) {
         themeColorMeta.remove();
       }
     }
+
+    // Cleanup de segurança caso o componente seja desmontado
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.classList.remove("menu-open-safari-fix");
+    };
   }, [menuOpen, theme]);
 
   // Observer do Scrollspy
