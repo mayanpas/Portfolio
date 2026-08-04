@@ -121,13 +121,6 @@ function Header() {
             label={menuOpen ? <BiX /> : <BiMenu />}
             id="headerMobileMenuButton"
           />
-          {/* <button
-            className="mobileMenuToggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {menuOpen ? <BiX size={28} /> : <BiMenu size={28} />}
-          </button> */}
         </div>
       </div>
     </header>
