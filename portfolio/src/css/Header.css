@@ -2,11 +2,11 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  --headerBackground: #ffffffbd;
+  --headerBackground: #ffffff;
 }
 
 [data-theme="dark"] {
-  --headerBackground: #0c0c0cbd;
+  --headerBackground: #0c0c0c;
 }
 
 header {
@@ -20,7 +20,6 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
-  backdrop-filter: var(--blur);
 }
 
 /* LOGO */
@@ -91,19 +90,19 @@ header nav ul li a.active {
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .7rem;
   z-index: 1001; /* Fica acima do overlay mobile */
 }
-
-.mobileMenuToggle {
+#headerButton{
+  border: 2px solid transparent;
+  padding: .5rem 1rem;
+}
+#headerMobileMenuButton {
   display: none; /* Oculto em Telas Grandes */
-  background: transparent;
-  border: none;
-  color: var(--textColor);
-  cursor: pointer;
-  padding: 0.2rem;
-  align-items: center;
-  justify-content: center;
+  background-color: transparent;
+  border: 2px solid var(--accentColor);
+  color: var(--accentColor);
+  padding: .5rem 1rem;
 }
 
 /* HOVER / TOUCH FEEDBACK */
@@ -135,7 +134,7 @@ header nav ul li a.active {
     position: fixed;
   }
 
-  .mobileMenuToggle {
+  #headerMobileMenuButton {
     display: flex;
   }
 
@@ -146,9 +145,7 @@ header nav ul li a.active {
     right: 1.5rem;
     width: 200px;
     height: auto;
-    background-color: var(--cardBackgroundColor);
-    backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
+    background-color: var(--headerBackground);
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     padding: 1.5rem;

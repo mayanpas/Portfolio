@@ -33,7 +33,7 @@ function Header() {
       {
         rootMargin: "-45% 0px -45% 0px",
         threshold: 0,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -109,19 +109,25 @@ function Header() {
           {/* Alternador de Tema */}
           <Button
             acao={toggleTheme}
-            icon={theme === "dark" ? <BiSun size={20} /> : <BiMoon size={20} />}
+            icon={theme === "dark" ? <BiSun /> : <BiMoon />}
             id="headerButton"
             ariaLabel="Alternar tema"
           />
-          
+
           {/* Botão Hambúrguer Mobile */}
-          <button
+          <Button
+            acao={() => setMenuOpen(!menuOpen)}
+            ariaLabel="Toggle menu"
+            label={menuOpen ? <BiX /> : <BiMenu />}
+            id="headerMobileMenuButton"
+          />
+          {/* <button
             className="mobileMenuToggle"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >
             {menuOpen ? <BiX size={28} /> : <BiMenu size={28} />}
-          </button>
+          </button> */}
         </div>
       </div>
     </header>
