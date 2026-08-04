@@ -1,22 +1,3 @@
-/* 1. Remova o background-color e a transition do html e body */
-html, body {
-  background-color: transparent !important; /* Deixe transparente */
-  /* Remova qualquer transition de cor daqui */
-}
-
-/* 2. Crie um background fixo que o Safari consiga animar */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2; /* Fica no fundo de tudo */
-  background-color: var(--HTMLBackgroundColor);
-  transition: background-color 0.5s ease; /* Aqui a transição funciona! */
-}
-
 /* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
 
 :root {
@@ -94,12 +75,11 @@ html::before {
   transition: var(--transition);
 }
 html {
-  /* background-color: var(--HTMLBackgroundColor); */
+  background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  /* overflow-x: hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: var(--transition);
-  scroll-behavior:smooth; */
 }
 main {
   padding: 0 10rem;
