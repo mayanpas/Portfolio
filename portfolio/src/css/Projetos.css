@@ -31,11 +31,6 @@
   gap: 1rem;
   /* Mova a transição para cá para funcionar na entrada e saída do hover */
   transition: var(--transition);
-
-  &:hover {
-    box-shadow: var(--shadow);
-  }
-
   .prjImage {
     background-size: cover;
     background-position: top;
@@ -46,11 +41,7 @@
     margin: -2rem -2rem 0 -2rem;
     aspect-ratio: 16 / 9; /* Padrão mais comum que 16/7 */
     transition: var(--transition);
-    &:hover {
-      transform: scale(1.03);
-    }
   }
-
   .type {
     text-transform: uppercase;
     color: var(--textColor);
@@ -80,11 +71,6 @@
     border: 3px solid var(--accentColor);
     color: var(--accentColor);
     transition: var(--transition);
-
-    &:hover {
-      background-color: var(--accentColor);
-      color: var(--button1IconColor);
-    }
   }
 }
 .cardProjetoContent {
@@ -92,6 +78,34 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+/* HOVER / TOUCH FEEDBACK */
+@media (hover: hover) {
+  .cardProjeto:hover {
+    box-shadow: var(--shadow);
+  }
+  .cardProjeto a:hover {
+    background-color: var(--accentColor);
+    color: var(--button1IconColor);
+  }
+  .prjImage:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (pointer: coarse) {
+  .cardProjeto:active {
+    box-shadow: var(--shadow);
+  }
+  .cardProjeto a:active {
+    background-color: var(--accentColor);
+    color: var(--button1IconColor);
+  }
+  .prjImage:active {
+    transform: scale(1.03);
+  }
+}
+
 /* RESPONSIVIDADE */
 
 /* Tablets / Telas Médias */

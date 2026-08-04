@@ -65,15 +65,6 @@
   cursor: pointer;
   transition: var(--transition);
   flex-shrink: 0; /* Impede a foto de esmagar se o texto for grande */
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-
-  &:active {
-    transform: scale(0.98);
-    opacity: 0.9;
-  }
 }
 
 /* RESPONSIVIDADE */

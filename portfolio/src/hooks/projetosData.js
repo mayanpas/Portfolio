@@ -32,7 +32,7 @@ export const projetosData = [
       "Sistema completo de uma clínica odontológica, promovendo uma gestão mais organizada de suas atividades.",
     habilities: ["html5", "css3", "javaScript", "react", "gitHub"],
     photos: clinigestPhotos,
-    github: "",
+    github: "https://github.com/EmanuelScapim/CliniGest---PI",
     liveDemo: "", 
   },
   {

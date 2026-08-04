@@ -25,12 +25,12 @@ export default function DetalhesProjeto() {
   }
 
   // Redireciona diretamente para a seção de projetos na Home (#prjSection)
-  const handleGoBack = () => {
-    setIsExiting(true);
-    setTimeout(() => {
-      navigate("/#prjSection");
-    }, 300);
-  };
+  // const handleGoBack = () => {
+  //   setIsExiting(true);
+  //   setTimeout(() => {
+  //     navigate("/#prjSection");
+  //   }, 300);
+  // };
 
   return (
     <section
@@ -45,7 +45,7 @@ export default function DetalhesProjeto() {
         data-aos="fade-right"
       >
         <div className="backButton">
-          <Link to="/#prjSection" onClick={handleGoBack}>
+          <Link to="/#prjSection">
             <Button icon={<BiArrowBack />} label="Voltar" id="backButton"/>
           </Link>
         </div>

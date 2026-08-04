@@ -111,9 +111,18 @@
   margin-top: 1rem;
 }
 
-.habCard:hover {
-  box-shadow: var(--shadow);
-  transform: scale(1.03);
+/* HOVER / TOUCH FEEDBACK */
+@media (hover: hover) {
+  .habCard:hover {
+    box-shadow: var(--shadow);
+    transform: scale(1.03);
+  }
+}
+@media (pointer: coarse) {
+  .habCard:active {
+    box-shadow: var(--shadow);
+    transform: scale(1.03);
+  }
 }
 
 /* RESPONSIVIDADE FIEL AO DESIGN ORIGINAL */

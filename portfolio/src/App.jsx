@@ -30,19 +30,19 @@ function Home() {
   }, [hash]);
 
   return (
-    <div className="fade-in-page">
+    <>
       <Hero />
       <Sobre />
       <Habilidades />
       <Projetos />
       <Contato />
-    </div>
+    </>
   );
 }
 
 function App() {
   return (
-    <SmoothScroll>
+    <>
       <div className="App">
         <Header />
         <main>
@@ -53,7 +53,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </SmoothScroll>
+    </>
   );
 }
 

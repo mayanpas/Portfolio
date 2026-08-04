@@ -14,6 +14,7 @@ function Hero() {
         </div>
 
         <div
+          className="photo"
           id="heroPhoto"
           role="img"
           aria-label="Foto de Mayan Patrick"

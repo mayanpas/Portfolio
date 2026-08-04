@@ -51,6 +51,15 @@ h3,
 span {
   transition: var(--transition);
 }
+
+/* Impede o comportamento de arrastar e selecionar texto em elementos clicáveis */
+a,
+button,
+.cardProjeto,
+img {
+  -webkit-user-drag: none; /* Impede o drag no Chrome/Safari/Edge */
+  user-select: none; /* Impede seleção de texto acidental ao segurar */
+}
 /* CONTROLE DO BACKGROUND DO SITE */
 html::before {
   content: "";
@@ -334,11 +343,24 @@ a {
     transform: scale(0.98);
     opacity: 0.8;
   }
+  .photo:hover {
+    transform: translateY(-4px);
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 }
 
 /* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
 @media (pointer: coarse) {
   .button1:active {
     transform: scale(0.98);
+    opacity: 0.8;
+    background-color: var(--textColor);
+    color: var(--button1IconColor);
+  }
+  .photo:active {
+    transform: translateY(-4px);
+    transform: scale(0.98);
+    opacity: 0.9;
   }
 }
