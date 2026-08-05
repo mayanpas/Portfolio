@@ -55,33 +55,44 @@ function Header() {
       {
         rootMargin: "-45% 0px -45% 0px",
         threshold: 0,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
 
-    const handleScroll = () => {
-      const isBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 50;
-      if (isBottom) {
-        setActiveSection("contatoSection");
-      }
-    };
+    // const handleScroll = () => {
+    //   const isBottom =
+    //     window.innerHeight + window.scrollY >=
+    //     document.documentElement.scrollHeight - 50;
+    //   if (isBottom) {
+    //     setActiveSection("contatoSection");
+    //   }
+    // };
 
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // return () => {
+    //   observer.disconnect();
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
   }, [location]);
 
   return (
     // 3. Adicionada a prop ref={headerRef}
     <header ref={headerRef} className={menuOpen ? "menu-active" : ""}>
       {/* 1. LOGO */}
-      <Link to="/#heroSection" id="headerLogo" onClick={handleLinkClick}>
+      <Link
+        to="/#heroSection"
+        id="headerLogo"
+        onClick={(e) => {
+          e.preventDefault();
+          setMenuOpen(false);
+          document
+            .getElementById("habSection")
+            ?.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, null, "#heroSection");
+        }}
+      >
         mayanpas
       </Link>
 
