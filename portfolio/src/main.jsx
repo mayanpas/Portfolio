@@ -11,7 +11,7 @@ function Root() {
     AOS.init({
       duration: 600, 
       mirror: true, 
-      once: false,  
+      once: true,  
       offset: 50,  
     });
 
