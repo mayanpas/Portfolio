@@ -9,7 +9,6 @@ import { BiArrowBack, BiLogoGithub, BiExit } from "react-icons/bi";
 export default function DetalhesProjeto() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isExiting, setIsExiting] = useState(false);
 
   const projeto = projetosData.find((item) => item.id === id);
 
@@ -22,47 +21,30 @@ export default function DetalhesProjeto() {
         </Link>
       </section>
     );
-
-    // Força o reset absoluto do scroll para o topo no carregamento da página
-    useEffect(() => {
-      // 1. Desativa a restauração automática de scroll do navegador
-      if ("scrollRestoration" in window.history) {
-        window.history.scrollRestoration = "manual";
-      }
-
-      // 2. Joga instantaneamente para o topo (sem animação) assim que a página abre
-      window.scrollTo(0, 0);
-
-      // 3. Se o Lenis estiver ativo, garante que ele também inicie no topo
-      if (window.lenis) {
-        window.lenis.scrollTo(0, { immediate: true });
-      }
-    }, []);
   }
 
-  // Redireciona diretamente para a seção de projetos na Home (#prjSection)
-  // const handleGoBack = () => {
-  //   setIsExiting(true);
-  //   setTimeout(() => {
-  //     navigate("/#prjSection");
-  //   }, 300);
+  //   const stopScroll = () => {
+  //   // Tratamento seguro para a instância do Lenis
+  //   if (window.lenis) {
+  //     window.lenis.scrollTo(0, { immediate: true });
+  //   } else {
+  //     // Força a rolagem suave para o topo caso o Lenis não esteja ativado
+  //     indow.scrollTo(0, 0);
+  //   }
   // };
 
   return (
     <section
       id="prjDetailsSection"
-      className={`project-detail-container ${
-        isExiting ? "page-exit" : "page-enter"
-      }`}
     >
       <div
         className="sectionContent"
         id="prjDetailContent"
-        data-aos="fade-right"
+        data-aos="fade-left"
       >
         <div className="backButton">
           <Link to="/#prjSection">
-            <Button icon={<BiArrowBack />} label="Voltar" id="backButton" />
+            <Button icon={<BiArrowBack />} label="Voltar" id="backButton"/>
           </Link>
         </div>
 
