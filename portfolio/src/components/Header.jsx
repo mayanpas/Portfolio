@@ -88,7 +88,7 @@ function Header() {
           e.preventDefault();
           setMenuOpen(false);
           document
-            .getElementById("habSection")
+            .getElementById("heroSection")
             ?.scrollIntoView({ behavior: "smooth" });
           window.history.pushState(null, null, "#heroSection");
         }}
