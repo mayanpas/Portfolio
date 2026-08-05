@@ -3,15 +3,37 @@ import { useTheme } from "../hooks/useTheme";
 import { BiMoon, BiSun, BiMenu, BiX } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../components/Buttons/Button1";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; // 1. useRef adicionado
 
 function Header() {
   const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const headerRef = useRef(null); // 2. Referência do Header criada
 
   const handleLinkClick = () => setMenuOpen(false);
+
+  // Fecha o menu flutuante ao clicar/tocar fora do header
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuOpen &&
+        headerRef.current &&
+        !headerRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   // Observer do Scrollspy
   useEffect(() => {
@@ -33,7 +55,7 @@ function Header() {
       {
         rootMargin: "-45% 0px -45% 0px",
         threshold: 0,
-      },
+      }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -56,7 +78,8 @@ function Header() {
   }, [location]);
 
   return (
-    <header className={menuOpen ? "menu-active" : ""}>
+    // 3. Adicionada a prop ref={headerRef}
+    <header ref={headerRef} className={menuOpen ? "menu-active" : ""}>
       {/* 1. LOGO */}
       <Link to="/#heroSection" id="headerLogo" onClick={handleLinkClick}>
         mayanpas

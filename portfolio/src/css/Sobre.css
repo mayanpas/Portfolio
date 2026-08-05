@@ -43,16 +43,7 @@
   outline-offset: 3px;
   cursor: pointer;
   transition: var(--transition);
-  flex-shrink: 0; /* Impede a imagem de ser esmagada caso o texto cresça */
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-
-  &:active {
-    transform: scale(0.98);
-    opacity: 0.9;
-  }
+  flex-shrink: 0; 
 }
 
 #sobreText {

@@ -345,7 +345,6 @@ a {
     opacity: 0.8;
   }
   .photo:hover {
-    transform: translateY(-4px);
     transform: scale(0.98);
     opacity: 0.9;
   }
@@ -360,7 +359,6 @@ a {
     color: var(--button1IconColor);
   }
   .photo:active {
-    transform: translateY(-4px);
     transform: scale(0.98);
     opacity: 0.9;
   }

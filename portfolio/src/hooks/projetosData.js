@@ -1,4 +1,4 @@
-// src/data/projetosData.js
+
 import clinigest from "../assets/Projetos/clinigest.jpg";
 import bonbonetto from "../assets/Projetos/bonbonetto.jpg";
 import painelVendas from "../assets/Projetos/painelVendas.jpg";
@@ -24,7 +24,7 @@ const painelVendasPhotos = Object.values(painelVendasPhotosObj);
 
 export const projetosData = [
   {
-    id: "clinigest", // Corrigido de "clinegest" para "clinigest"
+    id: "clinigest",
     image: clinigest,
     type: "front-end / back-end",
     title: "Clinigest",

@@ -12,6 +12,10 @@ export default function DetalhesProjeto() {
 
   const projeto = projetosData.find((item) => item.id === id);
 
+  const handleVoltar = () => {
+    navigate(-1); // "-1" significa voltar 1 página no histórico do navegador
+  };
+
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
@@ -22,6 +26,8 @@ export default function DetalhesProjeto() {
       </section>
     );
   }
+
+  
 
   //   const stopScroll = () => {
   //   // Tratamento seguro para a instância do Lenis
@@ -43,9 +49,9 @@ export default function DetalhesProjeto() {
         data-aos="fade-left"
       >
         <div className="backButton">
-          <Link to="/#prjSection">
-            <Button icon={<BiArrowBack />} label="Voltar" id="backButton"/>
-          </Link>
+       
+            <Button icon={<BiArrowBack />} label="Voltar" id="backButton" acao={handleVoltar}/>
+         
         </div>
 
         <div className="sectionText" id="prjDetailText">
