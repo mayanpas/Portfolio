@@ -19,39 +19,27 @@ export default function DetalhesProjeto() {
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
+        <Button
+          icon={<BiArrowBack />}
+          label="Voltar"
+          id="backButton"
+          acao={handleVoltar}
+        />
         <h2>Projeto não encontrado</h2>
-        <Link to="/#prjSection">
-          <Button icon={<BiArrowBack />} label="Voltar" />
-        </Link>
       </section>
     );
   }
 
-  
-
-  //   const stopScroll = () => {
-  //   // Tratamento seguro para a instância do Lenis
-  //   if (window.lenis) {
-  //     window.lenis.scrollTo(0, { immediate: true });
-  //   } else {
-  //     // Força a rolagem suave para o topo caso o Lenis não esteja ativado
-  //     indow.scrollTo(0, 0);
-  //   }
-  // };
-
   return (
-    <section
-      id="prjDetailsSection"
-    >
-      <div
-        className="sectionContent"
-        id="prjDetailContent"
-        data-aos="fade-left"
-      >
+    <section id="prjDetailsSection">
+      <div className="sectionContent" id="prjDetailContent" data-aos="fade-up">
         <div className="backButton">
-       
-            <Button icon={<BiArrowBack />} label="Voltar" id="backButton" acao={handleVoltar}/>
-         
+          <Button
+            icon={<BiArrowBack />}
+            label="Voltar"
+            id="backButton"
+            acao={handleVoltar}
+          />
         </div>
 
         <div className="sectionText" id="prjDetailText">
