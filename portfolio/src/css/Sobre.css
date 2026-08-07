@@ -44,6 +44,7 @@
   cursor: pointer;
   transition: var(--transition);
   flex-shrink: 0; 
+  z-index:1;
 }
 
 #sobreText {

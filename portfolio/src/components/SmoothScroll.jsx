@@ -13,12 +13,12 @@ export default function SmoothScroll({ children }) {
       stopInertiaOnNavigate: true,
     });
 
-    const resetScroll = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      lenis.scrollTo(0, { immediate: true });
-    };
+    // const resetScroll = () => {
+    //   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    //   lenis.scrollTo(0, { immediate: true });
+    // };
 
-    requestAnimationFrame(resetScroll);
+    // requestAnimationFrame(resetScroll);
 
     return () => {
       lenis.destroy();

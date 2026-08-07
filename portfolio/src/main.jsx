@@ -9,7 +9,7 @@ function Root() {
   useEffect(() => {
     // Inicializa o AOS
     AOS.init({
-      duration: 1000, 
+      duration: 800, 
       mirror: true, 
       once: false,  
       offset: 50,  
