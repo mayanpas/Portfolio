@@ -1,0 +1,120 @@
+@import "../App.css";
+
+#heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100dvh; /* Garante tela cheia sem estourar 110% */
+  padding: 2rem 0;
+}
+
+#heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+
+  /* Estilização da tipografia com fontes fluídas (clamp) */
+  .heroText {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    color: var(--textColor);
+
+    .greeting {
+      color: var(--accentColor);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-weight: 500;
+      text-transform: uppercase;
+      /* Tipografia fluída: encolhe em notebooks pequenos e cresce em monitores */
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      text-transform: capitalize;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+      line-height: 1.2;
+    }
+  }
+}
+
+/* FOTO */
+#heroPhoto {
+  background-image: url(../assets/FotosPerfil/perfil1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: clamp(11rem, 20vw, 17rem);
+  max-width: 100%;
+  aspect-ratio: 9 / 15;
+  border-radius: 1.5rem;
+  outline: 0.2rem dashed var(--accentColor);
+  outline-offset: 4px;
+  box-shadow: var(--photoShadow);
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0; /* Impede a foto de esmagar se o texto for grande */
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets e Celulares (Unificado) */
+@media (max-width: 480px) {
+  #heroSection {
+    min-height: 110dvh;
+    padding: 4rem 0;
+  }
+
+  #heroContent {
+    flex-direction: column-reverse; /* Foto acima do texto em telas menores */
+    justify-content: center;
+    text-align: center;
+    gap: 2.5rem;
+
+    .heroText {
+      align-items: center;
+    }
+  }
+
+  #heroPhoto {
+    width: 11rem;
+    border-radius: 1rem;
+  }
+}
+/* TABLETS */
+@media (max-height: 868px) {
+  #heroContent {
+    justify-content: space-around;
+  }
+}
+
+/* Dispositivos no Modo Landscape (Horizontal Curta) */
+@media (max-height: 500px) and (orientation: landscape) {
+  #heroSection {
+    min-height: 110dvh;
+    /* padding: 1rem 0; */
+  }
+
+  #heroContent {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.5rem;
+  }
+
+  #heroPhoto {
+    width: 8rem;
+    aspect-ratio: 1 / 1.2;
+    background-position: top;
+  }
+}
