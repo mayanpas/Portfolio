@@ -78,7 +78,7 @@ html::before {
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  overflow-x: clip;
+  overflow-x: hidden;
   transition: var(--transition);
   /* scroll-behavior: smooth; */
   /* min-height: 100%; */

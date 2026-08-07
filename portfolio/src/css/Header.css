@@ -15,11 +15,12 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background: var(--headerBackground);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
+  /* transition: var(--transition); */
 }
 
 /* LOGO */
@@ -65,7 +66,7 @@ header nav ul li a::after {
   content: "";
   position: absolute;
   bottom: -8px;
-  width: 1rem;
+  width: .8rem;
   height: 0.23rem;
   background-color: var(--accentColor);
   border-radius: 1rem;
@@ -82,7 +83,7 @@ header nav ul li a.active::after {
 }
 
 header nav ul li a.active {
-  font-weight: bold;
+  /* font-weight: 600; */
   color: var(--blackWhite);
 }
 
@@ -108,11 +109,11 @@ header nav ul li a.active {
 /* HOVER / TOUCH FEEDBACK */
 @media (hover: hover) {
   #headerLogo:hover {
-    color: var(--textColor);
+    color: var(--blackWhite);
   }
   a:hover {
     color: var(--accentColor);
-    font-weight: 600;
+    /* font-weight: 600; */
   }
 }
 
