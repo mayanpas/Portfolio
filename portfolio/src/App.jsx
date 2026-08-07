@@ -26,10 +26,10 @@ function Home() {
   return (
     <>
       {/* <Hero /> */}
-      <Sobre />
-      {/* <Habilidades />
+      {/* <Sobre /> */}
+      {/* <Habilidades /> */}
       <Projetos />
-      <Contato /> */}
+      {/* <Contato /> */}
     </>
   );
 }
@@ -38,18 +38,14 @@ function Home() {
 function RootLayout() {
   return (
     <SmoothScroll>
-      <div className="App">
-        <Header />
-        <main>
-          <div className="content">
-            {/* O <Outlet /> é onde o React Router vai 
+      <Header />
+      <main>
+          {/* O <Outlet /> é onde o React Router vai 
               injetar a <Home /> ou o <DetalhesProjeto /> */}
-            <Outlet />
-          </div>
-        </main>
-        <Footer />
-        <ScrollRestoration />
-      </div>
+          <Outlet />
+      </main>
+      <Footer />
+      <ScrollRestoration />
     </SmoothScroll>
   );
 }
