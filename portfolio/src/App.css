@@ -1,6 +1,7 @@
 /* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
 
 :root {
+  color-scheme: light;
   --accentColor: #0073ff;
   --HTMLBackgroundColor: #ffffff;
   --HTMLBackgroundImage: url(assets/Backgrounds/light.jpg);
@@ -18,7 +19,8 @@
   --blackWhite: #000;
 }
 /* --- TEMA ESCURO --- */
-[data-theme="dark"] {
+:root[data-theme="dark"] {
+  color-scheme: dark;
   --accentColor: #8dc1ff;
   --HTMLBackgroundColor: #0c0c0c;
   --HTMLBackgroundImage: url(assets/Backgrounds/dark.jpg);
