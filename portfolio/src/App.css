@@ -61,19 +61,23 @@ img {
   user-select: none; /* Impede seleção de texto acidental ao segurar */
 }
 /* CONTROLE DO BACKGROUND DO SITE */
-html::before {
+.content::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  z-index: -1;
+  /* z-index: -1; */
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
   transition: var(--transition);
   pointer-events: none;
+}
+.content{
+  background-color: var(--HTMLBackgroundColor);
+  transition: var(--transition);
 }
 html {
   background-color: var(--HTMLBackgroundColor);

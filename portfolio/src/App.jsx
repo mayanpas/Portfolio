@@ -19,6 +19,7 @@ import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 import DetalhesProjeto from "./components/DetalhesProjetos";
 import "./App.css";
+import { useTheme } from "./hooks/useTheme";
 
 function Home() {
   const { hash } = useLocation();
@@ -38,14 +39,16 @@ function Home() {
 function RootLayout() {
   return (
     <SmoothScroll>
-      <Header />
-      <main>
+      <div className={`content ${useTheme ? 'dark' : 'light'}`}>
+        <Header />
+        <main>
           {/* O <Outlet /> é onde o React Router vai 
               injetar a <Home /> ou o <DetalhesProjeto /> */}
           <Outlet />
-      </main>
-      <Footer />
-      <ScrollRestoration />
+        </main>
+        <Footer />
+        <ScrollRestoration />
+      </div>
     </SmoothScroll>
   );
 }
