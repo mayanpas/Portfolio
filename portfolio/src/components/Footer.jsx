@@ -3,7 +3,7 @@ import { BiLogoGithub } from "react-icons/bi";
 
 function Footer() {
   return (
-    <footer id="footer">
+    <footer id="footer" data-aos="fade">
       <p id="copyright">&copy; 2026 Mayan Patrick</p>
       
       <a

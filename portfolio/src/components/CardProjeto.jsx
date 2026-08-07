@@ -9,27 +9,9 @@ export default function CardProjeto({
   description,
   delay = 0, // Valor default para evitar 'undefined' no AOS
 }) {
-  // const handleScrollToTop = () => {
-  //   // 👇 ADICIONE ESTE BLOCO AQUI
-  //   useEffect(() => {
-  //     window.scrollTo({
-  //       top: 0,
-  //       left: 0,
-  //       behavior: "instant", // "instant" faz ir pro topo de uma vez, sem animação feia de rolagem
-  //     });
-  //   }, [id]);
-  //   // Tratamento seguro para a instância do Lenis
-  //   // if (window.lenis) {
-  //   //   window.lenis.scrollTo(0, { immediate: true });
-  //   // } else {
-  //   //   // Força a rolagem suave para o topo caso o Lenis não esteja ativado
-  //   //   indow.scrollTo(0, 0);
-
-  //   // }
-  // };
 
   return (
-    <article className="cardProjeto">
+    <article className="cardProjeto" data-aos="fade-up" data-aos-delay={delay}>
       <div
         className="prjImage"
         style={{ backgroundImage: `url(${image})` }}

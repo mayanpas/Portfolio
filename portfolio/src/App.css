@@ -79,7 +79,7 @@ html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
   overflow-x: hidden;
-  /* transition: var(--transition); */
+  transition: var(--transition);
   /* scroll-behavior: smooth; */
   min-height: 100%;
 }
@@ -189,8 +189,6 @@ a {
     }
   }
   section {
-    /* min-height: 100dvh;
-    width: 100%; */
     .sectionText {
       line-height: 2.5;
       color: var(--textColor);
@@ -226,8 +224,6 @@ a {
     }
   }
   section {
-    /* min-height: 100dvh;
-    width: 100%; */
     .sectionText {
       line-height: 2.5;
       color: var(--textColor);
@@ -263,8 +259,6 @@ a {
     }
   }
   section {
-    /* min-height: 100dvh;
-    width: 100%; */
     .sectionText {
       line-height: 2.5;
       color: var(--textColor);
@@ -286,25 +280,9 @@ a {
     }
   }
 }
-/* @media (min-width: 480px) and (max-width: 768px) {
-  main {
-    padding: 0 5rem;
-  }
-  header {
-    padding: 1rem 5rem;
-    nav ul {
-      gap: 1rem;
-    }
-  }
-  .headerRightGroup {
-    gap: 1rem;
-  }
-} */
+
 /* TELAS DE LAPTOPS/MONITORES PEQUENOS */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* .prjCards {
-    grid-template-columns: repeat(1, 1fr);
-  } */
   #prjSection {
     display: flex;
     align-items: center;

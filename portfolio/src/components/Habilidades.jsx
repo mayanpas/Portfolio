@@ -5,7 +5,7 @@ function Habilidades() {
   return (
     <section id="habSection">
       <div className="sectionContent" id="habContent">
-        <div className="sectionText" id="habText">
+        <div className="sectionText" id="habText" data-aos="fade">
           <h2>Habilidades</h2>
           <p>
             Soluções completas e bem estruturadas, integrando Front-end,
@@ -16,7 +16,7 @@ function Habilidades() {
           </p>
         </div>
 
-        <div className="habCards">
+        <div className="habCards" data-aos="fade-up">
           <div className="part1">
             <div className="habCard" id="HB1">
               <div className="habCardIcon">

@@ -12,7 +12,7 @@ function Sobre() {
           aria-label="Foto sobre mim"
         />
 
-        <div className="sectionText" id="sobreText">
+        <div className="sectionText" id="sobreText" data-aos="fade-up">
           <h2 className="sectionTitle">Sobre mim</h2>
           <p>
             <span className="textHighlight">Apaixonado por tecnologia</span> e

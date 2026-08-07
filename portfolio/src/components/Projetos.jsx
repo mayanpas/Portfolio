@@ -6,7 +6,7 @@ function Projetos() {
   return (
     <section id="prjSection">
       <div className="sectionContent" id="prjContent">
-        <div className="sectionText" id="prjText">
+        <div className="sectionText" id="prjText" data-aos="fade">
           <h2>Projetos</h2>
           <p>
             Uma seleção dos meus trabalhos recentes, que demonstram diversas
