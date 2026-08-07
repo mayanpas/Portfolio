@@ -23,5 +23,13 @@ export function useTheme() {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
+  // Atualiza a barra de status do Safari
+  const metaThemeColor = document.getElementById('theme-color-meta');
+  if (theme) {
+    metaThemeColor.setAttribute('content', '#000000'); // Cor do tema escuro
+  } else {
+    metaThemeColor.setAttribute('content', '#ffffff'); // Cor do tema claro
+  }
+
   return { theme, toggleTheme };
 }
