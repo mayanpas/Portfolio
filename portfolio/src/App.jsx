@@ -28,8 +28,8 @@ function Home() {
       <Hero />
       <Sobre />
       <Habilidades />
-      <Projetos />
-      <Contato />
+      {/* <Projetos />
+      <Contato /> */}
     </>
   );
 }
