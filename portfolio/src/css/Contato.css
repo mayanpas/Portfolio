@@ -5,9 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 100dvh; /* Garante que ocupe a tela sem forçar scroll extra */
-  padding: 4rem 0;
 }
 
 #contatoContent {
