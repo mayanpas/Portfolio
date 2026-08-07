@@ -39,13 +39,13 @@ function RootLayout() {
   return (
     <SmoothScroll>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <main>
           {/* O <Outlet /> é onde o React Router vai 
               injetar a <Home /> ou o <DetalhesProjeto /> */}
           <Outlet />
         </main>
-        {/* <Footer /> */}
+        <Footer />
         <ScrollRestoration />
       </div>
     </SmoothScroll>
