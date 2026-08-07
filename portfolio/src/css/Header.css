@@ -15,7 +15,7 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background: var(--headerBackground);
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   box-shadow: var(--shadow);

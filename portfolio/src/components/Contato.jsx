@@ -18,7 +18,7 @@ function Contato() {
           </p>
         </div>
         
-        <div className="contatoButtons" data-aos="fade-up">
+        <div className="contatoButtons" data-aos="fade">
           <a
             href="mailto:mayanpas0710@gmail.com?subject=Contato do Site&body=Olá, gostaria de falar sobre..."
             className="contatoButton"

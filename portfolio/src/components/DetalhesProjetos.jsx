@@ -31,7 +31,7 @@ export default function DetalhesProjeto() {
   }
 
   return (
-    <section id="prjDetailsSection">
+    <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
           <Button

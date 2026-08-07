@@ -78,12 +78,12 @@ html::before {
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: var(--transition);
   /* scroll-behavior: smooth; */
-  min-height: 100%;
+  /* min-height: 100%; */
 }
-body {
+/* body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -93,7 +93,7 @@ body {
   padding-right: env(safe-area-inset-right);
   background: transparent;
   -webkit-font-smoothing: antialiased;
-}
+} */
 main {
   padding: 0 10rem;
 }
