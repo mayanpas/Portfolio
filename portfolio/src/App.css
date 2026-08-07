@@ -61,7 +61,7 @@ img {
   user-select: none; /* Impede seleção de texto acidental ao segurar */
 }
 /* CONTROLE DO BACKGROUND DO SITE */
-html::before {
+/* html::before {
   content: "";
   position: fixed;
   top: 0;
@@ -73,7 +73,7 @@ html::before {
   background-size: cover;
   background-repeat: no-repeat;
   transition: var(--transition);
-}
+} */
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
