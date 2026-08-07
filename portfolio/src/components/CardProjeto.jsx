@@ -29,7 +29,7 @@ export default function CardProjeto({
   // };
 
   return (
-    <article className="cardProjeto" data-aos="fade-up" data-aos-delay={delay}>
+    <article className="cardProjeto">
       <div
         className="prjImage"
         style={{ backgroundImage: `url(${image})` }}

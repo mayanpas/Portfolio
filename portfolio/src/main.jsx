@@ -6,20 +6,20 @@ import App from "./App.jsx";
 
 
 function Root() {
-  useEffect(() => {
-    // Inicializa o AOS
-    AOS.init({
-      duration: 600, 
-      mirror: true, 
-      once: false,  
-      offset: 50,  
-    });
+  // useEffect(() => {
+  //   // Inicializa o AOS
+  //   AOS.init({
+  //     duration: 600, 
+  //     mirror: true, 
+  //     once: false,  
+  //     offset: 50,  
+  //   });
 
-    // Força o AOS a recalcular as posições dos elementos após a renderização inicial do React
-    requestAnimationFrame(() => {
-      AOS.refresh();
-    });
-  }, []);
+  //   // Força o AOS a recalcular as posições dos elementos após a renderização inicial do React
+  //   requestAnimationFrame(() => {
+  //     AOS.refresh();
+  //   });
+  // }, []);
 
   return (
     <App />

@@ -9,7 +9,7 @@ import {
 function Contato() {
   return (
     <section id="contatoSection" >
-      <div className="sectionContent" id="contatoContent" data-aos="fade-up">
+      <div className="sectionContent" id="contatoContent">
         <div className="sectionText" id="contatoText" >
           <h2>Contato</h2>
           <p>

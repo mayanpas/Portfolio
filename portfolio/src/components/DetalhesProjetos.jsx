@@ -32,7 +32,7 @@ export default function DetalhesProjeto() {
 
   return (
     <section id="prjDetailsSection">
-      <div className="sectionContent" id="prjDetailContent" data-aos="fade-up">
+      <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
           <Button
             icon={<BiArrowBack />}
@@ -63,7 +63,7 @@ export default function DetalhesProjeto() {
           </div>
         )}
 
-        <div className="prjButtons" data-aos="fade">
+        <div className="prjButtons">
           {projeto.github && (
             <a href={projeto.github} target="_blank" rel="noopener noreferrer">
               <Button
