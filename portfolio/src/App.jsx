@@ -41,9 +41,11 @@ function RootLayout() {
       <div className="App">
         <Header />
         <main>
-          {/* O <Outlet /> é onde o React Router vai 
+          <div className="content">
+            {/* O <Outlet /> é onde o React Router vai 
               injetar a <Home /> ou o <DetalhesProjeto /> */}
-          <Outlet />
+            <Outlet />
+          </div>
         </main>
         <Footer />
         <ScrollRestoration />
