@@ -26,10 +26,10 @@ function Home() {
   return (
     <>
       <Hero />
-      {/* <Sobre /> */}
-      <Habilidades />
+      <Sobre />
+      {/* <Habilidades />
       <Projetos />
-      <Contato />
+      <Contato /> */}
     </>
   );
 }
