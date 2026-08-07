@@ -173,7 +173,7 @@ a {
 /* Responsividade */
 /* APENAS PARA CELULARES */
 @media (max-width: 480px) {
-  html::before {
+  .content::before {
     background-image: var(--HTMLBackgroundImageMobile);
   }
 }
