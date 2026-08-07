@@ -25,9 +25,9 @@ function Home() {
 
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       <Sobre />
-      {/* <Habilidades /> */}
+      <Habilidades />
       <Projetos />
       <Contato />
     </>
