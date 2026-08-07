@@ -4,16 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Pré-carrega os backgrounds do tema claro e escuro e fotos de perfil -->
-    <link
-      rel="preload"
-      as="image"
-      href="./src/assets/FotosPerfil/perfil1.jpg"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="./src/assets/FotosPerfil/perfil2.jpg"
-    />
+    <link rel="preload" as="image" href="./src/assets/FotosPerfil/perfil1.jpg" />
+    <link rel="preload" as="image" href="./src/assets/FotosPerfil/perfil2.jpg" />
     <link rel="preload" as="image" href="./src/assets/Backgrounds/light.jpg" />
     <link rel="preload" as="image" href="./src/assets/Backgrounds/dark.jpg" />
     <link
@@ -26,42 +18,31 @@
       as="image"
       href="./src/assets/Backgrounds/Mobile/dark.jpg"
     />
-
-    <!-- viewport-fit=cover é essencial para o blur pegar até a ilha dinâmica -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="description" content="Portfólio pessoal" />
-
-    <!-- Meta tag com id para o JS manipular -->
-    <meta id="theme-color-meta" name="theme-color" content="#ffffff" />
-
     <title>Portfólio | Mayan Patrick</title>
-
-    <!-- SCRIPT ANTI-PISCO (FOUC) ATUALIZADO -->
+    <!-- SCRIPT ANTI-PISCO (FOUC) -->
     <script>
       (function () {
         try {
+          /* Verifica se você salvou o tema no localStorage (ajuste o nome da chave se necessário) */
           var localTheme = localStorage.getItem("theme");
+          /* Verifica a preferência de cor do sistema operacional do usuário */
           var sysTheme = window.matchMedia(
             "(prefers-color-scheme: dark)",
           ).matches;
-          var metaThemeColor = document.getElementById("theme-color-meta");
 
-          /* ATENÇÃO: Coloque aqui a cor predominante do TOPO da sua imagem dark.jpg e light.jpg */
-          var corTemaEscuro = "#121212";
-          var corTemaClaro = "#ffffff";
-
+          /* Se tiver salvo dark, ou se não tiver nada salvo mas o PC dele for dark, aplica a classe imediatamente */
           if (localTheme === "dark" || (!localTheme && sysTheme)) {
             document.documentElement.setAttribute("data-theme", "dark");
-            metaThemeColor.setAttribute("content", corTemaEscuro);
-          } else {
-            metaThemeColor.setAttribute("content", corTemaClaro);
           }
         } catch (e) {}
       })();
     </script>
+    <!-- Fim do script -->
   </head>
   <body>
     <div id="root"></div>

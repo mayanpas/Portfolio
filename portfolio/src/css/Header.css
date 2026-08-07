@@ -2,11 +2,11 @@
 
 /* CONFIGURAÇÃO DE CORES */
 :root {
-  --headerBackground: #ffffffbd;
+  --headerBackground: #ffffff;
 }
 
 [data-theme="dark"] {
-  --headerBackground: #0c0c0cbd;
+  --headerBackground: #0c0c0c;
 }
 
 header {
@@ -20,10 +20,6 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
-  -webkit-backdrop-filter: var(--blur); /* Para o Safari */
-  backdrop-filter: var(--blur);
-  box-shadow: inset 0 1px 0 var(--HTMLBackgroundColor);
-  transition: padding var(--transition), transform var(--transition);
   /* transition: var(--transition); */
 }
 
