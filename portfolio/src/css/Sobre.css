@@ -29,6 +29,7 @@
   border-radius: var(--borderRadius);
   transition: var(--transition);
   width: 100%;
+  z-index: 1;
 }
 
 #sobrePhoto {
@@ -43,8 +44,8 @@
   outline-offset: 3px;
   cursor: pointer;
   transition: var(--transition);
-  flex-shrink: 0; 
-  z-index:1;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
 #sobreText {
