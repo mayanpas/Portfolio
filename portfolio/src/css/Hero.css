@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100dvh; /* Garante tela cheia sem estourar 110% */
-  padding: 2rem 0;
+  /* width: 100%;
+  min-height: 100dvh; 
+  padding: 2rem 0; */
 }
 
 #heroContent {
@@ -72,8 +72,8 @@
 /* Tablets e Celulares (Unificado) */
 @media (max-width: 480px) {
   #heroSection {
-    min-height: 110dvh;
-    padding: 4rem 0;
+    /* min-height: 110dvh;
+    padding: 4rem 0; */
   }
 
   #heroContent {
@@ -102,8 +102,7 @@
 /* Dispositivos no Modo Landscape (Horizontal Curta) */
 @media (max-height: 500px) and (orientation: landscape) {
   #heroSection {
-    min-height: 110dvh;
-    /* padding: 1rem 0; */
+    /* min-height: 110dvh; */
   }
 
   #heroContent {
