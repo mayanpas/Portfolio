@@ -77,9 +77,9 @@ img {
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  transition: var(--transition);
+  /* overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; */
+  /* transition: var(--transition); */
   /* scroll-behavior: smooth; */
 }
 main {
