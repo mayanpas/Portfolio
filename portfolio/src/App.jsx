@@ -1,7 +1,7 @@
-// import "@fontsource/cal-sans";
-// import "@fontsource/plus-jakarta-sans/400.css";
-// import "@fontsource/plus-jakarta-sans/500.css";
-// import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/cal-sans";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/700.css";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -38,7 +38,7 @@ function Home() {
 function RootLayout() {
   return (
     <SmoothScroll>
-      <div className="App">
+
         <Header />
         <main>
           {/* O <Outlet /> é onde o React Router vai 
@@ -47,7 +47,7 @@ function RootLayout() {
         </main>
         <Footer />
         <ScrollRestoration />
-      </div>
+      
     </SmoothScroll>
   );
 }
