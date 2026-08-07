@@ -23,6 +23,7 @@ header {
   -webkit-backdrop-filter: var(--blur); /* Para o Safari */
   backdrop-filter: var(--blur);
   box-shadow: inset 0 1px 0 var(--HTMLBackgroundColor);
+  transition: padding var(--transition), transform var(--transition);
   /* transition: var(--transition); */
 }
 
