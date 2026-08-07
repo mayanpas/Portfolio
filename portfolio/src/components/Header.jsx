@@ -1,12 +1,12 @@
 import "../css/Header.css";
-// import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 import { BiMoon, BiSun, BiMenu, BiX } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../components/Buttons/Button1";
 import { useState, useEffect, useRef } from "react"; // 1. useRef adicionado
 
 function Header() {
-  // const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -170,8 +170,8 @@ function Header() {
         <div className="headerActions">
           {/* Alternador de Tema */}
           <Button
-            // acao={toggleTheme}
-            // icon={theme === "dark" ? <BiSun /> : <BiMoon />}
+            acao={toggleTheme}
+            icon={theme === "dark" ? <BiSun /> : <BiMoon />}
             id="headerButton"
             ariaLabel="Alternar tema"
           />
