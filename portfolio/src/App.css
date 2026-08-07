@@ -80,7 +80,13 @@ html {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: var(--transition);
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 main {
   padding: 0 10rem;
