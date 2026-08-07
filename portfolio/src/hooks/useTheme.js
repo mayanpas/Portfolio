@@ -16,20 +16,33 @@ export function useTheme() {
     document.documentElement.setAttribute('data-theme', theme);
     // Salva a escolha do usuário no LocalStorage
     localStorage.setItem('theme', theme);
-  }, [theme]);
+
+    // --- CÓDIGO NOVO PARA O SAFARI AQUI ---
+    
+    // Busca a tag meta theme-color no HTML
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    
+    // Se a tag não existir no index.html, cria ela dinamicamente
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement('meta');
+      metaThemeColor.name = 'theme-color';
+      document.head.appendChild(metaThemeColor);
+    }
+    
+    // Define a cor baseada no tema atual (substitua pelas cores exatas do seu site)
+    const corTemaEscuro = '#0c0c0c'; // Exemplo: cor do fundo escuro
+    const corTemaClaro = '#ffffff';  // Exemplo: cor do fundo claro
+    
+    metaThemeColor.setAttribute('content', theme === 'dark' ? corTemaEscuro : corTemaClaro);
+    
+    // --------------------------------------
+
+  }, [theme]); // Como o 'theme' está no array de dependências, isso roda sempre que o tema muda.
 
   // Função para alternar entre 'dark' e 'light'
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
-
-  // Atualiza a barra de status do Safari
-  const metaThemeColor = document.getElementById('theme-color-meta');
-  if (theme) {
-    metaThemeColor.setAttribute('content', '#000000'); // Cor do tema escuro
-  } else {
-    metaThemeColor.setAttribute('content', '#ffffff'); // Cor do tema claro
-  }
 
   return { theme, toggleTheme };
 }
