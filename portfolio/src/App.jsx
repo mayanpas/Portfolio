@@ -38,7 +38,7 @@ function Home() {
 function RootLayout() {
   return (
     <SmoothScroll>
-
+      <div className="App">
         <Header />
         <main>
           {/* O <Outlet /> é onde o React Router vai 
@@ -47,7 +47,7 @@ function RootLayout() {
         </main>
         <Footer />
         <ScrollRestoration />
-      
+      </div>
     </SmoothScroll>
   );
 }
