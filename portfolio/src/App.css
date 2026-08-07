@@ -1,0 +1,365 @@
+/* CONFIGURAÇAO DE CORES P/ TEMA CLARO E TEMA ESCURO */
+
+:root {
+  --accentColor: #0073ff;
+  --HTMLBackgroundColor: #ffffff;
+  --HTMLBackgroundImage: url(assets/Backgrounds/light.jpg);
+  --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/light.jpg);
+  --HTMLColorScheme: light;
+  --textColor: #111;
+  --subTextColor: #333;
+  --button1IconColor: #fff;
+  --transition: 0.3s ease;
+  --blur: blur(8px);
+  --shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --photoShadow: 0px 4px 50px 0px #3f95ffbb;
+  --borderRadius: 1rem;
+  --cardBackgroundColor: #ffffffbb;
+  --blackWhite: #000;
+}
+/* --- TEMA ESCURO --- */
+[data-theme="dark"] {
+  --accentColor: #8dc1ff;
+  --HTMLBackgroundColor: #0c0c0c;
+  --HTMLBackgroundImage: url(assets/Backgrounds/dark.jpg);
+  --HTMLBackgroundImageMobile: url(assets/Backgrounds/Mobile/dark.jpg);
+  --HTMLColorScheme: dark;
+  --textColor: #fff;
+  --subTextColor: #c2c2c2;
+  --button1IconColor: #111;
+  --photoShadow: 0px 4px 50px 0px #8dc0ff6b;
+  --cardBackgroundColor: #111111bb;
+  --blackWhite: #fff;
+}
+
+/* CONFIGURAÇÕES GLOBAIS */
+/* 1. Garante que o layout flex funcione de cima a baixo */
+
+*,
+:after,
+:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cal Sans", "Plus Jakarta Sans", sans-serif;
+}
+a,
+p,
+h1,
+h2,
+h3,
+span {
+  transition: var(--transition);
+}
+
+/* Impede o comportamento de arrastar e selecionar texto em elementos clicáveis */
+a,
+button,
+.cardProjeto,
+img {
+  -webkit-user-drag: none; /* Impede o drag no Chrome/Safari/Edge */
+  user-select: none; /* Impede seleção de texto acidental ao segurar */
+}
+/* CONTROLE DO BACKGROUND DO SITE */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: var(--HTMLBackgroundImage);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: var(--transition);
+}
+html {
+  background-color: var(--HTMLBackgroundColor);
+  color-scheme: var(--HTMLColorScheme);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: var(--transition);
+  /* scroll-behavior: smooth; */
+}
+main {
+  padding: 0 10rem;
+}
+header {
+  padding: 1rem 10rem;
+  transition: var(--transition);
+}
+footer {
+  padding: 2rem 10rem;
+}
+section {
+  width: 100%;
+  .sectionText {
+    line-height: 2;
+    color: var(--textColor);
+    h2 {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+    p {
+      line-height: normal;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: large;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: 0;
+      span {
+        color: var(--accentColor);
+      }
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+.button1 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  width: fit-content;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: medium;
+  color: var(--button1IconColor);
+  background-color: var(--accentColor);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.habButton {
+  display: flex;
+  gap: 0.3rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  color: var(--textColor);
+  img {
+    width: 0.8rem;
+  }
+  font-size: small;
+  transition: var(--transition);
+}
+.habButtonsCollection {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+/* Responsividade */
+/* APENAS PARA CELULARES */
+@media (max-width: 480px) {
+  html::before {
+    background-image: var(--HTMLBackgroundImageMobile);
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 0 1.5rem;
+  }
+  header {
+    padding: 0.6rem 1.5rem;
+  }
+  footer {
+    padding: 1.5rem;
+    gap: 1rem;
+    a,
+    p {
+      font-size: x-small;
+    }
+  }
+  section {
+    min-height: 100dvh;
+    /* padding: 7rem; */
+    width: 100%;
+    .sectionText {
+      line-height: 2.5;
+      color: var(--textColor);
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+      p {
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: medium;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: 0;
+        span {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}
+@media (max-height: 480px) {
+  main {
+    padding: 0 3rem;
+  }
+  header {
+    padding: 0.6rem 3rem;
+    #headerLogo {
+      font-size: medium;
+    }
+    nav ul li a {
+      font-size: small;
+    }
+  }
+  section {
+    min-height: 100dvh;
+    /* padding: 7rem; */
+    width: 100%;
+    .sectionText {
+      line-height: 2.5;
+      color: var(--textColor);
+      h2 {
+        font-size: xx-large;
+        font-weight: 500;
+      }
+      p {
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: small;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: 0;
+        span {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  main {
+    padding: 0 3rem;
+  }
+  header {
+    padding: 0.6rem 3rem;
+    #headerLogo {
+      font-size: medium;
+    }
+    nav ul li a {
+      font-size: small;
+    }
+  }
+  section {
+    min-height: 100dvh;
+    width: 100%;
+    .sectionText {
+      line-height: 2.5;
+      color: var(--textColor);
+      h2 {
+        font-size: xx-large;
+        font-weight: 500;
+      }
+      p {
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: small;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: 0;
+        span {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}
+/* @media (min-width: 480px) and (max-width: 768px) {
+  main {
+    padding: 0 5rem;
+  }
+  header {
+    padding: 1rem 5rem;
+    nav ul {
+      gap: 1rem;
+    }
+  }
+  .headerRightGroup {
+    gap: 1rem;
+  }
+} */
+/* TELAS DE LAPTOPS/MONITORES PEQUENOS */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* .prjCards {
+    grid-template-columns: repeat(1, 1fr);
+  } */
+  #prjSection {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+  }
+  .prjCards {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .cardProjeto {
+    flex: 1;
+    padding: 1rem;
+    gap: 0.6rem;
+    border-radius: 0.5rem;
+    .type {
+      font-size: x-small;
+    }
+    h3 {
+      font-size: medium;
+    }
+    .description {
+      font-size: x-small;
+    }
+    a {
+      padding: 0.4rem 0.8rem;
+      border: 2px solid var(--accentColor);
+      font-size: small;
+    }
+    a:hover {
+      background-color: var(--accentColor);
+      color: var(--button1IconColor);
+    }
+  }
+}
+/* AJUSTES PARA TABLETS E CELULARES */
+@media (orientation: landscape) and (max-height: 500px) {
+}
+@media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
+}
+
+/* O hover só será aplicado se o dispositivo suportar hover (ex: mouse/trackpad) */
+@media (hover: hover) {
+  .button1:hover {
+    background-color: var(--textColor);
+    color: var(--button1IconColor);
+  }
+  .button1:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  .photo:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* Opcional: Estilo para quando for touch (para dar feedback visual sem ser "hover") */
+@media (pointer: coarse) {
+  .button1:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+    background-color: var(--textColor);
+    color: var(--button1IconColor);
+  }
+  .photo:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
