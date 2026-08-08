@@ -79,13 +79,13 @@ img {
 }
 .content{
   background-color: var(--HTMLBackgroundColor);
-  /* transition: var(--transition); */
+  transition: var(--transition);
 }
 html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
   overflow-x: hidden;
-  transition: var(--transition);
+  /* transition: var(--transition); */
   /* scroll-behavior: smooth; */
   /* min-height: 100%; */
 }
