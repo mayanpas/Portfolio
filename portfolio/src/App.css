@@ -68,8 +68,8 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 150vmax;
-  height: 150vmax;
+  width: 100vw;
+  height: 100vh;
   /* z-index: -1; */
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
@@ -79,7 +79,7 @@ img {
 }
 .content{
   background-color: var(--HTMLBackgroundColor);
-  transition: var(--transition);
+  /* transition: var(--transition); */
 }
 html {
   background-color: var(--HTMLBackgroundColor);
