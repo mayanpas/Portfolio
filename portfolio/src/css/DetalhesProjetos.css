@@ -165,10 +165,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.6rem;
-
     .prjPhoto {
       width: 100%;
       aspect-ratio: 16 / 9;
+          border-radius: .6rem;
     }
   }
 
