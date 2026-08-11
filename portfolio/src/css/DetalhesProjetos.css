@@ -25,11 +25,11 @@
   }
   .backButton {
     align-self: flex-start;
-  }
-  #backButton {
-    background-color: transparent;
-    border: 2px solid var(--accentColor);
-    color: var(--accentColor);
+    #backButton {
+      background-color: transparent;
+      border: 2px solid var(--accentColor);
+      color: var(--accentColor);
+    }
   }
 }
 #prjDetailText {
