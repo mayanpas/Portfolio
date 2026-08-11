@@ -10,20 +10,14 @@ export default function DetalhesProjeto() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const voltar = () => {
-    // navigate(`/#prjSection`);
-    navigate(-1);
-    window.lenis.stop();
-  };
-
   const projeto = projetosData.find((item) => item.id === id);
 
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
-        {/* <Link to={navigate(-1)} className="button1" id="backButton">
+        <Link to={navigate(-1)} className="button1" id="backButton">
           <BiLeftArrowCircle /> Voltar
-        </Link> */}
+        </Link>
         <h2>Projeto não encontrado</h2>
       </section>
     );
@@ -33,11 +27,8 @@ export default function DetalhesProjeto() {
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
-          {/* <Link to={navigate(-1)} className="button1" id="backButton">
+          <Link to={navigate(-1)} className="button1" id="backButton">
             <BiLeftArrowCircle /> Voltar
-          </Link> */}
-          <Link to={navigate(-1)}>
-            <Button label="Voltar"></Button>
           </Link>
         </div>
 

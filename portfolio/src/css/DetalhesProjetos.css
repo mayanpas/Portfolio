@@ -97,8 +97,8 @@
     transform: scale(1.03);
   }
   #backButton:hover {
-    background-color: var(--accentColor) !important;
-    color: var(--HTMLBackgroundColor) !important;
+    /* background-color: var(--accentColor) !important;
+    color: var(--HTMLBackgroundColor) !important; */
   }
 }
 
@@ -108,8 +108,8 @@
   }
   #backButton:active {
     opacity: 0.8;
-    background-color: var(--accentColor) !important;
-    color: var(--HTMLBackgroundColor) !important;
+    /* background-color: var(--accentColor) !important;
+    color: var(--HTMLBackgroundColor) !important; */
   }
 }
 
