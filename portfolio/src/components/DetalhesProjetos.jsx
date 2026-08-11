@@ -67,19 +67,23 @@ export default function DetalhesProjeto() {
         )}
 
         <div className="prjButtons">
-          <Button
-            acao={projeto.github}
-            icon={<BiLogoGithub size={20} />}
-            label="GitHub"
-            id="github"
-          />
+          {projeto.github && (
+            <Button
+              acao={projeto.github}
+              icon={<BiLogoGithub size={20} />}
+              label="GitHub"
+              id="github"
+            />
+          )}
 
-          <Button
-            acao={projeto.liveDemo}
-            icon={<BiExit size={20} />}
-            label="Live Demo"
-            id="liveDemo"
-          />
+          {projeto.liveDemo && (
+            <Button
+              acao={projeto.liveDemo}
+              icon={<BiExit size={20} />}
+              label="Live Demo"
+              id="liveDemo"
+            />
+          )}
         </div>
       </div>
     </section>
