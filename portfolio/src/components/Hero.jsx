@@ -11,10 +11,10 @@ function Hero() {
           <h1 data-aos="fade-up" data-aos-delay={50}>
             Mayan
           </h1>
-          <h1 data-aos="fade-up" data-aos-delay={100}>
+          <h1 data-aos="fade-up" data-aos-delay={50}>
             Patrick
           </h1>
-          <p className="subtitle" data-aos="fade-up" data-aos-delay={150}>
+          <p className="subtitle" data-aos="fade-up" data-aos-delay={100}>
             Engenheiro de Software
           </p>
         </div>
