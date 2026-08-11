@@ -29,6 +29,7 @@
   --textColor: #fff;
   --subTextColor: #c2c2c2;
   --button1IconColor: #111;
+  --shadow: 0px 4px 50px 0px #8dc0ff07;
   --photoShadow: 0px 4px 50px 0px #8dc0ff6b;
   --cardBackgroundColor: #111111bb;
   --blackWhite: #fff;
@@ -57,7 +58,7 @@ a,
 button,
 .cardProjeto,
 img {
-  -webkit-user-drag: none; 
+  -webkit-user-drag: none;
   user-select: none;
 }
 /* CONTROLE DO BACKGROUND DO SITE */
@@ -74,7 +75,7 @@ img {
   transition: var(--transition);
   pointer-events: none;
 }
-.content{
+.content {
   background-color: var(--HTMLBackgroundColor);
   transition: var(--transition);
 }

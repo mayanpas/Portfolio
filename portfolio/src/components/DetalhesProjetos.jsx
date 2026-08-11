@@ -4,7 +4,7 @@ import { projetosData } from "../hooks/projetosData";
 import "../css/DetalhesProjetos.css";
 import HabButtons from "../components/HabButtons";
 import Button from "../components/Buttons/Button1";
-import { BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
+import { BiChevronLeft, BiLogoGithub, BiExit } from "react-icons/bi";
 
 export default function DetalhesProjeto() {
   const { id } = useParams();
@@ -20,7 +20,7 @@ export default function DetalhesProjeto() {
     return (
       <section id="prjDetailsSection">
         <Button
-          icon={<BiLeftArrowCircle />}
+          icon={<BiChevronLeft size={20}/>}
           label="Voltar"
           id="backButton"
           acao={handleVoltar}
@@ -33,17 +33,17 @@ export default function DetalhesProjeto() {
   return (
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
-        <div className="backButton">
-          <Button
-            icon={<BiLeftArrowCircle />}
-            label="Voltar"
-            id="backButton"
-            acao={handleVoltar}
-          />
-        </div>
-
         <div className="sectionText" id="prjDetailText">
-          <h2>{projeto.title}</h2>
+          <h2>
+            <div className="backButton">
+              <Button
+                icon={<BiChevronLeft size={30}/>}
+                id="backButton"
+                acao={handleVoltar}
+              />
+            </div>
+            {projeto.title}
+          </h2>
           <p>{projeto.description}</p>
           <div className="prjHabilities">
             <HabButtons habs={projeto.habilities} />

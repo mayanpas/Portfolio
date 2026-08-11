@@ -1,8 +1,8 @@
 @import "../App.css";
 
 #prjDetailsSection {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
   width: 100%;
 }
 
@@ -13,6 +13,10 @@
   align-items: center;
   gap: 1.5rem;
   h2 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
     text-transform: capitalize;
     justify-self: center;
     line-height: 1;
@@ -23,13 +27,11 @@
     color: var(--textColor);
     line-height: 1.6;
   }
-  .backButton {
-    align-self: flex-start;
-    #backButton {
-      background-color: transparent;
-      border: 2px solid var(--accentColor);
-      color: var(--accentColor);
-    }
+  #backButton {
+    background-color: transparent;
+    border: 2px solid var(--accentColor);
+    color: var(--accentColor);
+    padding: .1rem;
   }
 }
 #prjDetailText {
@@ -57,12 +59,11 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: var(--borderRadius);
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: var(--transition);
+      transition: 1s ease;
     }
   }
 }
@@ -79,7 +80,6 @@
   }
 
   #github {
-    background-color: var(--textColor);
     border: 3px solid transparent;
     color: var(--HTMLBackgroundColor);
   }
@@ -131,8 +131,8 @@
 
 @media (max-width: 480px) {
   #prjDetailsSection {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
   #prjDetailContent {
@@ -179,6 +179,10 @@
 
   .prjHabilities .habIcon {
     width: 0.75rem !important;
+  }
+
+  .prjButtons{
+    padding-top: 0;
   }
 }
 

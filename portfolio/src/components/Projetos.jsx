@@ -19,7 +19,7 @@ function Projetos() {
             <PrjCard
               key={projeto.id || index} 
               {...projeto}              // Passa todas as propriedades
-              delay={index * 100}       // Incremental: 0ms, 100ms, 200ms...
+              // delay={index * 100}       // Incremental: 0ms, 100ms, 200ms...
             />
           ))}
         </div>
