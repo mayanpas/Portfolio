@@ -29,7 +29,7 @@ function Home() {
       <Habilidades />
       <Projetos />
       <Contato />
-
+      <Footer />
     </>
   );
 }
@@ -49,7 +49,6 @@ function RootLayout() {
         </main>
         <ScrollRestoration />
       </div>
-            <Footer />
     </SmoothScroll>
   );
 }
