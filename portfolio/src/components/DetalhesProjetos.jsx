@@ -4,24 +4,27 @@ import { projetosData } from "../hooks/projetosData";
 import "../css/DetalhesProjetos.css";
 import HabButtons from "../components/HabButtons";
 import Button from "../components/Buttons/Button1";
-import { BiArrowBack, BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
+import { BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
 
 export default function DetalhesProjeto() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleVoltar = () =>{
-    navigate(-2)
-  }
+  const handleVoltar = () => {
+    navigate(-2);
+  };
 
   const projeto = projetosData.find((item) => item.id === id);
 
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
-        <Link to={navigate(-1)} className="button1" id="backButton">
-          <BiLeftArrowCircle /> Voltar
-        </Link>
+        <Button
+          icon={<BiLeftArrowCircle />}
+          label="Voltar"
+          id="backButton"
+          acao={handleVoltar}
+        />
         <h2>Projeto não encontrado</h2>
       </section>
     );
@@ -31,11 +34,8 @@ export default function DetalhesProjeto() {
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
-          {/* <Link to={navigate(-1)} className="button1" id="backButton">
-            <BiLeftArrowCircle /> Voltar
-          </Link> */}
           <Button
-            icon={<BiArrowBack />}
+            icon={<BiLeftArrowCircle />}
             label="Voltar"
             id="backButton"
             acao={handleVoltar}

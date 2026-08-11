@@ -29,6 +29,7 @@ function Home() {
       <Habilidades />
       <Projetos />
       <Contato />
+      <Footer />
     </>
   );
 }
@@ -46,7 +47,6 @@ function RootLayout() {
               injetar a <Home /> ou o <DetalhesProjeto /> */}
           <Outlet />
         </main>
-        <Footer />
         <ScrollRestoration />
       </div>
     </SmoothScroll>
