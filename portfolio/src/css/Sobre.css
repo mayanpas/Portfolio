@@ -55,7 +55,7 @@
 }
 
 #sobreButton {
-  align-self: flex-start; /* Evita que o botão estique na largura do container */
+  align-self: flex-start;
   padding: 0.4rem 1.5rem;
 }
 
@@ -93,7 +93,6 @@
   #sobreContent {
     flex-direction: row;
     gap: 2rem;
-    /* padding: 1.5rem; */
   }
   #sobreButton {
     padding: 0.1rem 1.5rem;

@@ -20,20 +20,17 @@ header {
   width: 100%;
   box-shadow: var(--shadow);
   z-index: 150;
-  /* transition: var(--transition); */
 }
 
-/* LOGO */
 #headerLogo {
   text-decoration: none;
   color: var(--accentColor);
   font-family: "Cal Sans", sans-serif;
   font-size: 1.5rem;
-  z-index: 1001; /* Fica acima do overlay mobile */
+  z-index: 1001;
   transition: var(--transition);
 }
 
-/* AGRUPAMENTO DA DIREITA */
 .headerRightGroup {
   display: flex;
   align-items: center;
@@ -83,7 +80,6 @@ header nav ul li a.active::after {
 }
 
 header nav ul li a.active {
-  /* font-weight: 600; */
   color: var(--blackWhite);
 }
 
@@ -92,14 +88,14 @@ header nav ul li a.active {
   display: flex;
   align-items: center;
   gap: .7rem;
-  z-index: 1001; /* Fica acima do overlay mobile */
+  z-index: 1001;
 }
 #headerButton{
   border: 2px solid transparent;
   padding: .5rem 1rem;
 }
 #headerMobileMenuButton {
-  display: none; /* Oculto em Telas Grandes */
+  display: none;
   background-color: transparent;
   border: 2px solid var(--accentColor);
   color: var(--accentColor);
@@ -113,7 +109,6 @@ header nav ul li a.active {
   }
   a:hover {
     color: var(--accentColor);
-    /* font-weight: 600; */
   }
 }
 
@@ -126,9 +121,9 @@ header nav ul li a.active {
   }
 }
 
-/* ===================================================
-   📱 RESPONSIVIDADE MOBILE / TABLET (<= 768px)
-   =================================================== */
+/* RESPONSIVIDADE */
+
+/* CELULARES E TABLETS */
 @media (max-width: 768px) {
   header {
     padding: 1rem 1.5rem;
@@ -142,7 +137,7 @@ header nav ul li a.active {
   /* Menu Flutuante Mobile (Substitui o overlay) */
   #headerNav {
     position: absolute;
-    top: 4.5rem; /* Posicionado logo abaixo do header */
+    top: 4.5rem; 
     right: 1.5rem;
     width: 200px;
     height: auto;
@@ -150,11 +145,9 @@ header nav ul li a.active {
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
-    
     display: flex;
     flex-direction: column;
     z-index: 1000;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(-15px) scale(0.95);

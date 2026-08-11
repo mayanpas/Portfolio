@@ -4,9 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 100%;
-  min-height: 100dvh; 
-  padding: 2rem 0; */
 }
 
 #heroContent {
@@ -15,29 +12,23 @@
   justify-content: space-between;
   width: 100%;
   gap: 2rem;
-
-  /* Estilização da tipografia com fontes fluídas (clamp) */
   .heroText {
     display: flex;
     flex-direction: column;
     line-height: 0.9;
     color: var(--textColor);
-
     .greeting {
       color: var(--accentColor);
       font-size: clamp(1.8rem, 4vw, 3rem);
       text-transform: capitalize;
       font-weight: 500;
     }
-
     h1 {
       font-weight: 500;
       text-transform: uppercase;
-      /* Tipografia fluída: encolhe em notebooks pequenos e cresce em monitores */
       font-size: clamp(3.5rem, 8vw, 7.5rem);
       letter-spacing: -1px;
     }
-
     .subtitle {
       font-size: clamp(0.9rem, 1.5vw, 1.1rem);
       text-transform: capitalize;
@@ -49,7 +40,6 @@
   }
 }
 
-/* FOTO */
 #heroPhoto {
   background-image: url(../assets/FotosPerfil/perfil1.jpg);
   background-size: cover;
@@ -64,20 +54,15 @@
   box-shadow: var(--photoShadow);
   cursor: pointer;
   transition: var(--transition);
-  flex-shrink: 0; /* Impede a foto de esmagar se o texto for grande */
+  flex-shrink: 0;
 }
 
 /* RESPONSIVIDADE */
 
-/* Tablets e Celulares (Unificado) */
+/* CELULARES */
 @media (max-width: 480px) {
-  #heroSection {
-    /* min-height: 110dvh;
-    padding: 4rem 0; */
-  }
-
   #heroContent {
-    flex-direction: column-reverse; /* Foto acima do texto em telas menores */
+    flex-direction: column-reverse;
     justify-content: center;
     text-align: center;
     gap: 2.5rem;
@@ -101,10 +86,6 @@
 
 /* Dispositivos no Modo Landscape (Horizontal Curta) */
 @media (max-height: 500px) and (orientation: landscape) {
-  #heroSection {
-    /* min-height: 110dvh; */
-  }
-
   #heroContent {
     flex-direction: row;
     justify-content: space-around;

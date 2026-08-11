@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
   useLocation,
 } from "react-router-dom";
+import { useTheme } from "./hooks/useTheme";
 import SmoothScroll from "./components/SmoothScroll";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -19,11 +20,8 @@ import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 import DetalhesProjeto from "./components/DetalhesProjetos";
 import "./App.css";
-import { useTheme } from "./hooks/useTheme";
 
 function Home() {
-  const { hash } = useLocation();
-
   return (
     <>
       <Hero />
@@ -37,9 +35,11 @@ function Home() {
 
 // 2. Layout Base
 function RootLayout() {
+  const { tema } = useTheme();
+
   return (
     <SmoothScroll>
-      <div className={`content ${useTheme ? 'dark' : 'light'}`}>
+      <div className={`content ${tema ? "dark" : "light"}`}>
         <Header />
         <main>
           {/* O <Outlet /> é onde o React Router vai 

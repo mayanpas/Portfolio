@@ -10,21 +10,20 @@ export default function DetalhesProjeto() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const projeto = projetosData.find((item) => item.id === id);
-
-  const handleVoltar = () => {
-    navigate(-1); // "-1" significa voltar 1 página no histórico do navegador
+  const voltar = () => {
+    // navigate(`/#prjSection`);
+    navigate(-1);
+    window.lenis.stop();
   };
+
+  const projeto = projetosData.find((item) => item.id === id);
 
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
-        <Button
-          icon={<BiArrowBack />}
-          label="Voltar"
-          id="backButton"
-          acao={handleVoltar}
-        />
+        <Link to={navigate(-1)} onClick={`window.lenis.stop();`}>
+          <Button icon={<BiArrowBack />} label="Voltar" id="backButton" />
+        </Link>
         <h2>Projeto não encontrado</h2>
       </section>
     );
@@ -34,12 +33,9 @@ export default function DetalhesProjeto() {
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
-          <Button
-            icon={<BiArrowBack />}
-            label="Voltar"
-            id="backButton"
-            acao={handleVoltar}
-          />
+          <Link to={navigate(-1)}>
+            <Button icon={<BiArrowBack />} label="Voltar" id="backButton" />
+          </Link>
         </div>
 
         <div className="sectionText" id="prjDetailText">

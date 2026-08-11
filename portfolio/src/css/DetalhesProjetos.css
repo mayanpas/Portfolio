@@ -6,30 +6,17 @@
   width: 100%;
 }
 
-/* Transição suave de página */
-.page-enter {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-exit {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
 #prjDetailContent {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   gap: 1.5rem;
-
   h2 {
     text-transform: capitalize;
     justify-self: center;
     line-height: 1;
   }
-
   p {
     width: 90%;
     margin: 0 auto;
@@ -54,15 +41,13 @@
 .prjHabilities .habButton {
   gap: 0.2rem !important;
   font-size: 0.75rem !important;
-  /* opacity: 0.7; */
   color: var(--subTextColor) !important;
 }
 
-/* GALERIA DE FOTOS (FLEXWRAP CENTRALIZADO) */
 .prjPhotos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centraliza a 2ª linha com as 2 fotos */
+  justify-content: center;
   gap: 0.6rem;
   width: 100%;
 
@@ -125,7 +110,7 @@
   }
 }
 
-/* RESPONSIVIDADE ORIGINAL */
+/* RESPONSIVIDADE*/
 
 @media (min-width: 480px) and (max-width: 768px) {
   #prjDetailsSection {
@@ -135,7 +120,7 @@
 
   .prjPhotos {
     .prjPhoto {
-      width: calc(50% - 0.4rem); /* 2 fotos por linha em tablets */
+      width: calc(50% - 0.4rem);
       aspect-ratio: 16 / 9;
     }
   }
@@ -174,7 +159,7 @@
     gap: 0.6rem;
 
     .prjPhoto {
-      width: 100%; /* 1 foto por linha no mobile */
+      width: 100%;
       aspect-ratio: 16 / 9;
     }
   }
@@ -182,7 +167,6 @@
   .habButtonsCollection {
     padding: 0 !important;
     gap: 0.5rem !important;
-    /* line-height: 0; */
   }
   .prjHabilities .habButton {
     gap: 0.2rem !important;
@@ -191,11 +175,10 @@
   }
 
   .prjHabilities .habIcon {
-    /* display: none; */
     width: 0.75rem !important;
   }
 }
-/* Ajuste isolado para Habilidades dentro de Detalhes do Projeto */
+
 .prjHabilities .habButtonsCollection {
   display: flex !important;
   flex-direction: row;

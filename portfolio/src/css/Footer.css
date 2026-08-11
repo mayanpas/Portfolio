@@ -13,11 +13,9 @@
 }
 
 footer {
-  /* O background-color agora está ativo para cobrir elementos caso haja sobreposição */
-  /* background-color: var(--footerBackground); */
   border-top: 1px solid var(--footerBorder);
   width: 100%;
-  padding: 1.5rem 2rem; /* Adicionado padding para respiro visual */
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,26 +42,29 @@ footer a {
   transition: var(--transition);
 }
 
-/* Ajuste direto para o SVG do React Icons (removida a tag img) */
 footer a .footerIcon,
 footer a svg {
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
-/* O hover escopado APENAS para o footer, evitando quebrar links globais */
+/* HOVER / TOUCH FEEDBACK */
 @media (hover: hover) {
   footer a:hover {
     color: var(--accentColor);
   }
 }
+@media (pointer: coarse) {
+  footer a:active {
+    color: var(--accentColor);
+  }
+}
 
-/* ===================================================
-   📱 RESPONSIVIDADE MOBILE (Menor ou igual a 480px)
-   =================================================== */
+/* RESPONSIVIDADE */
+/* APENAS CELULARES */
 @media (max-width: 480px) {
   footer {
-    gap: 1rem; /* Reduz o espaço entre eles */
+    gap: 1rem;
     padding: 1.5rem 1rem;
   }
 }

@@ -17,8 +17,8 @@ function Projetos() {
         <div className="prjCards">
           {projetosData.map((projeto, index) => (
             <PrjCard
-              key={projeto.id || index} // Chave única e estável
-              {...projeto}              // Passa todas as propriedades limpamente
+              key={projeto.id || index} 
+              {...projeto}              // Passa todas as propriedades
               delay={index * 100}       // Incremental: 0ms, 100ms, 200ms...
             />
           ))}

@@ -35,7 +35,6 @@
 }
 
 /* CONFIGURAÇÕES GLOBAIS */
-/* 1. Garante que o layout flex funcione de cima a baixo */
 
 *,
 :after,
@@ -54,13 +53,12 @@ span {
   transition: var(--transition);
 }
 
-/* Impede o comportamento de arrastar e selecionar texto em elementos clicáveis */
 a,
 button,
 .cardProjeto,
 img {
-  -webkit-user-drag: none; /* Impede o drag no Chrome/Safari/Edge */
-  user-select: none; /* Impede seleção de texto acidental ao segurar */
+  -webkit-user-drag: none; 
+  user-select: none;
 }
 /* CONTROLE DO BACKGROUND DO SITE */
 .content::before {
@@ -70,7 +68,6 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* z-index: -1; */
   background-image: var(--HTMLBackgroundImage);
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,21 +82,7 @@ html {
   background-color: var(--HTMLBackgroundColor);
   color-scheme: var(--HTMLColorScheme);
   overflow-x: hidden;
-  /* transition: var(--transition); */
-  /* scroll-behavior: smooth; */
-  /* min-height: 100%; */
 }
-/* body {
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  background: transparent;
-  -webkit-font-smoothing: antialiased;
-} */
 main {
   padding: 0 10rem;
 }

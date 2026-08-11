@@ -3,18 +3,15 @@ import { useTheme } from "../hooks/useTheme";
 import { BiMoon, BiSun, BiMenu, BiX } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../components/Buttons/Button1";
-import { useState, useEffect, useRef } from "react"; // 1. useRef adicionado
+import { useState, useEffect, useRef } from "react";
 
 function Header() {
   const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const headerRef = useRef(null); // 2. Referência do Header criada
+  const headerRef = useRef(null);
 
-  const handleLinkClick = () => setMenuOpen(false);
-
-  // Fecha o menu flutuante ao clicar/tocar fora do header
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -35,7 +32,6 @@ function Header() {
     };
   }, [menuOpen]);
 
-  // Observer do Scrollspy
   useEffect(() => {
     if (location.pathname !== "/") {
       setActiveSection("");
@@ -55,48 +51,35 @@ function Header() {
       {
         rootMargin: "-45% 0px -45% 0px",
         threshold: 0,
-      },
+      }
     );
 
     sections.forEach((section) => observer.observe(section));
 
-    // const handleScroll = () => {
-    //   const isBottom =
-    //     window.innerHeight + window.scrollY >=
-    //     document.documentElement.scrollHeight - 50;
-    //   if (isBottom) {
-    //     setActiveSection("contatoSection");
-    //   }
-    // };
-
-    // window.addEventListener("scroll", handleScroll);
-
-    // return () => {
-    //   observer.disconnect();
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
+    return () => {
+      observer.disconnect();
+    };
   }, [location]);
 
+  const handleNavClick = (e, sectionId) => {
+    setMenuOpen(false); 
+    if (location.pathname === "/") {
+      e.preventDefault();
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, null, `#${sectionId}`);
+    }
+  };
+
   return (
-    // 3. Adicionada a prop ref={headerRef}
     <header ref={headerRef} className={menuOpen ? "menu-active" : ""}>
-      {/* 1. LOGO */}
       <Link
         to="/#heroSection"
         id="headerLogo"
-        onClick={(e) => {
-          e.preventDefault();
-          setMenuOpen(false);
-          document
-            .getElementById("heroSection")
-            ?.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, null, "#heroSection");
-        }}
+        onClick={(e) => handleNavClick(e, "heroSection")}
       >
         mayanpas
       </Link>
 
-      {/* 2. NAVEGAÇÃO E AÇÕES DA DIREITA */}
       <div className="headerRightGroup">
         <nav id="headerNav" className={menuOpen ? "open" : ""}>
           <ul>
@@ -104,14 +87,7 @@ function Header() {
               <Link
                 to="/#sobreSection"
                 className={activeSection === "sobreSection" ? "active" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  document
-                    .getElementById("sobreSection")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, null, "#sobreSection");
-                }}
+                onClick={(e) => handleNavClick(e, "sobreSection")}
               >
                 Sobre
               </Link>
@@ -120,14 +96,7 @@ function Header() {
               <Link
                 to="/#habSection"
                 className={activeSection === "habSection" ? "active" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  document
-                    .getElementById("habSection")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, null, "#habSection");
-                }}
+                onClick={(e) => handleNavClick(e, "habSection")}
               >
                 Habilidades
               </Link>
@@ -136,14 +105,7 @@ function Header() {
               <Link
                 to="/#prjSection"
                 className={activeSection === "prjSection" ? "active" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  document
-                    .getElementById("prjSection")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, null, "#prjSection");
-                }}
+                onClick={(e) => handleNavClick(e, "prjSection")}
               >
                 Projetos
               </Link>
@@ -152,14 +114,7 @@ function Header() {
               <Link
                 to="/#contatoSection"
                 className={activeSection === "contatoSection" ? "active" : ""}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMenuOpen(false);
-                  document
-                    .getElementById("contatoSection")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                  window.history.pushState(null, null, "#contatoSection");
-                }}
+                onClick={(e) => handleNavClick(e, "contatoSection")}
               >
                 Contato
               </Link>
@@ -168,7 +123,7 @@ function Header() {
         </nav>
 
         <div className="headerActions">
-          {/* Alternador de Tema */}
+      
           <Button
             acao={toggleTheme}
             icon={theme === "dark" ? <BiSun /> : <BiMoon />}
@@ -176,7 +131,6 @@ function Header() {
             ariaLabel="Alternar tema"
           />
 
-          {/* Botão Hambúrguer Mobile */}
           <Button
             acao={() => setMenuOpen(!menuOpen)}
             ariaLabel="Toggle menu"

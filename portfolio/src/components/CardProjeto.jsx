@@ -1,5 +1,7 @@
 import "../css/Projetos.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLenis } from "lenis/react"; // ou 'lenis/react' dependendo da sua versão
+import Button from "../components/Buttons/Button1";
 
 export default function CardProjeto({
   id,
@@ -7,8 +9,14 @@ export default function CardProjeto({
   type,
   title,
   description,
-  delay = 0, // Valor default para evitar 'undefined' no AOS
+  delay = 0,
 }) {
+  const navigate = useNavigate();
+  const lenis = useLenis(); // Instância do Lenis
+
+  const lidarComNavegacao = () => {
+    navigate(`/projeto/${id}`);
+  };
 
   return (
     <article className="cardProjeto" data-aos="fade-up" data-aos-delay={delay}>
@@ -24,7 +32,7 @@ export default function CardProjeto({
         <h3>{title}</h3>
         <p className="description">{description}</p>
       </div>
-      <Link to={`/projeto/${id}`} className="button1">
+      <Link onClick={lidarComNavegacao} className="button1">
         Saiba Mais
       </Link>
     </article>

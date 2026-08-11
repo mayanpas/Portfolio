@@ -15,10 +15,8 @@
 #habSection {
   display: flex;
   flex-direction: column;
-  /* height: 110dvh; */
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
 }
 
 #habContent {
@@ -53,9 +51,8 @@
   display: flex;
   gap: 1rem;
   width: auto;
-
   .part2 {
-    padding-top: 1.5rem; /* Efeito Staggered no desktop */
+    padding-top: 1.5rem;
   }
 
   .habCard {
@@ -68,7 +65,6 @@
     width: 14rem;
     aspect-ratio: 1 / 1.1;
     transition: var(--transition);
-
     h3 {
       font-weight: 500;
       font-family: "Cal Sans", sans-serif;
@@ -81,21 +77,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-
     .habButtonsCollection {
       padding: 0;
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
       gap: 0.4rem;
-
       .habButton {
         display: flex;
         align-items: center;
         gap: 0.3rem;
         line-height: 1.7;
         color: var(--subTextColor);
-
         .habIcon,
         svg {
           font-size: 0.85rem;
@@ -125,8 +118,9 @@
   }
 }
 
-/* RESPONSIVIDADE FIEL AO DESIGN ORIGINAL */
+/* RESPONSIVIDADE */
 
+/* TABLETS E CELULARES */
 @media (max-width: 768px) {
   #habText h2 {
     font-size: 2.5rem;
@@ -165,18 +159,12 @@
     gap: 0.6rem;
     width: 100%;
     justify-content: center;
-
-    /* .part2 {
-      padding-top: 0;
-    } */
-
     .habCard {
       justify-content: flex-start;
       gap: 0.8rem;
       padding: 0.8rem;
       width: 10rem;
       aspect-ratio: 1 / 1.1;
-
       h3 {
         font-size: 0.85rem;
         text-align: start;
@@ -209,7 +197,6 @@
   #habContent {
     align-items: center;
     justify-content: space-between;
-    /* gap: 1rem; */
   }
 
   .habCardIcon {
@@ -220,14 +207,12 @@
   .habCards {
     display: flex;
     gap: 0.6rem;
-
     .habCard {
       justify-content: flex-start;
       gap: 0.8rem;
       padding: 0.8rem;
       width: 10rem;
       aspect-ratio: 1 / 1;
-
       h3 {
         font-size: 0.85rem;
         text-align: start;
@@ -274,14 +259,12 @@
   .habCards {
     display: flex;
     gap: 0.6rem;
-
     .habCard {
       justify-content: flex-start;
       gap: 0.8rem;
       padding: 0.8rem;
       width: 10rem;
       aspect-ratio: 1 / 1;
-
       h3 {
         font-size: 0.85rem;
         text-align: start;
@@ -293,7 +276,6 @@
         .habButton {
           line-height: 1.3;
           font-size: 0.6rem;
-
           .habIcon,
           svg {
             font-size: 0.65rem;
