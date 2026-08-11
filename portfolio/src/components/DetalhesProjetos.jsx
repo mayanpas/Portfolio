@@ -4,11 +4,15 @@ import { projetosData } from "../hooks/projetosData";
 import "../css/DetalhesProjetos.css";
 import HabButtons from "../components/HabButtons";
 import Button from "../components/Buttons/Button1";
-import { BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
+import { BiArrowBack, BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
 
 export default function DetalhesProjeto() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const handleVoltar = () =>{
+    navigate(-1)
+  }
 
   const projeto = projetosData.find((item) => item.id === id);
 
@@ -27,9 +31,15 @@ export default function DetalhesProjeto() {
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
-          <Link to={navigate(-1)} className="button1" id="backButton">
+          {/* <Link to={navigate(-1)} className="button1" id="backButton">
             <BiLeftArrowCircle /> Voltar
-          </Link>
+          </Link> */}
+          <Button
+            icon={<BiArrowBack />}
+            label="Voltar"
+            id="backButton"
+            acao={handleVoltar}
+          />
         </div>
 
         <div className="sectionText" id="prjDetailText">
