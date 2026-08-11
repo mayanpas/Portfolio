@@ -16,7 +16,7 @@ export default function DetalhesProjeto() {
     return (
       <section id="prjDetailsSection">
         <Link to={navigate(-1)} className="button1" id="backButton">
-           Voltar
+          <BiLeftArrowCircle /> Voltar
         </Link>
         <h2>Projeto não encontrado</h2>
       </section>
@@ -28,7 +28,7 @@ export default function DetalhesProjeto() {
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
           <Link to={navigate(-1)} className="button1" id="backButton">
-            Voltar
+            <BiLeftArrowCircle /> Voltar
           </Link>
         </div>
 
