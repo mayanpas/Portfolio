@@ -11,7 +11,7 @@ export default function DetalhesProjeto() {
   const navigate = useNavigate();
 
   const handleVoltar = () =>{
-    navigate(-1)
+    navigate(-2)
   }
 
   const projeto = projetosData.find((item) => item.id === id);
