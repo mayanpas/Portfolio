@@ -2,6 +2,7 @@ import "../css/Projetos.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useLenis } from "lenis/react"; // ou 'lenis/react' dependendo da sua versão
 import Button from "../components/Buttons/Button1";
+import { BiRightArrowCircle } from "react-icons/bi";
 
 export default function CardProjeto({
   id,
@@ -33,7 +34,7 @@ export default function CardProjeto({
         <p className="description">{description}</p>
       </div>
       <Link onClick={lidarComNavegacao} className="button1">
-        Saiba Mais
+        <BiRightArrowCircle size={18}/> Saiba Mais
       </Link>
     </article>
   );

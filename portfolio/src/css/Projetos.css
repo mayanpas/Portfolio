@@ -65,7 +65,7 @@
   a {
     margin-top: auto;
     background-color: transparent;
-    border: 3px solid var(--accentColor);
+    border: 2px solid var(--accentColor);
     color: var(--accentColor);
     transition: var(--transition);
   }

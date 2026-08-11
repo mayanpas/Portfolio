@@ -1,5 +1,6 @@
 import "../css/Sobre.css";
 import Button1 from "./Buttons/Button1";
+import { BiFile } from "react-icons/bi";
 
 function Sobre() {
   return (
@@ -23,8 +24,9 @@ function Sobre() {
           </p>
 
           <Button1
+            icon={<BiFile size={20}/>}
             label="Currículo"
-            acao="/files/curriculo-mayan-patrick.pdf"
+            acao="/files/CurriculoMayanPatrick.pdf"
             id="sobreButton"
           />
         </div>

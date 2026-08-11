@@ -25,11 +25,11 @@
   }
   .backButton {
     align-self: flex-start;
-    #backButton {
-      background-color: transparent;
-      border: 2px solid var(--accentColor);
-      color: var(--accentColor);
-    }
+  }
+  #backButton {
+    background-color: transparent;
+    border: 2px solid var(--accentColor);
+    color: var(--accentColor);
   }
 }
 #prjDetailText {
@@ -96,8 +96,9 @@
   .prjPhoto img:hover {
     transform: scale(1.03);
   }
-  a:hover {
-    opacity: 0.8;
+  #backButton:hover {
+    background-color: var(--accentColor) !important;
+    color: var(--HTMLBackgroundColor) !important;
   }
 }
 
@@ -105,8 +106,10 @@
   .prjPhoto img:active {
     transform: scale(1.03);
   }
-  a:active {
+  #backButton:active {
     opacity: 0.8;
+    background-color: var(--accentColor) !important;
+    color: var(--HTMLBackgroundColor) !important;
   }
 }
 

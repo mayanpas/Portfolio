@@ -4,7 +4,7 @@ import { projetosData } from "../hooks/projetosData";
 import "../css/DetalhesProjetos.css";
 import HabButtons from "../components/HabButtons";
 import Button from "../components/Buttons/Button1";
-import { BiArrowBack, BiLogoGithub, BiExit } from "react-icons/bi";
+import { BiLeftArrowCircle, BiLogoGithub, BiExit } from "react-icons/bi";
 
 export default function DetalhesProjeto() {
   const { id } = useParams();
@@ -21,8 +21,8 @@ export default function DetalhesProjeto() {
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
-        <Link to={navigate(-1)} onClick={`window.lenis.stop();`}>
-          <Button icon={<BiArrowBack />} label="Voltar" id="backButton" />
+        <Link to={navigate(-1)} className="button1" id="backButton">
+          <BiLeftArrowCircle /> Voltar
         </Link>
         <h2>Projeto não encontrado</h2>
       </section>
@@ -33,8 +33,8 @@ export default function DetalhesProjeto() {
     <section id="prjDetailsSection" data-aos="fade-up">
       <div className="sectionContent" id="prjDetailContent">
         <div className="backButton">
-          <Link to={navigate(-1)}>
-            <Button icon={<BiArrowBack />} label="Voltar" id="backButton" />
+          <Link to={navigate(-1)} className="button1" id="backButton">
+            <BiLeftArrowCircle /> Voltar
           </Link>
         </div>
 
