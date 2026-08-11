@@ -5,7 +5,7 @@ import { BiFile } from "react-icons/bi";
 function Sobre() {
   return (
     <section id="sobreSection">
-      <div className="sectionContent" id="sobreContent">
+      <div className="sectionContent" id="sobreContent" >
         <div
           className="photo"
           id="sobrePhoto"

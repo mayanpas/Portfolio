@@ -14,16 +14,21 @@ export default function DetalhesProjeto() {
     navigate(-1);
   };
 
+  // Dentro do componente da página do projeto:
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const projeto = projetosData.find((item) => item.id === id);
 
   if (!projeto) {
     return (
       <section id="prjDetailsSection">
         <Button
-          icon={<BiChevronLeft size={20}/>}
+          icon={<BiChevronLeft size={20} />}
           label="Voltar"
           id="backButton"
-          acao={handleVoltar}
+          acao={navigate(-1)}
         />
         <h2>Projeto não encontrado</h2>
       </section>
@@ -31,16 +36,12 @@ export default function DetalhesProjeto() {
   }
 
   return (
-    <section id="prjDetailsSection" data-aos="fade-up">
-      <div className="sectionContent" id="prjDetailContent">
+    <section id="prjDetailsSection" >
+      <div className="sectionContent" id="prjDetailContent" data-aos="fade-up">
         <div className="sectionText" id="prjDetailText">
           <h2>
             <div className="backButton">
-              <Button
-                icon={<BiChevronLeft size={30}/>}
-                id="backButton"
-                acao={handleVoltar}
-              />
+              <Link to={navigate(-1)} className="button1" id="backButton"><BiChevronLeft size={30}/></Link>
             </div>
             {projeto.title}
           </h2>

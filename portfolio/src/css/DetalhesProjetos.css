@@ -43,7 +43,7 @@
 .prjHabilities .habButton {
   gap: 0.2rem !important;
   font-size: 0.75rem !important;
-  color: var(--subTextColor) !important;
+  color: var(--textColor) !important;
 }
 
 .prjPhotos {

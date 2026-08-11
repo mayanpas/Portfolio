@@ -53,8 +53,21 @@
   outline-offset: 4px;
   box-shadow: var(--photoShadow);
   cursor: pointer;
-  transition: var(--transition);
+  /* transition: var(--transition); */
   flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  #heroPhoto:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+@media (pointer: coarse) {
+  #heroPhoto:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 }
 
 /* RESPONSIVIDADE */

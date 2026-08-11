@@ -3,7 +3,7 @@ import "../css/Hero.css";
 function Hero() {
   return (
     <section id="heroSection">
-      <div className="sectionContent" id="heroContent" data-aos="fade-up">
+      <div className="sectionContent" id="heroContent" data-aos="fade">
         <div className="heroText">
           <span className="greeting" data-aos="fade-up">
             Prazer,
@@ -24,6 +24,7 @@ function Hero() {
           id="heroPhoto"
           role="img"
           aria-label="Foto de Mayan Patrick"
+          data-aos="fade-up"
         />
       </div>
     </section>
