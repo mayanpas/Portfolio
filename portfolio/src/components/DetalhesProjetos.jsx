@@ -36,12 +36,14 @@ export default function DetalhesProjeto() {
   }
 
   return (
-    <section id="prjDetailsSection" >
+    <section id="prjDetailsSection">
       <div className="sectionContent" id="prjDetailContent" data-aos="fade-up">
         <div className="sectionText" id="prjDetailText">
           <h2>
             <div className="backButton">
-              <Link to={navigate(-1)} className="button1" id="backButton"><BiChevronLeft size={30}/></Link>
+              <Link to={navigate(-1)} className="button1" id="backButton">
+                <BiChevronLeft size={30} />
+              </Link>
             </div>
             {projeto.title}
           </h2>
@@ -65,28 +67,19 @@ export default function DetalhesProjeto() {
         )}
 
         <div className="prjButtons">
-          {projeto.github && (
-            <a href={projeto.github} target="_blank" rel="noopener noreferrer">
-              <Button
-                icon={<BiLogoGithub size={20} />}
-                label="GitHub"
-                id="github"
-              />
-            </a>
-          )}
-          {projeto.liveDemo && (
-            <a
-              href={projeto.liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                icon={<BiExit size={20} />}
-                label="Live Demo"
-                id="liveDemo"
-              />
-            </a>
-          )}
+          <Button
+            acao={projeto.github}
+            icon={<BiLogoGithub size={20} />}
+            label="GitHub"
+            id="github"
+          />
+
+          <Button
+            acao={projeto.liveDemo}
+            icon={<BiExit size={20} />}
+            label="Live Demo"
+            id="liveDemo"
+          />
         </div>
       </div>
     </section>

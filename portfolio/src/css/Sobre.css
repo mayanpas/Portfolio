@@ -81,6 +81,7 @@
 
   #sobreButton {
     align-self: center;
+    padding: 0.1rem 1.2rem;
   }
 }
 
@@ -95,7 +96,7 @@
     gap: 2rem;
   }
   #sobreButton {
-    padding: 0.1rem 1.5rem;
+    padding: 0.1rem 1.2rem;
   }
 
   #sobrePhoto {
